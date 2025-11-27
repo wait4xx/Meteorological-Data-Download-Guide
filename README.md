@@ -1,5 +1,7 @@
 # Meteorological-Data-Download-Guide
 
+# 完善中...
+
 # 🌤️ 公开气象数据下载资源库
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -23,16 +25,18 @@
 
 ## 数值预报数据
 
-### 全球模式
+### 实时预报数据
+
+#### 全球模式
 
 | 数据源 | 描述 | 分辨率 | 更新频率 | 访问方式 |
 |--------|------|--------|----------|----------|
-| **ECMWF IFS** | 欧洲中期天气预报中心集成预报系统 | 0.1°-0.4° | 每日2次 | [开放数据门户](https://www.ecmwf.int/en/forecasts/datasets) |
-| **NCEP GFS** | 美国全球预报系统 | 0.25° | 每日4次 | [NOMADS](https://nomads.ncep.noaa.gov/) |
+| **ECMWF IFS** | 欧洲中期天气预报中心集成预报系统 | 0.25° | 每日4次 | [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) |
+| **NCEP GFS** | 美国全球预报系统 | 0.25° | 每日4次 | [GFS](https://motherlode.ucar.edu/native/grid/NCEP/GFS/) |
 | **DWD ICON** | 德国天气局全球模式 | 0.1°-0.2° | 每日2次 | [Open Data](https://www.dwd.de/EN/ourservices/opendata/opendata.html) |
 | **JMA GSM** | 日本气象厅全球谱模式 | 0.25° | 每日2次 | [JMA Website](https://www.jma.go.jp/jma/en/Activities/nwp.html) |
 
-### 区域模式
+#### 区域模式
 
 | 数据源 | 区域 | 分辨率 | 更新频率 | 访问方式 |
 |--------|------|--------|----------|----------|
@@ -40,13 +44,42 @@
 | **WRF-ARW** | 多个区域 | 可变 | 可变 | [UCAR](https://www2.mmm.ucar.edu/wrf/users/) |
 | **COSMO** | 欧洲 | 1-7km | 每日多次 | [COSMO Data](https://www.cosmo-model.org/) |
 
-### 集合预报
+#### 集合预报
 
 | 数据源 | 系统 | 成员数 | 访问方式 |
 |--------|------|--------|----------|
-| **ECMWF ENS** | 集合预报系统 | 51 | [ECMWF](https://www.ecmwf.int/en/forecasts/datasets/set-i) |
+| **ECMWF ENS** | 集合预报系统 | 51 | [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) |
 | **NCEP GEFS** | 全球集合预报系统 | 31 | [NOMADS](https://nomads.ncep.noaa.gov/) |
 | **DWD EPS** | 欧洲集合预报系统 | 20 | [Open Data](https://www.dwd.de/EN/ourservices/opendata/opendata.html) |
+
+### 历史预报数据
+
+#### 全球模式
+
+| 数据源 | 描述 | 分辨率 | 更新频率 | 访问方式 |
+|--------|------|--------|----------|----------|
+| **NCEP GFS** | 美国全球预报系统 | 0.25° | 每日4次 | [NOMADS](https://gdex.ucar.edu/datasets/d084001/) |
+
+#### 区域模式
+
+| 数据源 | 区域 | 分辨率 | 更新频率 | 访问方式 |
+|--------|------|--------|----------|----------|
+| **HRRR** | 美国 | 3km | 每小时 | [NOMADS](https://nomads.ncep.noaa.gov/) |
+
+#### 集合预报
+
+| 数据源 | 系统 | 成员数 | 访问方式 |
+|--------|------|--------|----------|
+| **NCEP GEFS** | 全球集合预报系统 | 31 | [NOMADS](https://nomads.ncep.noaa.gov/) |
+
+## 大模型预报数据
+
+### 实时预报数据
+
+| 数据源 | 描述 | 分辨率 | 访问方式 |
+|--------|------|--------|----------|
+
+### 历史预报数据
 
 ## 实况观测数据
 
