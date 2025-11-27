@@ -3,7 +3,7 @@
 # 🌤️ 公开气象数据下载资源库
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
-[![GitHub Stars](https://img.shields.io/github/stars/your-username/weather-data-resources.svg)](https://github.com/your-username/weather-data-resources)
+[![GitHub Stars](https://img.shields.io/github/stars/wait4xx/Meteorological-Data-Download-Guide.svg)](https://github.com/wait4xx/Meteorological-Data-Download-Guide)
 
 一个收集整理各类公开气象数据下载网址的资源库，旨在为气象研究、数据分析和应用开发提供便捷的数据获取渠道。
 
