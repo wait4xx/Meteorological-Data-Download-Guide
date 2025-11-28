@@ -29,19 +29,19 @@
 ### 实时预报数据
 
 <table>
-  <thead style="text-align:center;">
+  <thead align="center">
     <tr>
-      <th>数据源</th>
-      <th>描述</th>
-      <th>预报方法</th>
-      <th>分辨率</th>
-      <th>时效</th>
-      <th>更新频率</th>
-      <th>访问方式</th>
-      <th>备注</th>
+      <th style="width: 10%">数据源</th>
+      <th style="width: 20%">描述</th>
+      <th style="width: 10%">预报方法</th>
+      <th style="width: 5%">分辨率</th>
+      <th style="width: 10%">时效</th>
+      <th style="width: 10%">更新频率</th>
+      <th style="width: 10%">访问方式</th>
+      <th style="width: 25%">备注</th>
     </tr>
   </thead>
-  <tbody style="text-align:center;">
+  <tbody align="center">
     <tr>
       <td><strong>ECMWF IFS</strong></td>
       <td rowspan="2">欧洲中期天气预报中心</td>
