@@ -98,11 +98,10 @@
     </tr>
   </tbody>
 </table>
-[ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) ECMWF公开数据说明：
 
-包含IFS及AIFS，其中IFS数据格式说明如下：
-
-![ec_file](./pics/ec_file.png)
+> [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) —— ECMWF公开数据说明
+> 包含IFS及AIFS，其中IFS数据格式说明如下：
+> ![ec_file](./pics/ec_file.png)
 
 ### 历史预报数据
 
