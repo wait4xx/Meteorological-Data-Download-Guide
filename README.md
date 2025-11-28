@@ -28,16 +28,8 @@
 
 ### 实时预报数据
 
-<style>
-.center-table th,
-.center-table td {
-    text-align: center;
-    vertical-align: middle;
-}
-</style>
-
-<table class="center-table">
-  <thead>
+<table>
+  <thead style="text-align:center;">
     <tr>
       <th>数据源</th>
       <th>描述</th>
@@ -49,7 +41,7 @@
       <th>备注</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody style="text-align:center;">
     <tr>
       <td><strong>ECMWF IFS</strong></td>
       <td rowspan="2">欧洲中期天气预报中心</td>
@@ -110,7 +102,7 @@
 
 包含IFS及AIFS，其中IFS数据格式说明如下：
 
-![ec_file](.\pics\ec_file.png)
+![ec_file](./pics/ec_file.png)
 
 ### 历史预报数据
 
