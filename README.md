@@ -28,84 +28,15 @@
 
 ### 实时预报数据
 
-<table>
-  <thead align="center">
-    <tr>
-      <th style="width: 10%">数据源</th>
-      <th style="width: 20%">描述</th>
-      <th style="width: 10%">预报方法</th>
-      <th style="width: 5%">分辨率</th>
-      <th style="width: 10%">时效</th>
-      <th style="width: 10%">更新频率</th>
-      <th style="width: 10%">访问方式</th>
-      <th style="width: 10%">时间范围</th>
-      <th style="width: 25%">备注</th>
-    </tr>
-  </thead>
-  <tbody align="center">
-    <tr>
-      <td><strong>ECMWF IFS</strong></td>
-      <td rowspan="2">欧洲中期天气预报中心</td>
-      <td>确定性预报</td>
-      <td rowspan="2">0.25°</td>
-      <td rowspan="2">0~144h(3h)</br>144~360h(6h)</td>
-      <td rowspan="2">每日4次</td>
-      <td rowspan="2"><a href="https://data.ecmwf.int/forecasts/">ECMWF Free & Open Data Portal</a></td>
-      <td rowspan="2">包含最近4日数据</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>ECMWF EFS</strong></td>
-      <td>集合预报</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td rowspan="2"><strong>NCEP GFS</strong></td>
-      <td rowspan="3">美国全球预报系统</td>
-      <td rowspan="2">确定性预报</td>
-      <td rowspan="3">0.25°/0.5°</td>
-      <td rowspan="3">0~144h(3h)</br>144~360h(6h)</td>
-      <td rowspan="3">每日4次</td>
-      <td><a href="https://motherlode.ucar.edu/native/grid/NCEP/GFS/">GFS_UCAR</a></td>
-      <td>包含最近3月数据</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><a href="https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/">GFS_NOAA</a></td>
-      <td>包含最近10日数据</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>NCEP GEFS</strong></td>
-      <td >集合预报</td>
-      <td><a href="https://nomads.ncep.noaa.gov/pub/data/nccf/com/gens/">GEFS_NOAA</a></td>
-      <td>包含最近4日数据</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>DWD ICON</strong></td>
-      <td>德国天气局全球模式</td>
-      <td>确定性预报</td>
-      <td>0.125°</td>
-      <td>0~144h(3h)</br>144~360h(6h)</td>
-      <td>每日4次</td>
-      <td><a href="https://opendata.dwd.de/weather/nwp/icon/grib/">ICON</a></td>
-      <td>包含最近4个起报时次数据</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>JMA GSM</strong></td>
-      <td>日本气象厅全球谱模式</td>
-      <td>确定性预报</td>
-      <td>0.25°/0.5°</td>
-      <td>0~144h(3h)</br>144~360h(6h)</td>
-      <td>每日4次</td>
-      <td><a href="https://www.wis-jma.go.jp/cms/gsm/download.html">JMA High-Resolution GSM Data Service</a></td>
-      <td>包含最近5日数据</td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
+| 数据源 | 描述 | 子产品/配置 | 预报方法 | 分辨率 | 时效 | 更新频率 | 访问方式 | 时间范围 | 备注 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **ECMWF** | 欧洲中期天气预报中心 | **IFS** | 确定性预报 | 0.25° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) | 包含最近4日数据 | |
+| | | **EFS** | 集合预报 | 0.25° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) | 包含最近4日数据 | |
+| **NCEP** | 美国全球预报系统 | **GFS** |确定性预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [GFS_UCAR](https://motherlode.ucar.edu/native/grid/NCEP/GFS/) | 包含最近3月数据 | |
+| | | **GFS** | 确定性预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [GFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/) | 包含最近10日数据 | |
+| | | **GEFS** | 集合预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [GEFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gens/) | 包含最近4日数据 | |
+| **DWD ICON** | 德国天气局全球模式 | **ICON** | 确定性预报 | 0.125° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [ICON](https://opendata.dwd.de/weather/nwp/icon/grib/) | 包含最近4个起报时次数据 | |
+| **JMA** | 日本气象厅全球谱模式 | **GSM** | 确定性预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [JMA High-Resolution GSM Data Service](https://www.wis-jma.go.jp/cms/gsm/download.html) | 包含最近5日数据 | |
 
 > [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) —— ECMWF公开数据说明
 > <br>包含IFS及AIFS，其中IFS数据格式说明如下：
@@ -113,239 +44,42 @@
 
 ### 历史预报数据
 
-<table>
-  <thead align="center">
-    <tr>
-      <th style="width: 10%">数据源</th>
-      <th style="width: 20%">描述</th>
-      <th style="width: 10%">预报方法</th>
-      <th style="width: 5%">分辨率</th>
-      <th style="width: 10%">时效</th>
-      <th style="width: 10%">更新频率</th>
-      <th style="width: 10%">访问方式</th>
-      <th style="width: 10%">时间范围</th>
-      <th style="width: 25%">备注</th>
-    </tr>
-  </thead>
-  <tbody align="center">
-    <tr>
-      <td rowspan="2"><strong>ECMWF IFS</strong></td>
-      <td rowspan="3">欧洲中期天气预报中心</td>
-      <td rowspan="2">确定性预报</td>
-      <td>0.25°/0.4°</td>
-      <td>0~144h(3h)</br>144~360h(6h)</td>
-      <td rowspan="3">每日4次</td>
-      <td><a href="https://console.cloud.google.com/storage/browser/ecmwf-open-data;tab=objects?prefix=&forceOnObjectsSortingFiltering=false">🪜ECMWF_GOOGLE</a></td>
-      <td>2023年7月12日至今（最新数据较官网有延迟）</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>0.1°</td>
-      <td>0~12h(6h)</td>
-      <td><a href="https://gdex.ucar.edu/datasets/d113001/dataaccess/#">IFS_UCAR</a></td>
-      <td>2016年1月1日至今（仅含地面要素）</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>ECMWF EFS</strong></td>
-      <td>集合预报</td>
-      <td>0.25°/0.4°</td>
-      <td>0~144h(3h)</br>144~360h(6h)</td>
-      <td><a href="https://console.cloud.google.com/storage/browser/ecmwf-open-data;tab=objects?prefix=&forceOnObjectsSortingFiltering=false">🪜ECMWF_GOOGLE</a></td>
-      <td>2023年7月12日至今（最新数据较官网有延迟）</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td rowspan="2"><strong>NCEP GFS</strong></td>
-      <td rowspan="3">美国全球预报系统</td>
-      <td rowspan="2">确定性预报</td>
-      <td rowspan="3">0.25°/0.5°</td>
-      <td rowspan="3">0~144h(3h)</br>144~360h(6h)</td>
-      <td rowspan="3">每日4次</td>
-      <td><a href="https://gdex.ucar.edu/datasets/d084001/dataaccess/">GFS_UCAR</a></td>
-      <td>2015年1月15日至今</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><a href="https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/">GFS_NOAA</a></td>
-      <td>包含最近10日数据</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>NCEP GEFS</strong></td>
-      <td >集合预报</td>
-      <td><a href="https://nomads.ncep.noaa.gov/pub/data/nccf/com/gens/">GEFS_NOAA</a></td>
-      <td>包含最近4日数据</td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
+| 主数据源 | 描述 | 子产品/配置 | 预报方法 | 分辨率 | 时效 | 更新频率 | 访问方式 | 时间范围 | 备注 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **ECMWF** | 欧洲中期天气预报中心 | **IFS (HRES)** | 确定性预报 | 0.25°/0.4° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [🪜ECMWF_GOOGLE](https://console.cloud.google.com/storage/browser/ecmwf-open-data;tab=objects?prefix=&forceOnObjectsSortingFiltering=false) | 2023年7月12日至今（最新数据较官网有延迟） | |
+| | | **IFS (HRES \~ 地面)** | 确定性预报 | 0.1° | 0\~12h(6h) | 每日4次 | [IFS_UCAR](https://gdex.ucar.edu/datasets/d113001/dataaccess/#) | 2016年1月1日至今 | |
+| | | **EFS** | 集合预报 | 0.25°/0.4° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [🪜ECMWF_GOOGLE](https://console.cloud.google.com/storage/browser/ecmwf-open-data;tab=objects?prefix=&forceOnObjectsSortingFiltering=false) | 2023年7月12日至今（最新数据较官网有延迟） | |
+| **NCEP** | 美国全球预报系统 | **GFS** | 确定性预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [GFS_UCAR](https://gdex.ucar.edu/datasets/d084001/dataaccess/) | 2015年1月15日至今 | |
+| | | **GFS** | 确定性预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [GFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/) | 包含最近10日数据 | |
+| | | **GEFS** | 集合预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [GEFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gens/) | 包含最近4日数据 | |
 
 ## 大模型预报数据
 
 ### 实时预报数据
 
-<table>
-  <thead align="center">
-    <tr>
-      <th>数据源</th>
-      <th>描述</th>
-      <th>预报方法</th>
-      <th>分辨率</th>
-      <th>时效</th>
-      <th>更新频率</th>
-      <th>访问方式</th>
-      <th>时间范围</th>
-      <th>备注</th>
-    </tr>
-  </thead>
-  <tbody align="center">
-    <tr>
-      <td><strong>ECMWF AIFS</strong></td>
-      <td rowspan="2">欧洲中期天气预报中心</td>
-      <td>确定性预报</td>
-      <td rowspan="2">0.25°</td>
-      <td rowspan="2">0~360h(6h)</td>
-      <td rowspan="2">每日4次</td>
-      <td rowspan="2"><a href="https://data.ecmwf.int/forecasts/">ECMWF Free & Open Data Portal</a></td>
-      <td rowspan="2">包含最近4日数据</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>ECMWF AIEFS</strong></td>
-      <td>集合预报</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>NCEP AIGFS</strong></td>
-      <td rowspan="2">美国全球预报系统</td>
-      <td>确定性预报</td>
-      <td rowspan="2">0.25°/0.5°</td>
-      <td rowspan="2">0~360h(6h)</td>
-      <td rowspan="2">每日4次</td>
-      <td><a href="https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/">AIGFS_NOAA</a></td>
-      <td>包含最近2日数据</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>NCEP AIGEFS</strong></td>
-      <td >集合预报</td>
-      <td><a href="https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigefs/">AIGEFS_NOAA</a></td>
-      <td>包含最近2日数据</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>Aurora</strong></td>
-      <td>微软</td>
-      <td>确定性预报</td>
-      <td rowspan="4">0.5°</td>
-      <td rowspan="4">0~240h(6h)</td>
-      <td rowspan="4">每日2次</td>
-      <td rowspan="4"><a href="https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html">🪜AWS-S3</a></td>
-      <td> </td>
-      <td rowspan="4"><a href="./docs/noaa-oar-mlwp-data.txt">数据说明</a></td>
-    </tr>
-    <tr>
-      <td><strong>FourCastNet</strong></td>
-      <td>NVIDIA</td>
-      <td>确定性预报</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>GraphCast</strong></td>
-      <td>Google、DeepMind</td>
-      <td>确定性预报</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>PANGU</strong></td>
-      <td>华为</td>
-      <td>确定性预报</td>
-      <td> </td>
-    </tr>
-  </tbody>
-</table>
+| 数据源 | 描述 | 预报方法 | 分辨率 | 时效 | 更新频率 | 访问方式 | 时间范围 | 备注 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **ECMWF-AIFS** | 欧洲中期天气预报中心 | 确定性预报 | 0.25° | 0\~360h(6h) | 每日4次 | [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) | 包含最近4日数据 | |
+| **ECMWF-AIEFS** | 欧洲中期天气预报中心 | 集合预报 | 0.25°| 0\~360h(6h) | 每日4次  | [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) | 包含最近4日数据 | |
+| **NCEP-AIGFS** | 美国全球预报系统 | 确定性预报 | 0.25°/0.5° | 0\~360h(6h) | 每日4次 | [AIGFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/) | 包含最近2日数据 | |
+| **NCEP-AIGEFS** | 美国全球预报系统 | 集合预报 | 0.25°/0.5° | 0\~360h(6h) | 每日4次  | [AIGEFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigefs/) | 包含最近2日数据 | |
+| **Aurora** | 微软 | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次 | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **FourCastNet** | NVIDIA | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **GraphCast** | Google、DeepMind | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **PANGU** | 华为 | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
 
 ### 历史预报数据
 
-<table>
-  <thead align="center">
-    <tr>
-      <th>数据源</th>
-      <th>描述</th>
-      <th>预报方法</th>
-      <th>分辨率</th>
-      <th>时效</th>
-      <th>更新频率</th>
-      <th>访问方式</th>
-      <th>时间范围</th>
-      <th>备注</th>
-    </tr>
-  </thead>
-  <tbody align="center">
-    <tr>
-      <td><strong>ECMWF AIFS</strong></td>
-      <td rowspan="2">欧洲中期天气预报中心</td>
-      <td>确定性预报</td>
-      <td rowspan="2">0.25°</td>
-      <td rowspan="2">0~360h(6h)</td>
-      <td rowspan="2">每日4次</td>
-      <td rowspan="2"><a href="https://data.ecmwf.int/forecasts/">ECMWF Free & Open Data Portal</a></td>
-      <td rowspan="2">包含最近4日数据</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>ECMWF AIEFS</strong></td>
-      <td>集合预报</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>NCEP AIGFS</strong></td>
-      <td rowspan="2">美国全球预报系统</td>
-      <td>确定性预报</td>
-      <td rowspan="2">0.25°/0.5°</td>
-      <td rowspan="2">0~360h(6h)</td>
-      <td rowspan="2">每日4次</td>
-      <td><a href="https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/">AIGFS_NOAA</a></td>
-      <td>包含最近2日数据</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>NCEP AIGEFS</strong></td>
-      <td >集合预报</td>
-      <td><a href="https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigefs/">AIGEFS_NOAA</a></td>
-      <td>包含最近2日数据</td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td><strong>Aurora</strong></td>
-      <td>微软</td>
-      <td>确定性预报</td>
-      <td rowspan="4">0.5°</td>
-      <td rowspan="4">0~240h(6h)</td>
-      <td rowspan="4">每日2次</td>
-      <td rowspan="4"><a href="https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html">🪜AWS-S3</a></td>
-      <td>2025年1月23日至今</td>
-      <td rowspan="4"><a href="./docs/noaa-oar-mlwp-data.txt">数据说明</a></td>
-    </tr>
-    <tr>
-      <td><strong>FourCastNet</strong></td>
-      <td>NVIDIA</td>
-      <td>确定性预报</td>
-      <td rowspan="3">2020年9月30日至今</td>
-    </tr>
-    <tr>
-      <td><strong>GraphCast</strong></td>
-      <td>Google、DeepMind</td>
-      <td>确定性预报</td>
-    </tr>
-    <tr>
-      <td><strong>PANGU</strong></td>
-      <td>华为</td>
-      <td>确定性预报</td>
-    </tr>
-  </tbody>
-</table>
+| 数据源 | 描述 | 预报方法 | 分辨率 | 时效 | 更新频率 | 访问方式 | 时间范围 | 备注 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **ECMWF-AIFS**  | 欧洲中期天气预报中心 | 确定性预报 |   0.25°    | 0\~360h(6h) | 每日4次  | [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) |  包含最近4日数据  |                                           |
+| **ECMWF-AIEFS** | 欧洲中期天气预报中心 |  集合预报  |   0.25°    | 0\~360h(6h) | 每日4次  | [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) |  包含最近4日数据  |                                           |
+| **NCEP-AIGFS**  |   美国全球预报系统   | 确定性预报 | 0.25°/0.5° | 0\~360h(6h) | 每日4次  | [AIGFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/) |  包含最近2日数据  |                                           |
+| **NCEP-AIGEFS** |   美国全球预报系统   |  集合预报  | 0.25°/0.5° | 0\~360h(6h) | 每日4次  | [AIGEFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigefs/) |  包含最近2日数据  | |
+| **Aurora**| 微软 | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2025年1月23日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **FourCastNet** | NVIDIA   | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2020年9月30日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **GraphCast**   | Google、DeepMind | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2020年9月30日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **PANGU** | 华为 | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2020年9月30日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
 
 ## 实况观测数据
 
