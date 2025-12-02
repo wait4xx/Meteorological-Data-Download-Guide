@@ -1,0 +1,139 @@
+	This is an archive of pure AI-based numerical weather prediction reforecasts.
+
+	Additional information on this archive can be found in our BAMS paper (please
+	cite if you use this dataset).
+
+	Radford, J. T., I. Ebert-Uphoff, J. Q. Stewart, K. D. Musgrave, R. DeMaria, N. Tourville,
+	and K. Hilburn, 2025: Accelerating Community-Wide Evaluation of AI Models for Global Weather
+	Prediction by Facilitating Access to Model Output. Bull. Amer. Meteor. Soc., 106, E68-E76,
+	https://doi.org/10.1175/BAMS-D-24-0057.1.	
+
+	The current period of record is roughly 09/30/20 to present.
+	For real-time visualizations, visit:
+
+	https://aiweather.cira.colostate.edu
+
+	00 UTC and 12 UTC initializations are available for all three years.
+	06 UTC and 18 UTC initializations are available for 2023 only.
+
+	Models currently included are:
+		1. FourCastNet v1
+			* Code: https://github.com/NVlabs/FourCastNet
+			* Reference: https://arxiv.org/abs/2202.11214
+		2. FourCastNet v2-small
+			* Reference https://arxiv.org/abs/2306.03838
+		3. Pangu-Weather
+			* Code: https://github.com/198808xc/Pangu-Weather
+			* Reference: https://www.nature.com/articles/s41586-023-06185-3
+		4. GraphCast Operational
+			* Code: https://github.com/google-deepmind/graphcast
+			* Reference: https://www.science.org/doi/10.1126/science.adi2336
+
+	The directory structure is as follows:
+		s3://noaa-oar-mlwp-data/MMMM_vNNN_III/YYYY/mmdd/MMMM_vNNN_III_YYYYmmddhh_fXXX_fYYY_ZZ.nc; where
+		MMMM = Four character model code (FOUR, PANG, or GRAP)
+		 NNN = Three digit version number (currently 100 or 200)
+		YYYY = Four digit year
+		  mm = Two digit month
+		  dd = Two digit day
+		 III = Three character initial condition system (GFS)
+		  hh = Two digit initialization time (00, 06, 12, or 18)
+		 XXX = Three digit first forecast hour of file (currently 000 for all files)
+		 YYY = Three digit last forecast hour of file (currently 240 for all files)
+		  ZZ = Two digit forecast step (currently 06 for all files)
+
+	Variables available by model:
+		* FourCastNet v1
+			* 10-m u wind component
+			* 10-m v wind component
+			* 100-m u wind component
+			* 100-m v wind component
+			* 2-m temperature
+			* Surface pressure
+			* Mean sea level pressure
+			* Total column integrated water vapor
+			* Geopotential at 1000, 850, 500, 250, and 50 hPa
+			* Temperature at 850, 500, and 250 hPa
+			* U wind component at 1000, 850, 500, and 250 hPa
+			* V wind component at 1000, 850, 500, and 250 hPa
+			* Relative humidity at 850 and 500 hPa
+		* FourCastNet v2-small
+			* 10-m u wind component
+			* 10-m v wind component
+			* 100-m u wind component
+			* 100-m v wind component
+			* 2-m temperature
+			* Surface pressure
+			* Mean sea level pressure
+			* Total column integrated water vapor
+			* Geopotential at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* Temperature at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* U wind component at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* V wind component at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* Relative humidity at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+		* Pangu-Weather
+			* 10-m u wind component
+			* 10-m v wind component
+			* 2-m temperature
+			* Mean sea level pressure
+			* Geopotential at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* Temperature at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* U wind component at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* V wind component at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* Specific humidity at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+		* GraphCast Operational
+			* 10-m u wind component
+			* 10-m v wind component
+			* 2-m temperature
+			* Mean sea level pressure
+			* Geopotential at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* Temperature at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* U wind component at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* V wind component at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* Specific humidity at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* Vertical velocity at 1000, 925, 850, 700, 600, 500, 400, 300, 250, 200, 150, 100, and 50 hPa
+			* 6-hr accumulated precipitation
+
+	Questions? Contact jacob.radford@noaa.gov
+
+	Citation: If you found our dataset helpful, please cite our paper:
+			Radford, J. T., I. Ebert-Uphoff, J. Q. Stewart, K. D. Musgrave, R. DeMaria, N. Tourville,
+			and K. Hilburn, 2025: Accelerating Community-Wide Evaluation of AI Models for Global Weather
+			Prediction by Facilitating Access to Model Output. Bull. Amer. Meteor. Soc., 106, E68–E76,
+			https://doi.org/10.1175/BAMS-D-24-0057.1.
+
+	Our acknowledgments: We would like to thank the FourCastNet, Pangu-Weather, and GraphCast developers
+			for make their code open access. We would also like to thank ECMWF for
+			providing the ai-models package (https://github.com/ecmwf-lab/ai-models) which
+			greatly simplifies running these models.
+
+	Disclaimer: NOAA is providing this data "as is," and NOAA and its partners cannot be held responsible,
+			nor assume any liability for any damages caused by inaccuracies in this data or documentation,
+			or as a result of the failure of the data or software to function in a particular manner.
+			NOAA and its partners make no warranty, expressed or implied, as to the accuracy, completeness,
+			or utility of this information, nor does the fact of distribution constitute a warranty
+
+*** 02/18/24 Update ***
+
+	A minor issue was found in the GraphCast implementation leading us to
+	regenerate the GraphCast files.
+
+*** 03/13/24 Update ***
+
+	The GraphCast archive is back but only dates back to 01/2022 to avoid
+	overlapping with the model training and fine-tuning period.
+
+	(Near) real time data is now flowing. We are still working out the
+	timing of when the files will be available for each initialization
+
+*** 06/19/24 Update ***
+
+	We filled in missing data for the 2023-2024 winter season.
+
+	A new "Derived" folder is being added with calculated
+	severe weather parameters
+
+*** 01/15/25 Update ***
+
+	We have begun to add IFS initialized versions of each model. Note that the directory structure has changed
+	slightly to accomodate this new data.
