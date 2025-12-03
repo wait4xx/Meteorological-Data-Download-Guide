@@ -55,7 +55,7 @@
 
 ## 大模型预报数据
 
-### 实时预报数据
+### 实时数据
 
 | 数据源 | 描述 | 预报方法 | 分辨率 | 时效 | 更新频率 | 访问方式 | 时间范围 | 备注 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
@@ -63,23 +63,19 @@
 | **ECMWF-AIEFS** | 欧洲中期天气预报中心 | 集合预报 | 0.25°| 0\~360h(6h) | 每日4次  | [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) | 包含最近4日数据 | |
 | **NCEP-AIGFS** | 美国全球预报系统 | 确定性预报 | 0.25°/0.5° | 0\~360h(6h) | 每日4次 | [AIGFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/) | 包含最近2日数据 | |
 | **NCEP-AIGEFS** | 美国全球预报系统 | 集合预报 | 0.25°/0.5° | 0\~360h(6h) | 每日4次  | [AIGEFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigefs/) | 包含最近2日数据 | |
-| **Aurora** | 微软 | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次 | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
-| **FourCastNet** | NVIDIA | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
-| **GraphCast** | Google、DeepMind | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
-| **PANGU** | 华为 | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **Aurora** | 微软 | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次 | [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **FourCastNet** | NVIDIA | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **GraphCast** | Google、DeepMind | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **PANGU** | 华为 | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
 
-### 历史预报数据
+### 历史数据
 
 | 数据源 | 描述 | 预报方法 | 分辨率 | 时效 | 更新频率 | 访问方式 | 时间范围 | 备注 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **ECMWF-AIFS**  | 欧洲中期天气预报中心 | 确定性预报 |   0.25°    | 0\~360h(6h) | 每日4次  | [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) |  包含最近4日数据  |                                           |
-| **ECMWF-AIEFS** | 欧洲中期天气预报中心 |  集合预报  |   0.25°    | 0\~360h(6h) | 每日4次  | [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) |  包含最近4日数据  |                                           |
-| **NCEP-AIGFS**  |   美国全球预报系统   | 确定性预报 | 0.25°/0.5° | 0\~360h(6h) | 每日4次  | [AIGFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/) |  包含最近2日数据  |                                           |
-| **NCEP-AIGEFS** |   美国全球预报系统   |  集合预报  | 0.25°/0.5° | 0\~360h(6h) | 每日4次  | [AIGEFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigefs/) |  包含最近2日数据  | |
-| **Aurora**| 微软 | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2025年1月23日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
-| **FourCastNet** | NVIDIA   | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2020年9月30日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
-| **GraphCast**   | Google、DeepMind | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2020年9月30日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
-| **PANGU** | 华为 | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [🪜AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2020年9月30日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **Aurora**| 微软 | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2025年1月23日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **FourCastNet** | NVIDIA   | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2020年9月30日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **GraphCast**   | Google、DeepMind | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2020年9月30日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
+| **PANGU** | 华为 | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2020年9月30日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
 
 ## 实况观测数据
 
@@ -143,11 +139,22 @@
 
 ### 再分析数据集
 
-| 数据集 | 时段 | 分辨率 | 要素 | 访问方式 | 备注 |
-|--------|------|--------|------|----------|----------|
-| **ERA5** | 1950-现在 | 0.25° | 全面 | [ECMWF CDS](https://cds.climate.copernicus.eu/) |  |
-| **MERRA-2** | 1980-现在 | 0.5° | 全面 | [NASA GES DISC](https://disc.gsfc.nasa.gov/) |  |
-| **JRA-55** | 1958-现在 | 0.56° | 全面 | [JMA](https://jra.kishou.go.jp/JRA-55/) |  |
+| 数据源 | 描述 | 空间分辨率 | 时间分辨率 | 访问方式 | 时间范围 | 备注 |
+| :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **ERA5-land**| ECMWF | 0.25° | hourly | [ERA5-land](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=download) | 1950年1月1日至今 | |
+| **ERA5-land**| ECMWF | 0.25° | monthly-mean | [ERA5-land](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land-monthly-means?tab=download) | 1950年1月1日至今 | |
+| **ERA5-land**| ECMWF | 0.25° | monthly-mean | [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.sfc/) | 1940年1月1日至今 | |
+| **ERA5-pressure**| ECMWF | 0.25° | hourly | [ERA5-pressure](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-pressure-levels?tab=download) | 1940年1月1日至今 | |
+| **ERA5-pressure**| ECMWF | 0.25° | monthly-mean | [ERA5-pressure](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-pressure-levels-monthly-means?tab=download) | 1940年1月1日至今 | |
+| **ERA5-pressure**| ECMWF | 0.25° | monthly-mean | [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.pl/) | 1940年1月1日至今 | |
+| **ERA5**| ECMWF | 0.25° | hourly/monthly-mean | [🪜ERA5_GOOGLE](https://console.cloud.google.com/storage/browser/gcp-public-data-arco-era5/raw/ERA5GRIB/HRES?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))) | 1940年1月1日至今 | |
+| **JRA-3Q**| JMA | 1.25° | hourly/mothly-mean | [JRA-3Q_DIAS]( https://data.diasjp.net/dl/storages/filelist/dataset:645) | 1947年9月1日至今 | 需登录 |
+| **JRA-3Q**| JMA | 1.25° | hourly | [JRA-3Q_UCAR](https://gdex.ucar.edu/datasets/d640000/dataaccess/#) | 1947年9月1日至今 |  |
+| **JRA-3Q**| JMA | 1.25° | hourly | [JRA-3Q_UCAR](https://gdex.ucar.edu/datasets/d640001/dataaccess/#) | 2023年12月9日至今(近实时更新) |  |
+| **JRA-3Q**| JMA | 1.25° | monthly-mean | [JRA-3Q_UCAR](https://gdex.ucar.edu/datasets/d640002/dataaccess/#) | 1947年9月1日至今 | |
+| **JRA-3Q**| JMA | 1.25° | monthly-mean | [JRA-3Q_UCAR](https://gdex.ucar.edu/datasets/d640003/dataaccess/#) | 1991年1月1日至今(近实时更新) | |
+| **MERRA-2**| NASA | 0.5° | hourly/monthly | [MERRA_GSFC](https://disc.gsfc.nasa.gov/datasets?project=MERRA-2) | 1980年1月1日至今 | |
+| **MERRA-2**| NASA | 0.5° | hourly/monthly | [MERRA_FTP](https://goldsmr4.gesdisc.eosdis.nasa.gov/data/) | 1980年1月1日至今 | |
 
 ### 气候数据集
 
