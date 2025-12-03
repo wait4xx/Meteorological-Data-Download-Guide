@@ -32,9 +32,16 @@
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **ECMWF** | 欧洲中期天气预报中心 | **IFS** | 确定性预报 | 0.25° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) | 包含最近4日数据 | |
 | | | **EFS** | 集合预报 | 0.25° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [ECMWF Free & Open Data Portal](https://data.ecmwf.int/forecasts/) | 包含最近4日数据 | |
-| **NCEP** | 美国全球预报系统 | **GFS** |确定性预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [GFS_UCAR](https://motherlode.ucar.edu/native/grid/NCEP/GFS/) | 包含最近3月数据 | |
-| | | **GFS** | 确定性预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [GFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/) | 包含最近10日数据 | |
-| | | **GEFS** | 集合预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [GEFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gens/) | 包含最近4日数据 | |
+| **NCEP** | 美国全球预报系统 | **GFS** | 确定性预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [GFS_UCAR](https://motherlode.ucar.edu/native/grid/NCEP/GFS/) | 包含最近3月数据 | |
+| | | **GFS** | 确定性预报 | 0.25° | 0\~120h(1h) | 每日4次 | [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_0p25_1hr/) | 包含最近10日数据 | [使用Python利用xarray库下载](./sources/download_from_opendap.py) |
+| | | **GFS** | 确定性预报 | 0.25° | 0\~384h(3h) | 每日4次 | [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_0p25//) | 包含最近10日数据 | [使用Python利用xarray库下载](./sources/download_from_opendap.py) |
+| | | **GFS** | 确定性预报 | 0.25° | 0\~120h(1h)<br>120\~384h(3h) | 每日4次 | [GFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/) | 包含最近10日数据 | |
+| | | **GFS** | 确定性预报 | 0.5° | 0\~384h(3h) | 每日4次 | [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_0p50/) | 包含最近10日数据 | [使用Python利用xarray库下载](./sources/download_from_opendap.py) |
+| | | **GFS** | 确定性预报 | 1° | 0\~384h(3h) | 每日4次 | [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_1p00/) | 包含最近10日数据 | [使用Python利用xarray库下载](./sources/download_from_opendap.py) |
+| | | **GFS** | 确定性预报 | 0.5°/1° | 0\~384h(3h) | 每日4次 | [GFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/) | 包含最近10日数据 | |
+| | | **GEFS** | 集合预报 | 0.25° | 0\~240h(3h) | 每日4次 | [GEFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gens/) | 包含最近4日数据 | |
+| | | **GEFS** | 集合预报 | 0.5° | 0\~240h(3h)<br>240\~840h(6h) | 每日4次 | [GEFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gens/) | 包含最近4日数据 | |
+| | | **GEFS** | 集合预报 | 0.5° | 0\~384h(6h) | 每日4次 | [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_0p50/) | 包含最近4日数据 | [使用Python利用xarray库下载](./sources/download_from_opendap.py) |
 | **DWD ICON** | 德国天气局全球模式 | **ICON** | 确定性预报 | 0.125° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [ICON](https://opendata.dwd.de/weather/nwp/icon/grib/) | 包含最近4个起报时次数据 | |
 | **JMA** | 日本气象厅全球谱模式 | **GSM** | 确定性预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [JMA High-Resolution GSM Data Service](https://www.wis-jma.go.jp/cms/gsm/download.html) | 包含最近5日数据 | |
 
@@ -46,12 +53,16 @@
 
 | 主数据源 | 描述 | 子产品/配置 | 预报方法 | 分辨率 | 时效 | 更新频率 | 访问方式 | 时间范围 | 备注 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-| **ECMWF** | 欧洲中期天气预报中心 | **IFS (HRES)** | 确定性预报 | 0.25°/0.4° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [🪜ECMWF_GOOGLE](https://console.cloud.google.com/storage/browser/ecmwf-open-data;tab=objects?prefix=&forceOnObjectsSortingFiltering=false) | 2023年7月12日至今（最新数据较官网有延迟） | |
-| | | **IFS (HRES \~ 地面)** | 确定性预报 | 0.1° | 0\~12h(6h) | 每日4次 | [IFS_UCAR](https://gdex.ucar.edu/datasets/d113001/dataaccess/#) | 2016年1月1日至今 | |
+| **ECMWF** | 欧洲中期天气预报中心 | **IFS (HRES \~ 地面)** | 确定性预报 | 0.1° | 0\~12h(6h) | 每日4次 | [IFS_UCAR](https://gdex.ucar.edu/datasets/d113001/dataaccess/#) | 2016年1月1日至今 | |
+| | | **IFS** | 确定性预报 | 0.25°/0.4° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [🪜ECMWF_GOOGLE](https://console.cloud.google.com/storage/browser/ecmwf-open-data;tab=objects?prefix=&forceOnObjectsSortingFiltering=false) | 2023年7月12日至今（最新数据较官网有延迟） | |
+| | | **IFS** | 确定性预报 | 0.25°/0.4° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [ASW-S3](https://ecmwf-forecasts.s3.amazonaws.com/) | 2023年3月18日至今（含最新数据） | 需使用ASWCLI下载或者在此网页基础上补全进行单个文件下载 |
 | | | **EFS** | 集合预报 | 0.25°/0.4° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [🪜ECMWF_GOOGLE](https://console.cloud.google.com/storage/browser/ecmwf-open-data;tab=objects?prefix=&forceOnObjectsSortingFiltering=false) | 2023年7月12日至今（最新数据较官网有延迟） | |
-| **NCEP** | 美国全球预报系统 | **GFS** | 确定性预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [GFS_UCAR](https://gdex.ucar.edu/datasets/d084001/dataaccess/) | 2015年1月15日至今 | |
-| | | **GFS** | 确定性预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [GFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/) | 包含最近10日数据 | |
-| | | **GEFS** | 集合预报 | 0.25°/0.5° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [GEFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gens/) | 包含最近4日数据 | |
+| | | **EFS** | 集合预报 | 0.25°/0.4° | 0\~144h(3h)<br>144\~360h(6h) | 每日4次 | [ASW-S3](https://ecmwf-forecasts.s3.amazonaws.com/) | 2023年3月18日至今（含最新数据） | 需使用ASWCLI下载或者在此网页基础上补全进行单个文件下载 |
+| **NCEP** | 美国全球预报系统 | **GFS** | 确定性预报 | 0.25°/0.5° | 0\~240h(3h)<br>240\~384h(12h) | 每日4次 | [GFS_UCAR](https://gdex.ucar.edu/datasets/d084001/dataaccess/) | 2015年1月15日至今(2026年停止更新) | |
+| | | **GFS** | 确定性预报 | 0.25°/0.5/1° | 0\~384h(3h) | 每日4次 | [ASW-S3](https://noaa-gfs-bdp-pds.s3.amazonaws.com/index.html) | 2021年1月1日至今 | 直接搜索gfs |
+| | | **GFS** | 确定性预报 | 0.25°/0.5/1° | 0\~384h(3h) | 每日4次 | [🪜GFS_GOOGLE](https://console.cloud.google.com/storage/browser/global-forecast-system;tab=objects?prefix=&forceOnObjectsSortingFiltering=false) | 2021年1月1日至今 | 直接搜索gfs |
+| | | **GEFS** | 集合预报 | 0.25°/0.5° | 0\~384h(6h)/0\~240h(3h) | 每日4次 | [ASW-S3](https://noaa-gefs-pds.s3.amazonaws.com/index.html) | 2017年1月1日至今 | |
+| | | **GEFS** | 集合预报 | 0.25°/0.5 | 0\~240h(3h) | 每日4次 | [🪜GFS_GOOGLE](https://console.cloud.google.com/storage/browser/gfs-ensemble-forecast-system;tab=objects?prefix=&forceOnObjectsSortingFiltering=false) | 2020年9月25日至今 | |
 
 ## 大模型预报数据
 
@@ -72,6 +83,8 @@
 
 | 数据源 | 描述 | 预报方法 | 分辨率 | 时效 | 更新频率 | 访问方式 | 时间范围 | 备注 |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| **ECMWF-AIFS** | 欧洲中期天气预报中心 |确定性预报 | 0.25° | 0\~360h(6h) | 每日4次 | [ASW-S3](https://ecmwf-forecasts.s3.amazonaws.com/) | 2024年2月29日至今（含最新数据） | 需使用ASWCLI下载或者在此网页基础上补全进行单个文件下载 |
+| **ECMWF-AIEFS** | 欧洲中期天气预报中心 |确定性预报（含最新数据） | 0.25° | 0\~360h(6h) | 每日4次 | [ASW-S3](https://ecmwf-forecasts.s3.amazonaws.com/) |  | 需使用ASWCLI下载或者在此网页基础上补全进行单个文件下载 |
 | **Aurora**| 微软 | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2025年1月23日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
 | **FourCastNet** | NVIDIA   | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2020年9月30日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
 | **GraphCast**   | Google、DeepMind | 确定性预报 | 0.5° | 0\~240h(6h) | 每日2次  | [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) | 2020年9月30日至今 | [数据说明](./docs/noaa-oar-mlwp-data.txt) |
@@ -143,11 +156,13 @@
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **ERA5-land**| ECMWF | 0.25° | hourly | [ERA5-land](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=download) | 1950年1月1日至今 | |
 | **ERA5-land**| ECMWF | 0.25° | monthly-mean | [ERA5-land](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land-monthly-means?tab=download) | 1950年1月1日至今 | |
-| **ERA5-land**| ECMWF | 0.25° | monthly-mean | [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.sfc/) | 1940年1月1日至今 | |
+| **ERA5-land**| ECMWF | 0.25° | hourly | [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.sfc/) | 1940年1月1日至今 | |
 | **ERA5-pressure**| ECMWF | 0.25° | hourly | [ERA5-pressure](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-pressure-levels?tab=download) | 1940年1月1日至今 | |
 | **ERA5-pressure**| ECMWF | 0.25° | monthly-mean | [ERA5-pressure](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-pressure-levels-monthly-means?tab=download) | 1940年1月1日至今 | |
-| **ERA5-pressure**| ECMWF | 0.25° | monthly-mean | [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.pl/) | 1940年1月1日至今 | |
+| **ERA5-pressure**| ECMWF | 0.25° | hourly | [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.pl/) | 1940年1月1日至今 | |
 | **ERA5**| ECMWF | 0.25° | hourly/monthly-mean | [🪜ERA5_GOOGLE](https://console.cloud.google.com/storage/browser/gcp-public-data-arco-era5/raw/ERA5GRIB/HRES?pageState=(%22StorageObjectListTable%22:(%22f%22:%22%255B%255D%22))) | 1940年1月1日至今 | |
+| **FNL**| NCEP | 0.25° | 6hourly | [FNL_UCAR](https://gdex.ucar.edu/datasets/d083003/dataaccess/#) | 2015年7月8日至今 | |
+| **FNL**| NCEP | 1° | 6hourly | [FNL_UCAR](https://gdex.ucar.edu/datasets/d083002/dataaccess/#) | 1999年7月30日至今 | |
 | **JRA-3Q**| JMA | 1.25° | hourly/mothly-mean | [JRA-3Q_DIAS]( https://data.diasjp.net/dl/storages/filelist/dataset:645) | 1947年9月1日至今 | 需登录 |
 | **JRA-3Q**| JMA | 1.25° | hourly | [JRA-3Q_UCAR](https://gdex.ucar.edu/datasets/d640000/dataaccess/#) | 1947年9月1日至今 |  |
 | **JRA-3Q**| JMA | 1.25° | hourly | [JRA-3Q_UCAR](https://gdex.ucar.edu/datasets/d640001/dataaccess/#) | 2023年12月9日至今(近实时更新) |  |
