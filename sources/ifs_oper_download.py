@@ -392,10 +392,26 @@ def check_url(url):
     except:
         return url, False
 
-def get_url():
+def get_url(data_symbol):
     """获取最新的可用数据URL"""
     time_now = datetime.utcnow()
     candidate_urls = []
+
+    # 根据不同的数据请求类型，生成不同的URL
+    url_ecmwf = "https://data.ecmwf.int/forecasts/"
+    url_gfs = "https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/prod/gfs."
+    if data_symbol == 'IFS':
+        url_input = "/ifs/0p25/oper/"
+        url_input = "/ifs/0p25/scda/"
+    elif data_symbol == 'EFS':
+        url_input = "/ifs/0p25/enfo/"
+    elif data_symbol == 'AIFS':
+        url_input = "/aifs-single/0p25/oper/"
+    elif data_symbol == 'AIEFS':
+        url_input = "/aifs-ens/0p25/enfo/"
+    elif data_symbol == 'GFS':
+        url_input = "/atmos/"
+
 
     # 生成最近 4 个可能的时次（按优先级排序）
     for i in range(4):
@@ -403,11 +419,17 @@ def get_url():
         date_str = dt.strftime("%Y%m%d")
         cycle = dt.hour // 6  # 0,1,2,3 → 0,6,12,18
         hour_str = f"{cycle * 6:02d}"
-        if cycle in (0, 2):  # 00Z, 12Z → oper
-            url = f"https://data.ecmwf.int/forecasts/{date_str}/{hour_str}z/ifs/0p25/oper/"
-        else:  # 06Z, 18Z → scda
-            url = f"https://data.ecmwf.int/forecasts/{date_str}/{hour_str}z/ifs/0p25/scda/"
-        candidate_urls.append(url)
+        
+        if data_symbol == 'IFS' and cycle in (0, 2):  # 00Z, 12Z → oper
+            url_input = url_input.replace("scda", "oper")
+        if data_symbol in ['IFS', 'EFS', 'AIFS', 'AIEFS']:
+            url_latest = url_ecmwf + f"{date_str}/{hour_str}z" + url_input
+        elif data_symbol == 'GFS':
+            url_latest = url_gfs + f"{date_str}/{hour_str}" + url_input
+        else:
+            raise ValueError(f"未知数据请求类型：{data_symbol}")
+        
+        candidate_urls.append(url_latest)
 
     print("正在检查候选URL...")
     available_urls = {}
@@ -443,7 +465,7 @@ if __name__ == "__main__":
     
     try:
         # 获取目标网页URL
-        target_url = get_url()
+        target_url = get_url('IFS')
         
         # 开始批量下载
         success_count = downloader.batch_download(
