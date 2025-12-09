@@ -7,6 +7,11 @@
 
 ---
 
+### 📅 2025 年 12 月 9 日更新内容
+
+- ✅ **新增功能**：更新了 [ECMWF Open Data](https://data.ecmwf.int/forecasts/) **实时 IFS 预报数据下载脚本**  
+  - 支持**IFS、EFS、AIFS、AIEFS**数据获取
+
 ### 📅 2025 年 12 月 5 日更新内容
 
 - ✅ **新增功能**：上传了 [ECMWF Open Data](https://data.ecmwf.int/forecasts/) **实时 IFS 预报数据下载脚本**  
