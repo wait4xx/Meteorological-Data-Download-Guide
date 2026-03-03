@@ -560,8 +560,6 @@
 
 🔗 [ERA5-land (monthly)](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land-monthly-means?tab=download)
 
-</details>
-
 ---
 
 **ERA5 (hourly)**
@@ -573,6 +571,8 @@
 ![魔法](https://img.shields.io/badge/魔法-√-3126F0?style=flat-square)
 
 🔗 [🪜 ERA5_GOOGLE](https://console.cloud.google.com/storage/browser/gcp-public-data-arco-era5/raw/ERA5GRIB/HRES)
+
+</details>
 
 <details>
 <summary><b>ERA5-pressure</b> · ECMWF 气压层再分析</summary>
