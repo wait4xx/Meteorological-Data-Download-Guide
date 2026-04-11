@@ -1,5 +1,13 @@
-#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
+'''
+Crated on 2026/04/11 17:28
+
+@Author  : XX
+@File    : s3_downloader_multi.py
+@Software: Visual Studio Code
+
+'''
+
 """
 AWS S3 ERA5 智能并发下载脚本（实时感知+动态推送版）
 ✅ 智能调度器：实时扫描本地目录，检测下载完成状态
@@ -8,9 +16,8 @@ AWS S3 ERA5 智能并发下载脚本（实时感知+动态推送版）
 ✅ S3 XML 命名空间兼容解析
 ✅ 支持命令行 / 代码内双模式调用
 
-Author: Your Name
-Date: 2026-01-22
 """
+
 
 import os
 import sys
