@@ -9,6 +9,8 @@
 ---
 
 ### 📢 最新动态
+> **2026-04-11** · 📝 新增 ERA5 AWS S3 多线程下载脚本使用教程（`s3_downloader_multi.py`）
+>
 > **2026-03-03** · 🎇 更新readme文档，优化显示
 > 
 > **2025-12-09** · ✨ ECMWF 下载脚本升级 — 新增 **IFS / EFS / AIFS / AIEFS** 全系列数据支持
@@ -547,7 +549,120 @@
 ![时间范围](https://img.shields.io/badge/时间范围-1940年至今-orange?style=flat-square)
 ![来源](https://img.shields.io/badge/来源-AWS-FF9900?style=flat-square)
 
-🔗 [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.sfc/) · 📅 数据延迟三个月
+🔗 [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.sfc/) · 📅 数据延迟三个月 · 📝 [Python 多线程下载脚本](./sources/s3_downloader_multi.py)
+
+<details>
+<summary>📖 s3_downloader_multi.py 使用教程</summary>
+
+---
+
+**脚本简介**
+
+`s3_downloader_multi.py` 是一个针对 AWS S3 ERA5 数据的智能并发下载脚本，通过调用 IDM 或 XDM 实现多任务并行下载，支持断点续传、字节级校验和自动跳过已完成文件。
+
+**环境依赖**
+
+```bash
+pip install requests beautifulsoup4 lxml
+```
+
+同时需要安装以下任意一款下载工具：
+- **IDM**（Windows，推荐）：[Internet Download Manager](https://www.internetdownloadmanager.com/)
+- **XDM**（跨平台）：[Xtreme Download Manager](https://xtremedownloadmanager.com/)
+
+**配置下载工具路径**
+
+打开脚本，修改 `Config` 类中的路径：
+
+```python
+class Config:
+    DOWNLOAD_TOOL = "idm"   # 或 "xdm"
+    IDM_PATH = r"D:\Program Files (x86)\Internet Download Manager\IDMan.exe"
+    XDM_PATH_LINUX  = "/opt/xdman/xdman"
+    XDM_PATH_WINDOWS = r"C:\Program Files\XDM\xdman.exe"
+```
+
+---
+
+**命令行模式（推荐）**
+
+```bash
+python s3_downloader_multi.py -v <变量> -y <年份范围> -o <输出目录> [选项]
+```
+
+| 参数 | 说明 | 示例 |
+|------|------|------|
+| `-v` | 变量名，多个用逗号分隔 | `2t` / `2t,10u,10v` |
+| `-y` | 年份范围，单年或区间 | `2024` / `2020-2024` |
+| `-m` | 月份，多个用逗号分隔（默认全年） | `1,2,3` |
+| `-o` | 本地输出目录 | `./era5_data` |
+| `-t` | 下载工具，`idm` 或 `xdm`（默认 `idm`） | `idm` |
+| `-c` | 最大并发数（默认 6） | `4` |
+| `--dry-run` | 预览模式，不实际下载 | — |
+| `--export` | 导出文件列表为 CSV/TXT | — |
+| `--delay` | 数据延迟月数（默认 5） | `3` |
+
+**示例**
+
+```bash
+# 预览 2024 年 2m 气温数据（不下载）
+python s3_downloader_multi.py -v 2t -y 2024 -o ./era5_data --dry-run --export
+
+# 下载 2023-2024 年 2m 气温 + 10m 风场，6 线程并发
+python s3_downloader_multi.py -v 2t,10u,10v -y 2023-2024 -o ./era5_data -c 6
+
+# 只下载 2024 年 6-8 月地面气压
+python s3_downloader_multi.py -v sp -y 2024 -m 6,7,8 -o ./era5_data
+```
+
+---
+
+**代码调用模式**
+
+修改脚本顶部 `Config` 类中的 `RUN_MODE` 和 `CODE_PARAMS`，然后直接运行：
+
+```python
+class Config:
+    RUN_MODE = "code"   # 切换为代码模式
+    CODE_PARAMS = {
+        "variables":      ["2t", "10u"],   # 变量列表
+        "start_year":     2023,
+        "end_year":       2024,
+        "months":         [6, 7, 8],       # None 表示全年
+        "output_dir":     "./era5_data",
+        "dry_run":        False,
+        "export_preview": True,
+        "preview_file":   "preview_list.csv",
+    }
+```
+
+---
+
+**支持的变量**
+
+| 变量代码 | 含义 |
+|----------|------|
+| `2t` | 2m 气温 |
+| `2d` | 2m 露点温度 |
+| `10u` | 10m 纬向风 |
+| `10v` | 10m 经向风 |
+| `sp` | 地面气压 |
+| `msl` | 海平面气压 |
+| `tp` | 总降水量 |
+| `skt` | 地表皮肤温度 |
+| `sd` | 雪深 |
+| `ssr` | 地面太阳辐射 |
+| `str` | 地面热辐射 |
+| `...` | ... |
+
+**注意事项**
+
+- 数据通常延迟约 **3-5 个月**，脚本会自动跳过未发布的月份
+- 下载任务由 IDM/XDM 接管，脚本通过扫描本地文件大小判断完成状态
+- 日志自动写入当前目录的 `download_log.txt`
+- 已完整下载的文件（字节数 ≥ 预期 × 99%）会自动跳过，支持断点续传
+
+</details>
 
 ---
 
@@ -599,7 +714,7 @@
 ![时间范围](https://img.shields.io/badge/时间范围-1940年至今-orange?style=flat-square)
 ![来源](https://img.shields.io/badge/来源-AWS-FF9900?style=flat-square)
 
-🔗 [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.pl/) · 📅 数据延迟三个月
+🔗 [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.pl/) · 📅 数据延迟三个月 · 📝 [Python 多线程下载脚本](./sources/s3_downloader_multi.py)（修改 `DATASET_PREFIX` 为 `e5.oper.an.pl`）
 
 ---
 
