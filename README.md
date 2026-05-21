@@ -1,7 +1,10 @@
 # 🌤️ 公开气象数据下载资源库
 
+**[中文](README.md)** | **[English](README_EN.md)**
+
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 [![GitHub Stars](https://img.shields.io/github/stars/wait4xx/Meteorological-Data-Download-Guide.svg?style=flat-square)](https://github.com/wait4xx/Meteorological-Data-Download-Guide)
+[![GitHub Forks](https://img.shields.io/github/forks/wait4xx/Meteorological-Data-Download-Guide.svg?style=flat-square)](https://github.com/wait4xx/Meteorological-Data-Download-Guide)
 [![Status](https://img.shields.io/badge/状态-持续更新中-blue.svg?style=flat-square)](https://github.com/wait4xx/Meteorological-Data-Download-Guide)
 
 > 一个收集整理各类公开气象数据下载网址的资源库，旨在为气象研究、数据分析和应用开发提供便捷的数据获取渠道。
@@ -9,6 +12,8 @@
 ---
 
 ### 📢 最新动态
+> **2026-05-21** · 📝 新增 Planette ERA5 AWS S3 下载脚本用于下载 ERA5 日平均、周平均、月平均数据（`era5_planette_downloader.py`），支持多变量并发、单位转换、实时进度
+>
 > **2026-04-11** · 📝 新增 ERA5 AWS S3 多线程下载脚本使用教程（`s3_downloader_multi.py`）
 >
 > **2026-03-03** · 🎇 更新readme文档，优化显示
@@ -117,7 +122,7 @@
 ![更新](https://img.shields.io/badge/更新-每日4次-orange?style=flat-square)
 ![来源](https://img.shields.io/badge/来源-OpeNDAP-00BFFF?style=flat-square)
 
-🔗 [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_0p25//) · 📅 最近 10 日 · 📝 [Python/xarray 示例](./sources/download_from_opendap.py)
+🔗 [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_0p25/) · 📅 最近 10 日 · 📝 [Python/xarray 示例](./sources/download_from_opendap.py)
 
 ---
 
@@ -549,7 +554,7 @@
 ![时间范围](https://img.shields.io/badge/时间范围-1940年至今-orange?style=flat-square)
 ![来源](https://img.shields.io/badge/来源-AWS-FF9900?style=flat-square)
 
-🔗 [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.sfc/) · 📅 数据延迟三个月 · 📝 [Python 多线程下载脚本](./sources/s3_downloader_multi.py)
+🔗 [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.sfc/) · 📅 数据延迟3-4个月 · 📝 [Python 多线程下载脚本](./sources/s3_downloader_multi.py)
 
 <details>
 <summary>📖 s3_downloader_multi.py 使用教程</summary>
@@ -677,7 +682,104 @@ class Config:
 
 ---
 
-**ERA5 (hourly)**
+**ERA5-land (daily/7-day/monthly/3-month)**
+
+![分辨率](https://img.shields.io/badge/分辨率-0.25°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-hourly-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1940年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-AWS-FF9900?style=flat-square)
+
+🔗 [AWS-S3](https://planette-era5.s3.amazonaws.com/index.html#era5/) · 📅 数据延迟3-4个月 · 数据为zarr格式 · 📝 [Python 下载脚本](./sources/era5_planette_downloader.py)
+
+<details>
+<summary>📖 era5_planette_downloader.py 使用教程</summary>
+
+---
+
+**脚本简介**
+
+`era5_planette_downloader.py` 是一个针对 AWS S3 Planette ERA5 数据的下载脚本，支持多变量并发下载、自动单位转换、空间/时间裁剪，实时显示下载进度和速度。
+
+**环境依赖**
+
+```bash
+pip install xarray icechunk s3fs numpy netcdf4 requests dask
+```
+
+**基本用法**
+
+```bash
+python era5_planette_downloader.py -v <变量> -f <频率> -o <输出路径> [选项]
+```
+
+| 参数 | 说明 | 示例 |
+|------|------|------|
+| `-v` | 变量名，支持多个 | `t2m` / `t2m tp slp` |
+| `-f` | 时间频率 | `day` / `7day` / `month` / `3month` |
+| `-g` | 网格分辨率（默认 0p25latx0p25lon） | `0p25latx0p25lon` |
+| `-t` | 时间范围 (YYYY-MM-DD) | `2020-01-01 2024-12-31` |
+| `-r` | 空间裁剪 (lon_min lon_max lat_min lat_max) | `70 140 15 55` |
+| `-o` | 输出文件或目录（目录对应多变量） | `./t2m.nc` / `./output/` |
+| `--format` | 输出格式（默认 netcdf4） | `netcdf4` / `zarr` |
+| `--auto-name` | 自动生成文件名 | — |
+| `--concurrent` | 多变量并发下载 | — |
+| `--workers` | 并发下载线程数（默认 4） | `8` |
+| `--no-convert` | 禁用单位转换 | — |
+| `--no-compress` | 禁用压缩（加快写入） | — |
+| `--no-validate` | 跳过数据校验 | — |
+| `--list-variables` | 列出 S3 可用变量 | — |
+| `--list-tree` | 显示变量数据目录树 | — |
+
+**示例**
+
+```bash
+# 查看可用变量
+python era5_planette_downloader.py --list-variables
+
+# 下载月平均 2m 气温 (2020-2024年)
+python era5_planette_downloader.py -v t2m -f month -t 2020-01-01 2024-12-31 -o ./t2m_monthly.nc
+
+# 下载并裁剪中国区域
+python era5_planette_downloader.py -v t2m -f month -t 2020-01-01 2020-12-31 -r 70 140 15 55 -o ./t2m_china.nc
+
+# 多变量并发下载 + 自动命名
+python era5_planette_downloader.py -v t2m tp slp -f month -t 2020-01-01 2024-12-31 -o ./output/ --auto-name --concurrent
+
+# 导出为 Zarr 格式
+python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
+```
+
+**支持的变量**
+
+| 变量 | 含义 | 单位转换 |
+|------|------|----------|
+| `t2m` | 2m 气温 | K → °C |
+| `d2m` | 2m 露点温度 | K → °C |
+| `sst` | 海表温度 | K → °C |
+| `tp` | 总降水量 | m → mm |
+| `sp` | 地面气压 | Pa → hPa |
+| `msl` | 海平面气压 | Pa → hPa |
+| `slp` | 海平面气压 | Pa → hPa |
+| `u10m` | 10m 纬向风 | m/s |
+| `v10m` | 10m 经向风 | m/s |
+| `u850` | 850hPa 纬向风 | m/s |
+| `v850` | 850hPa 经向风 | m/s |
+| `t850` | 850hPa 温度 | K → °C |
+| `z500` | 500hPa 位势高度 | m²/s² → dagpm |
+| `r500` | 500hPa 相对湿度 | % |
+| `...` | ... |
+
+**注意事项**
+
+- 数据为 **Icechunk Zarr** 格式，通过 Icechunk 库访问 S3，与直接下载 GRIB/NetCDF 文件方式不同
+- 下载速度受网络延迟和 Icechunk 协议开销影响，**数据量越大效率越高**
+- 输出为标准 **NetCDF4** 或 **Zarr** 格式，可用 `xarray` 直接打开
+
+</details>
+
+---
+
+**ERA5 (hourly/monthly)**
 
 ![分辨率](https://img.shields.io/badge/分辨率-0.25°-blue?style=flat-square)
 ![时间分辨率](https://img.shields.io/badge/时间分辨率-hourly/monthly-green?style=flat-square)
@@ -714,7 +816,7 @@ class Config:
 ![时间范围](https://img.shields.io/badge/时间范围-1940年至今-orange?style=flat-square)
 ![来源](https://img.shields.io/badge/来源-AWS-FF9900?style=flat-square)
 
-🔗 [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.pl/) · 📅 数据延迟三个月 · 📝 [Python 多线程下载脚本](./sources/s3_downloader_multi.py)（修改 `DATASET_PREFIX` 为 `e5.oper.an.pl`）
+🔗 [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.pl/) · 📅 数据延迟3-4个月 · 📝 [Python 多线程下载脚本](./sources/s3_downloader_multi.py)（修改 `DATASET_PREFIX` 为 `e5.oper.an.pl`）
 
 ---
 
@@ -729,7 +831,18 @@ class Config:
 
 ---
 
-**ERA5 (hourly)**
+**ERA5-pressure (daily/7-day/monthly/3-month)**
+
+![分辨率](https://img.shields.io/badge/分辨率-0.25°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-hourly-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1940年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-AWS-FF9900?style=flat-square)
+
+🔗 [AWS-S3](https://planette-era5.s3.amazonaws.com/index.html#era5/) · 📅 数据延迟3-4个月 · 数据为zarr格式 · 📝 [Python 下载脚本](./sources/era5_planette_downloader.py)
+
+---
+
+**ERA5 (hourly/monthly)**
 
 ![分辨率](https://img.shields.io/badge/分辨率-0.25°-blue?style=flat-square)
 ![时间分辨率](https://img.shields.io/badge/时间分辨率-hourly/monthly-green?style=flat-square)
@@ -853,221 +966,6 @@ class Config:
 ![来源](https://img.shields.io/badge/来源-DWD-00BFFF?style=flat-square)
 
 🔗 [DWD](https://www.dwd.de/EN/ourservices/gpcc/gpcc.html)
-
-</details>
-
-
-## 实况观测数据
-
-### 地面观测
-
-<details>
-<summary><b>ASOS/AWOS</b> · 全球机场观测</summary>
-
-![覆盖](https://img.shields.io/badge/覆盖-全球机场-blue?style=flat-square)
-![要素](https://img.shields.io/badge/要素-多要素-green?style=flat-square)
-![更新](https://img.shields.io/badge/更新-实时-orange?style=flat-square)
-![来源](https://img.shields.io/badge/来源-NOAA-00CED1?style=flat-square)
-
-🔗 [NOAA](https://www.ncei.noaa.gov/maps/hourly/)
-
-</details>
-
-<details>
-<summary><b>SYNOP</b> · 全球地面观测</summary>
-
-![覆盖](https://img.shields.io/badge/覆盖-全球-blue?style=flat-square)
-![要素](https://img.shields.io/badge/要素-基本气象要素-green?style=flat-square)
-![更新](https://img.shields.io/badge/更新-3/6小时-orange?style=flat-square)
-![来源](https://img.shields.io/badge/来源-OGIMET-9CF?style=flat-square)
-
-🔗 [OGIMET](https://www.ogimet.com/)
-
-</details>
-
-<details>
-<summary><b>MADIS</b> · 北美多源数据</summary>
-
-![覆盖](https://img.shields.io/badge/覆盖-北美-blue?style=flat-square)
-![要素](https://img.shields.io/badge/要素-多源数据-green?style=flat-square)
-![更新](https://img.shields.io/badge/更新-实时-orange?style=flat-square)
-![来源](https://img.shields.io/badge/来源-NOAA-00CED1?style=flat-square)
-
-🔗 [NOAA MADIS](https://madis.ncep.noaa.gov/)
-
-</details>
-
-### 高空观测
-
-<details>
-<summary><b>IGRA</b> · 全球探空</summary>
-
-![覆盖](https://img.shields.io/badge/覆盖-全球-blue?style=flat-square)
-![层次](https://img.shields.io/badge/层次-标准层-green?style=flat-square)
-![更新](https://img.shields.io/badge/更新-每日2次-orange?style=flat-square)
-![来源](https://img.shields.io/badge/来源-NOAA-00CED1?style=flat-square)
-
-🔗 [NOAA IGRA](https://www.ncei.noaa.gov/access/weather/igra/)
-
-</details>
-
-<details>
-<summary><b>AMDAR</b> · 全球航线观测</summary>
-
-![覆盖](https://img.shields.io/badge/覆盖-全球航线-blue?style=flat-square)
-![层次](https://img.shields.io/badge/层次-飞行层-green?style=flat-square)
-![更新](https://img.shields.io/badge/更新-实时-orange?style=flat-square)
-![来源](https://img.shields.io/badge/来源-WMO-9CF?style=flat-square)
-
-🔗 [WMO AMDAR](https://amdar.wmo.int/)
-
-</details>
-
-### 自动气象站
-
-<details>
-<summary><b>MesoWest</b> · 美国区域站网</summary>
-
-![规模](https://img.shields.io/badge/规模-数千站-blue?style=flat-square)
-![区域](https://img.shields.io/badge/区域-美国-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-官方-9CF?style=flat-square)
-
-🔗 [MesoWest](https://mesowest.utah.edu/)
-
-</details>
-
-<details>
-<summary><b>Weather Underground</b> · 全球个人站</summary>
-
-![规模](https://img.shields.io/badge/规模-全球个人站-blue?style=flat-square)
-![区域](https://img.shields.io/badge/区域-全球-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-官方-9CF?style=flat-square)
-
-🔗 [WUnderground](https://www.wunderground.com/)
-
-</details>
-
-## 卫星数据
-
-### 地球同步卫星
-
-<details>
-<summary><b>Himawari-8/9</b> · JMA · 亚太</summary>
-
-![产品](https://img.shields.io/badge/产品-云图/气溶胶-blue?style=flat-square)
-![覆盖](https://img.shields.io/badge/覆盖-亚太-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-JAXA-9CF?style=flat-square)
-
-🔗 [JAXA](https://www.eorc.jaxa.jp/ptree/)
-
-</details>
-
-<details>
-<summary><b>GOES-16/18</b> · NOAA · 美洲</summary>
-
-![产品](https://img.shields.io/badge/产品-多通道图像-blue?style=flat-square)
-![覆盖](https://img.shields.io/badge/覆盖-美洲-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-NOAA-00CED1?style=flat-square)
-
-🔗 [NOAA GOES](https://www.noaa.gov/goes-16-and-goes-17-satellite-data)
-
-</details>
-
-<details>
-<summary><b>FY-4A/4B</b> · CMA · 亚洲</summary>
-
-![产品](https://img.shields.io/badge/产品-云图/降水-blue?style=flat-square)
-![覆盖](https://img.shields.io/badge/覆盖-亚洲-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-NSMC-9CF?style=flat-square)
-
-🔗 [NSMC](http://satellite.nsmc.org.cn/)
-
-</details>
-
-### 极轨卫星
-
-<details>
-<summary><b>Suomi NPP</b> · NASA/NOAA</summary>
-
-![分辨率](https://img.shields.io/badge/分辨率-750m-blue?style=flat-square)
-![产品](https://img.shields.io/badge/产品-VIIRS数据-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-NASA-FF0000?style=flat-square)
-
-🔗 [NASA LAADS](https://ladsweb.modaps.eosdis.nasa.gov/)
-
-</details>
-
-<details>
-<summary><b>JPSS</b> · NOAA</summary>
-
-![分辨率](https://img.shields.io/badge/分辨率-375m-blue?style=flat-square)
-![产品](https://img.shields.io/badge/产品-多光谱数据-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-NOAA-00CED1?style=flat-square)
-
-🔗 [NOAA CLASS](https://www.avl.class.noaa.gov/)
-
-</details>
-
-<details>
-<summary><b>Sentinel-3</b> · ESA</summary>
-
-![分辨率](https://img.shields.io/badge/分辨率-300m-blue?style=flat-square)
-![产品](https://img.shields.io/badge/产品-海洋颜色-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-ESA-003399?style=flat-square)
-
-🔗 [Copernicus](https://scihub.copernicus.eu/)
-
-</details>
-
-### 卫星降水产品
-
-<details>
-<summary><b>GPM IMERG</b> · 全球降水</summary>
-
-![空间分辨率](https://img.shields.io/badge/空间分辨率-0.1°-blue?style=flat-square)
-![时间分辨率](https://img.shields.io/badge/时间分辨率-30分钟-green?style=flat-square)
-![覆盖](https://img.shields.io/badge/覆盖-全球-orange?style=flat-square)
-![来源](https://img.shields.io/badge/来源-NASA-FF0000?style=flat-square)
-
-🔗 [NASA GES DISC](https://disc.gsfc.nasa.gov/)
-
-</details>
-
-<details>
-<summary><b>CMORPH</b> · 全球降水</summary>
-
-![空间分辨率](https://img.shields.io/badge/空间分辨率-0.25°-blue?style=flat-square)
-![时间分辨率](https://img.shields.io/badge/时间分辨率-30分钟-green?style=flat-square)
-![覆盖](https://img.shields.io/badge/覆盖-全球-orange?style=flat-square)
-![来源](https://img.shields.io/badge/来源-NOAA-00CED1?style=flat-square)
-
-🔗 [CPC](https://www.cpc.ncep.noaa.gov/products/janowiak/cmorph_description.html)
-
-</details>
-
-## 雷达数据
-
-### 天气雷达
-
-<details>
-<summary><b>NEXRAD</b> · 美国天气雷达网</summary>
-
-![覆盖](https://img.shields.io/badge/覆盖-美国-blue?style=flat-square)
-![产品](https://img.shields.io/badge/产品-基数据/产品-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-NOAA-00CED1?style=flat-square)
-
-🔗 [NOAA NCEI](https://www.ncdc.noaa.gov/nexradinv/)
-
-</details>
-
-<details>
-<summary><b>OPERA</b> · 欧洲雷达网</summary>
-
-![覆盖](https://img.shields.io/badge/覆盖-欧洲-blue?style=flat-square)
-![产品](https://img.shields.io/badge/产品-合成产品-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-EUMETNET-9CF?style=flat-square)
-
-🔗 [EUMETNET](https://www.eumetnet.eu/activities/observations-programme/current-activities/opera/)
 
 </details>
 
