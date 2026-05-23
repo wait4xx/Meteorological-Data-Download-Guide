@@ -1,6 +1,6 @@
 # 🌟 Contributing Guide
 
-**[中文](CONTRIBUTING.md)** | **[English](CONTRIBUTING_EN.md)**
+**[中文](CONTRIBUTING.md)** | **English**
 
 Welcome to the Public Meteorological Data repository! Thank you for your willingness to contribute to this project. This guide will help you understand how to make contributions.
 

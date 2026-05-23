@@ -1,6 +1,6 @@
 # 🌤️ Public Meteorological Data Download Resources
 
-**[中文](README.md)** | **[English](README_EN.md)**
+**[中文](README.md)** | **English**
 
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
 [![GitHub Stars](https://img.shields.io/github/stars/wait4xx/Meteorological-Data-Download-Guide.svg?style=flat-square)](https://github.com/wait4xx/Meteorological-Data-Download-Guide)
@@ -63,8 +63,8 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~144h(3h)_144~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
-![Source](https://img.shields.io/badge/Source-官方-9CF?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
+![Source](https://img.shields.io/badge/Source-Official-9CF?style=flat-square)
 
 🔗 [ECMWF Open Data](https://data.ecmwf.int/forecasts/) · 📅 Last 4 days
 
@@ -74,8 +74,8 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~144h(3h)_144~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
-![Source](https://img.shields.io/badge/Source-官方-9CF?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
+![Source](https://img.shields.io/badge/Source-Official-9CF?style=flat-square)
 
 🔗 [ECMWF Open Data](https://data.ecmwf.int/forecasts/) · 📅 Last 4 days
 
@@ -97,7 +97,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°/0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~144h(3h)_144~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-UCAR-800080?style=flat-square)
 
 🔗 [GFS_UCAR](https://motherlode.ucar.edu/native/grid/NCEP/GFS/) · 📅 Last 3 months
@@ -108,7 +108,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~120h(1h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-OpeNDAP-00BFFF?style=flat-square)
 
 🔗 [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_0p25_1hr/) · 📅 Last 10 days · 📝 [Python/xarray Example](./sources/download_from_opendap.py)
@@ -119,7 +119,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~384h(3h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-OpeNDAP-00BFFF?style=flat-square)
 
 🔗 [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_0p25/) · 📅 Last 10 days · 📝 [Python/xarray Example](./sources/download_from_opendap.py)
@@ -130,7 +130,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~120h(1h)_120~384h(3h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NOAA-00CED1?style=flat-square)
 
 🔗 [GFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/) · 📅 Last 10 days
@@ -141,7 +141,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~384h(3h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-OpeNDAP-00BFFF?style=flat-square)
 
 🔗 [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_0p50/) · 📅 Last 10 days · 📝 [Python/xarray Example](./sources/download_from_opendap.py)
@@ -152,7 +152,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-1°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~384h(3h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-OpeNDAP-00BFFF?style=flat-square)
 
 🔗 [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_1p00/) · 📅 Last 10 days · 📝 [Python/xarray Example](./sources/download_from_opendap.py)
@@ -163,7 +163,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~240h(3h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NOAA-00CED1?style=flat-square)
 
 🔗 [GEFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gens/) · 📅 Last 4 days
@@ -174,7 +174,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~240h(3h)_240~840h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NOAA-00CED1?style=flat-square)
 
 🔗 [GEFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gens/) · 📅 Last 4 days
@@ -190,8 +190,8 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.125°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~144h(3h)_144~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
-![Source](https://img.shields.io/badge/Source-官方-9CF?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
+![Source](https://img.shields.io/badge/Source-Official-9CF?style=flat-square)
 
 🔗 [ICON Open Data](https://opendata.dwd.de/weather/nwp/icon/grib/) · 📅 Last 4 runs
 
@@ -206,8 +206,8 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°/0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~144h(3h)_144~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
-![Source](https://img.shields.io/badge/Source-官方-9CF?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
+![Source](https://img.shields.io/badge/Source-Official-9CF?style=flat-square)
 
 🔗 [JMA GSM](https://www.wis-jma.go.jp/cms/gsm/download.html) · 📅 Last 5 days
 
@@ -225,7 +225,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.1°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~12h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-UCAR-800080?style=flat-square)
 
 🔗 [IFS_UCAR](https://gdex.ucar.edu/datasets/d113001/dataaccess/#) · 📅 From Jan 1, 2016 to present
@@ -236,7 +236,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°/0.4°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~144h(3h)_144~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-Google-4285F4?style=flat-square)
 ![VPN](https://img.shields.io/badge/VPN-√-3126F0?style=flat-square)
 
@@ -248,7 +248,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°/0.4°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~144h(3h)_144~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://ecmwf-forecasts.s3.amazonaws.com/) · 📅 From Mar 18, 2023 to present · ⚠️ Requires awscli or complete URL
@@ -259,7 +259,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°/0.4°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~144h(3h)_144~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-Google-4285F4?style=flat-square)
 ![VPN](https://img.shields.io/badge/VPN-√-3126F0?style=flat-square)
 
@@ -271,7 +271,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°/0.4°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~144h(3h)_144~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://ecmwf-forecasts.s3.amazonaws.com/) · 📅 From Mar 18, 2023 to present · ⚠️ Requires awscli or complete URL
@@ -287,7 +287,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°/0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~240h(3h)_240~384h(12h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-UCAR-800080?style=flat-square)
 
 🔗 [GFS_UCAR](https://gdex.ucar.edu/datasets/d084001/dataaccess/) · 📅 From Jan 15, 2015 to present (discontinued in 2026)
@@ -298,7 +298,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°/0.5°/1°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~384h(3h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://noaa-gfs-bdp-pds.s3.amazonaws.com/index.html) · 📅 From Jan 1, 2021 to present · 🔍 Search `gfs`
@@ -309,7 +309,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°/0.5°/1°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~384h(3h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-Google-4285F4?style=flat-square)
 ![VPN](https://img.shields.io/badge/VPN-√-3126F0?style=flat-square)
 
@@ -321,7 +321,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°/0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~384h(6h)_0~240h(3h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://noaa-gefs-pds.s3.amazonaws.com/index.html) · 📅 From Jan 1, 2017 to present
@@ -332,7 +332,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°/0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~240h(3h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-Google-4285F4?style=flat-square)
 ![VPN](https://img.shields.io/badge/VPN-√-3126F0?style=flat-square)
 
@@ -353,8 +353,8 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
-![Source](https://img.shields.io/badge/Source-官方-9CF?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
+![Source](https://img.shields.io/badge/Source-Official-9CF?style=flat-square)
 
 🔗 [ECMWF Open Data](https://data.ecmwf.int/forecasts/) · 📅 Last 4 days
 
@@ -364,8 +364,8 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
-![Source](https://img.shields.io/badge/Source-官方-9CF?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
+![Source](https://img.shields.io/badge/Source-Official-9CF?style=flat-square)
 
 🔗 [ECMWF Open Data](https://data.ecmwf.int/forecasts/) · 📅 Last 4 days
 
@@ -380,7 +380,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°/0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NOAA-00CED1?style=flat-square)
 
 🔗 [AIGFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigfs/) · 📅 Last 2 days
@@ -391,7 +391,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°/0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NOAA-00CED1?style=flat-square)
 
 🔗 [AIGEFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/aigefs/) · 📅 Last 2 days
@@ -407,7 +407,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~240h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日2次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-2x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) · 📝 [Data Guide](./docs/noaa-oar-mlwp-data.txt)
@@ -418,7 +418,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~240h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日2次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-2x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) · 📝 [Data Guide](./docs/noaa-oar-mlwp-data.txt)
@@ -429,7 +429,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~240h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日2次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-2x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) · 📝 [Data Guide](./docs/noaa-oar-mlwp-data.txt)
@@ -440,7 +440,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~240h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日2次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-2x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) · 📝 [Data Guide](./docs/noaa-oar-mlwp-data.txt)
@@ -458,7 +458,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://ecmwf-forecasts.s3.amazonaws.com/) · 📅 From Feb 29, 2024 to present · ⚠️ Requires awscli or complete URL
@@ -469,7 +469,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~360h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日4次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-4x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://ecmwf-forecasts.s3.amazonaws.com/) · ⚠️ Requires awscli or complete URL
@@ -485,7 +485,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~240h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日2次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-2x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) · 📅 From Jan 23, 2025 to present · 📝 [Data Guide](./docs/noaa-oar-mlwp-data.txt)
@@ -496,7 +496,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~240h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日2次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-2x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) · 📅 From Sep 30, 2020 to present · 📝 [Data Guide](./docs/noaa-oar-mlwp-data.txt)
@@ -507,7 +507,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~240h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日2次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-2x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) · 📅 From Sep 30, 2020 to present · 📝 [Data Guide](./docs/noaa-oar-mlwp-data.txt)
@@ -518,7 +518,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.5°-blue?style=flat-square)
 ![Range](https://img.shields.io/badge/Range-0~240h(6h)-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日2次-orange?style=flat-square)
+![Update](https://img.shields.io/badge/Update-2x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://noaa-oar-mlwp-data.s3.amazonaws.com/index.html) · 📅 From Sep 30, 2020 to present · 📝 [Data Guide](./docs/noaa-oar-mlwp-data.txt)
@@ -540,7 +540,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.1°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-hourly-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1950年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1950–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-CDS-00CED1?style=flat-square)
 
 🔗 [ERA5-land](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land?tab=download)
@@ -551,7 +551,7 @@
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-hourly-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1940年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1940–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.sfc/) · 📅 Data delayed 3-4 months · 📝 [Python multi-threaded download script](./sources/s3_downloader_multi.py)
@@ -643,22 +643,237 @@ class Config:
 
 ---
 
-**Supported Variables**
+**Supported Variables (default dataset `e5.oper.an.sfc`, 62 total)**
 
-| Variable Code | Description |
-|---------------|-------------|
-| `2t` | 2m temperature |
-| `2d` | 2m dewpoint temperature |
-| `10u` | 10m zonal wind (u) |
-| `10v` | 10m meridional wind (v) |
-| `sp` | Surface pressure |
-| `msl` | Mean sea level pressure |
-| `tp` | Total precipitation |
-| `skt` | Skin temperature |
-| `sd` | Snow depth |
-| `ssr` | Surface solar radiation |
-| `str` | Surface thermal radiation |
-| `...` | ... |
+> The script downloads from `e5.oper.an.sfc` (surface analysis) by default. Change `DATASET_PREFIX` to access other datasets (see below). Full parameter descriptions: [ECMWF ERA5 Parameter Database](https://codes.ecmwf.int/grib/param-db/).
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `2t` | 2m temperature | `2d` | 2m dewpoint temperature |
+| `10u` | 10m U-wind | `10v` | 10m V-wind |
+| `100u` | 100m U-wind | `100v` | 100m V-wind |
+| `u10n` | 10m U-wind (neutral) | `v10n` | 10m V-wind (neutral) |
+| `sp` | Surface pressure | `msl` | Mean sea level pressure |
+| `skt` | Skin temperature | `sstk` | Sea surface temperature |
+| `sd` | Snow depth | `rsn` | Snow density |
+| `asn` | Snow albedo | `tsn` | Total snowfall |
+| `cape` | CAPE | `blh` | Boundary layer height |
+| `tcc` | Total cloud cover | `lcc` | Low cloud cover |
+| `mcc` | Medium cloud cover | `hcc` | High cloud cover |
+| `tcw` | Total column water | `tcwv` | Total column water vapor |
+| `tciw` | Total column cloud ice water | `tclw` | Total column cloud liquid water |
+| `tco3` | Total column ozone | `ci` | Sea ice area fraction |
+| `stl1`–`stl4` | Soil temperature (layers 1–4) | `swvl1`–`swvl4` | Soil moisture (layers 1–4) |
+| `istl1`–`istl4` | Ice temperature (layers 1–4) | `src` | Skin reservoir content |
+| `alnid` | Near-IR direct albedo | `alnip` | Near-IR diffuse albedo |
+| `aluvd` | UV direct albedo | `aluvp` | UV diffuse albedo |
+| `fal` | Forecast albedo | `fsr` | Forecast surface roughness |
+| `flsr` | Forecast log surface roughness | `chnk` | Charnock roughness |
+| `lailv` | LAI, low vegetation | `laihv` | LAI, high vegetation |
+| `tcrw` | Total column rain water | `tcsw` | Total column snow water |
+| `ie` | Instantaneous moisture flux | `ishf` | Instantaneous surface heat flux |
+| `iews` | Instantaneous E–W turbulent stress | `inss` | Instantaneous N–S turbulent stress |
+| `lblt` | Lake bottom temperature | `ltlt` | Lake mix-layer temperature |
+| `licd` | Lake ice depth | `lict` | Lake ice temperature |
+| `lshf` | Lake total heat flux | | |
+
+---
+
+**Pressure-level Analysis `e5.oper.an.pl` (16 variables)**
+
+> Set `DATASET_PREFIX = "e5.oper.an.pl"` to access. Variables cover multiple pressure levels (1–1000 hPa), including wind, temperature, geopotential height, humidity, clouds, ozone, and other 3D atmospheric analysis fields. This is one of the most essential ERA5 upper-air datasets, widely used in weather analysis, climate diagnostics, and NWP verification.
+
+| Code | Description | Unit | Code | Description | Unit |
+|------|-------------|------|------|-------------|------|
+| `z` | Geopotential | m²/s² | `t` | Temperature | K |
+| `u` | U-component of wind | m/s | `v` | V-component of wind | m/s |
+| `w` | Vertical velocity | Pa/s | `q` | Specific humidity | kg/kg |
+| `r` | Relative humidity | % | `d` | Divergence | s⁻¹ |
+| `vo` | Relative vorticity | s⁻¹ | `pv` | Potential vorticity | PVU |
+| `o3` | Ozone mass mixing ratio | kg/kg | `cc` | Cloud cover | (0–1) |
+| `clwc` | Specific cloud liquid water content | kg/kg | `ciwc` | Specific cloud ice water content | kg/kg |
+| `crwc` | Specific rain water content | kg/kg | `cswc` | Specific snow water content | kg/kg |
+<details>
+<summary>📂 Other Datasets (change <code>DATASET_PREFIX</code>)</summary>
+
+---
+
+**Vertically Integrated `e5.oper.an.vinteg` (36 variables)**
+
+> Atmospheric column vertically integrated quantities, including mass, energy, water vapour integrals and fluxes.
+
+**Basic Integrals**
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `vima` | Total mass of atmosphere | `vit` | Vertically integrated temperature |
+| `vike` | Vertically integrated kinetic energy | `vithe` | Vertically integrated thermal energy |
+| `vipie` | Vertically integrated dry static energy | `vipile` | Vertically integrated moist static energy |
+| `vitoe` | Vertically integrated total energy | `viec` | Energy conversion rate |
+
+**Water Vapour / Mass / Energy Fluxes**
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `vimae` | Eastward mass flux | `viman` | Northward mass flux |
+| `viwve` | Eastward water vapour flux | `viwvn` | Northward water vapour flux |
+| `vige` | Eastward geopotential flux | `vign` | Northward geopotential flux |
+| `vikee` | Eastward kinetic energy flux | `viken` | Northward kinetic energy flux |
+| `vithee` | Eastward heat flux | `vithen` | Northward heat flux |
+| `vitoee` | Eastward total energy flux | `vitoen` | Northward total energy flux |
+| `vioze` | Eastward ozone flux | `viozn` | Northward ozone flux |
+
+**Cloud Water Fluxes**
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `vilwe` | Eastward cloud liquid water flux | `vilwn` | Northward cloud liquid water flux |
+| `viiwe` | Eastward cloud frozen water flux | `viiwn` | Northward cloud frozen water flux |
+
+**Flux Divergences**
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `vimad` | Mass flux divergence | `viked` | Kinetic energy flux divergence |
+| `vithed` | Thermal energy flux divergence | `viwvd` | Moisture flux divergence |
+| `vigd` | Geopotential flux divergence | `vitoed` | Total energy flux divergence |
+| `viozd` | Ozone flux divergence | `vilwd` | Cloud liquid water flux divergence |
+| `viiwd` | Cloud frozen water flux divergence | `vimat` | Moisture advection tendency |
+---
+
+**Surface Forecast Accumulations `e5.oper.fc.sfc.accumu` (38 variables)**
+
+> Forecast model output of surface accumulated quantities, default accumulation period 0–24h.
+
+**Precipitation & Evaporation**
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `lsp` | Large-scale precipitation | `cp` | Convective precipitation |
+| `sf` | Snowfall | `csf` | Convective snowfall |
+| `lsf` | Large-scale snowfall | `ro` | Total runoff |
+| `sro` | Surface runoff | `ssro` | Sub-surface runoff |
+| `es` | Evaporation | `pev` | Potential evaporation |
+| `lspf` | Large-scale precipitation fraction | `e` | Evaporation (mm) |
+
+**Radiation (Surface)**
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `ssrd` | Surface solar radiation downward | `strd` | Surface thermal radiation downward |
+| `ssr` | Surface net solar radiation | `str` | Surface net thermal radiation |
+| `ssrc` | Surface net solar radiation, clear-sky | `strc` | Surface net thermal radiation, clear-sky |
+| `ssrdc` | Clear-sky surface solar rad. downward | `strdc` | Clear-sky surface thermal rad. downward |
+| `fdir` | Direct solar radiation | `cdir` | Clear-sky direct solar radiation |
+| `uvb` | UV radiation | | |
+
+**Radiation (TOA)**
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `tsr` | TOA net solar radiation | `ttr` | TOA net thermal radiation (OLR) |
+| `tsrc` | TOA net solar radiation, clear-sky | `ttrc` | TOA net thermal radiation, clear-sky |
+| `tisr` | TOA incident solar radiation | | |
+
+**Heat & Turbulence**
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `sshf` | Surface sensible heat flux | `slhf` | Surface latent heat flux |
+| `bld` | Boundary layer dissipation | `gwd` | Gravity wave dissipation |
+| `ewss` | Eastward turbulent surface stress | `nsss` | Northward turbulent surface stress |
+| `lgws` | Eastward gravity wave stress | `mgws` | Northward gravity wave stress |
+| `smlt` | Snowmelt | `vimd` | Vertically integrated moisture divergence |
+---
+
+**Surface Forecast Instantaneous `e5.oper.fc.sfc.instan` (14 variables)**
+
+> Forecast model output of surface instantaneous quantities, including cloud base height, gusts, precipitation rates, and wave parameters.
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `cbh` | Cloud base height | `zust` | Friction velocity |
+| `i10fg` | Instantaneous 10m wind gust | `deg01` | Turbulence degree |
+| `crr` | Convective rain rate | `lsrr` | Large-scale rain rate |
+| `csfr` | Convective snowfall rate | `lssfr` | Large-scale snowfall rate |
+| `ilspf` | Instantaneous large-scale precip. fraction | `dctb` | Direction of combined wind waves & swell |
+| `tplb` | Mean wave period (1st moment) | `tplt` | Mean wave period (2nd moment) |
+| `dndzn` | Wind wave direction | `dndza` | Wind wave direction (adjusted) |
+---
+
+**Surface Forecast Mean Fluxes `e5.oper.fc.sfc.meanflux` (39 variables)**
+
+> Forecast model output of surface time-averaged fluxes. Prefix `m` = mean, these are time-averaged versions of the accumulation variables.
+
+**Precipitation & Evaporation**
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `mtpr` | Mean total precipitation rate | `mcpr` | Mean convective precipitation rate |
+| `mlspr` | Mean large-scale precipitation rate | `mcsr` | Mean convective snowfall rate |
+| `mlssr` | Mean large-scale snowfall rate | `msr` | Mean snowfall rate |
+| `mer` | Mean evaporation rate | `mper` | Mean potential evaporation rate |
+| `msror` | Mean surface runoff rate | `mssror` | Mean sub-surface runoff rate |
+| `mror` | Mean runoff rate | `mlspf` | Mean large-scale precip. fraction |
+| `msmr` | Mean snowmelt rate | `mvimd` | Mean vertically integrated moisture div. |
+
+**Radiation (Surface)**
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `msdwswrf` | Mean SFC downward SW radiation | `msdwlwrf` | Mean SFC downward LW radiation |
+| `msnswrf` | Mean SFC net SW radiation | `msnlwrf` | Mean SFC net LW radiation |
+| `msdwswrfcs` | Mean CS SFC downward SW radiation | `msdwlwrfcs` | Mean CS SFC downward LW radiation |
+| `msnswrfcs` | Mean CS SFC net SW radiation | `msnlwrfcs` | Mean CS SFC net LW radiation |
+| `msdrswrf` | Mean SFC direct SW radiation | `msdrswrfcs` | Mean CS SFC direct SW radiation |
+| `msdwuvrf` | Mean SFC UV radiation flux | | |
+
+**Radiation (TOA)**
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `mtnswrf` | Mean TOA net SW radiation | `mtnlwrf` | Mean TOA net LW radiation (OLR) |
+| `mtnswrfcs` | Mean CS TOA net SW radiation | `mtnlwrfcs` | Mean CS TOA net LW radiation |
+| `mtdwswrf` | Mean TOA downward SW radiation | | |
+
+**Heat & Turbulence**
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `msshf` | Mean SFC sensible heat flux | `mslhf` | Mean SFC latent heat flux |
+| `mbld` | Mean boundary layer dissipation | `mgwd` | Mean gravity wave dissipation |
+| `metss` | Mean eastward turbulent stress | `mntss` | Mean northward turbulent stress |
+| `megwss` | Mean eastward gravity wave stress | `mngwss` | Mean northward gravity wave stress |
+---
+
+**Surface Forecast Min/Max `e5.oper.fc.sfc.minmax` (5 variables)**
+
+> Forecast model output of surface extreme values, including max/min temperature, wind gust, and extreme precipitation rates.
+
+| Code | Description | Unit |
+|------|-------------|------|
+| `10fg` | Maximum 10m wind gust | m/s |
+| `mx2t` | Maximum 2m temperature | K |
+| `mn2t` | Minimum 2m temperature | K |
+| `mxtpr` | Maximum total precipitation rate | kg m⁻² s⁻¹ |
+| `mntpr` | Minimum total precipitation rate | kg m⁻² s⁻¹ |
+---
+
+**Constant Invariants `e5.oper.invariant` (14 variables)**
+
+> Geographical/surface characteristic constants that do not change over time. Contains a single time step only.
+
+| Code | Description | Code | Description |
+|------|-------------|------|-------------|
+| `z` | Geopotential (orography) | `lsm` | Land-sea mask (0–1) |
+| `cl` | Lake cover | `dl` | Lake depth |
+| `cvl` | Low vegetation cover | `cvh` | High vegetation cover |
+| `tvl` | Type of low vegetation | `tvh` | Type of high vegetation |
+| `slt` | Soil type | `sdfor` | SD of filtered subgrid orography |
+| `sdor` | SD of orography | `isor` | Anisotropy of subgrid orography |
+| `anor` | Angle of subgrid orography | `slor` | Slope of subgrid orography |
+
+</details>
 
 **Notes**
 
@@ -675,7 +890,7 @@ class Config:
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-monthly_mean-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1950年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1950–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-CDS-00CED1?style=flat-square)
 
 🔗 [ERA5-land (monthly)](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land-monthly-means?tab=download)
@@ -686,7 +901,7 @@ class Config:
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-hourly-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1940年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1940–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://planette-era5.s3.amazonaws.com/index.html#era5/) · 📅 Data delayed 3-4 months · Data in zarr format · 📝 [Python Download Script](./sources/era5_planette_downloader.py)
@@ -714,7 +929,7 @@ python era5_planette_downloader.py -v <variable> -f <frequency> -o <output> [opt
 
 | Option | Description | Example |
 |--------|-------------|---------|
-| `-v` | Variable name(s), supports multiple | `t2m` / `t2m tp slp` |
+| `-v` | Variable name(s), supports multiple | `t2m` / `t2m pr slp` |
 | `-f` | Time frequency | `day` / `7day` / `month` / `3month` |
 | `-g` | Grid resolution (default: 0p25latx0p25lon) | `0p25latx0p25lon` |
 | `-t` | Time range (YYYY-MM-DD) | `2020-01-01 2024-12-31` |
@@ -725,6 +940,7 @@ python era5_planette_downloader.py -v <variable> -f <frequency> -o <output> [opt
 | `--concurrent` | Download variables concurrently | — |
 | `--workers` | Concurrent download threads (default: 4) | `8` |
 | `--no-convert` | Disable unit conversion | — |
+| `--no-resume` | Disable checkpoint resume | — |
 | `--no-compress` | Disable compression (faster export) | — |
 | `--no-validate` | Skip data validation | — |
 | `--list-variables` | List available S3 variables | — |
@@ -743,31 +959,89 @@ python era5_planette_downloader.py -v t2m -f month -t 2020-01-01 2024-12-31 -o .
 python era5_planette_downloader.py -v t2m -f month -t 2020-01-01 2020-12-31 -r 70 140 15 55 -o ./t2m_china.nc
 
 # Multi-variable concurrent download with auto-naming
-python era5_planette_downloader.py -v t2m tp slp -f month -t 2020-01-01 2024-12-31 -o ./output/ --auto-name --concurrent
+python era5_planette_downloader.py -v t2m pr slp -f month -t 2020-01-01 2024-12-31 -o ./output/ --auto-name --concurrent
 
 # Export as Zarr
 python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 ```
 
-**Supported Variables**
+**Supported Variables (64 total)**
 
-| Variable | Description | Unit Conversion |
-|----------|-------------|-----------------|
-| `t2m` | 2m Temperature | K → °C |
-| `d2m` | 2m Dewpoint Temperature | K → °C |
-| `sst` | Sea Surface Temperature | K → °C |
-| `tp` | Total Precipitation | m → mm |
-| `sp` | Surface Pressure | Pa → hPa |
-| `msl` | Mean Sea Level Pressure | Pa → hPa |
-| `slp` | Sea Level Pressure | Pa → hPa |
+> Use `--list-variables` to see the latest available variables on S3. Below is the complete list as of May 2026, grouped by category. The script has built-in unit conversion for common variables (see "Conv." column); others are output in raw units.
+
+**Surface Variables**
+
+| Variable | Description | Conv. | Variable | Description | Conv. |
+|----------|-------------|-------|----------|-------------|-------|
+| `t2m` | 2m Temperature | K→°C | `t2m_max` | 2m Max Temperature | — |
+| `t2m_min` | 2m Min Temperature | — | `td2m` | 2m Dewpoint Temperature | K→°C |
+| `ts` | Surface Temperature | K → °C | `sst` | Sea Surface Temperature | K→°C |
+| `ps` | Surface Pressure | Pa→hPa | `slp` | Sea Level Pressure | Pa→hPa |
+| `pr` | Precipitation Rate | — | `tcwv` | Total Column Water Vapor | — |
+| `cape` | CAPE | — | `olr` | Outgoing Longwave Radiation | — |
+| `cdd` | Cooling Degree Days | — | `hdd` | Heating Degree Days | — |
+| `sic` | Sea Ice Concentration | — | | | |
+
+**Wind (Height Levels)**
+
+| Variable | Description | Conv. |
+|----------|-------------|-------|
 | `u10m` | 10m U-component Wind | m/s |
 | `v10m` | 10m V-component Wind | m/s |
-| `u850` | 850hPa U-component Wind | m/s |
-| `v850` | 850hPa V-component Wind | m/s |
-| `t850` | 850hPa Temperature | K → °C |
-| `z500` | 500hPa Geopotential Height | m²/s² → dagpm |
-| `r500` | 500hPa Relative Humidity | % |
-| `...` | ... | |
+| `u100m` | 100m U-component Wind | — |
+| `v100m` | 100m V-component Wind | — |
+| `tau_x` | Zonal Wind Stress | — |
+| `tau_y` | Meridional Wind Stress | — |
+
+**Wind (Pressure Levels)**
+
+| Variable | Description | Variable | Description |
+|----------|-------------|----------|-------------|
+| `u10` | 10hPa U-wind | `v10` | 10hPa V-wind |
+| `u50` | 50hPa U-wind | `v50` | 50hPa V-wind |
+| `u100` | 100hPa U-wind | `v100` | 100hPa V-wind |
+| `u200` | 200hPa U-wind | `v200` | 200hPa V-wind |
+| `u500` | 500hPa U-wind | `v500` | 500hPa V-wind |
+| `u700` | 700hPa U-wind | `v700` | 700hPa V-wind |
+| `u850` | 850hPa U-wind | `v850` | 850hPa V-wind |
+
+**Temperature (Pressure Levels)**
+
+| Variable | Description | Conv. | Variable | Description | Conv. |
+|----------|-------------|-------|----------|-------------|-------|
+| `t10` | 10hPa Temperature | K→°C | `t50` | 50hPa Temperature | K→°C |
+| `t100` | 100hPa Temperature | K→°C | `t200` | 200hPa Temperature | K→°C |
+| `t500` | 500hPa Temperature | K→°C | `t700` | 700hPa Temperature | K→°C |
+| `t850` | 850hPa Temperature | K→°C | | | |
+
+**Geopotential Height & Vertical Velocity (Pressure Levels)**
+
+| Variable | Description | Conv. | Variable | Description | Conv. |
+|----------|-------------|-------|----------|-------------|-------|
+| `z10` | 10hPa Geopotential | m²/s²→dagpm | `w10` | 10hPa Vertical Velocity | — |
+| `z50` | 50hPa Geopotential | m²/s²→dagpm | `w50` | 50hPa Vertical Velocity | — |
+| `z200` | 200hPa Geopotential | m²/s²→dagpm | `w200` | 200hPa Vertical Velocity | — |
+| `z300` | 300hPa Geopotential | m²/s²→dagpm | `w500` | 500hPa Vertical Velocity | — |
+| `z500` | 500hPa Geopotential | m²/s²→dagpm | `w850` | 850hPa Vertical Velocity | — |
+| `z700` | 700hPa Geopotential | m²/s²→dagpm | | | |
+| `z850` | 850hPa Geopotential | m²/s²→dagpm | | | |
+
+**Specific Humidity (Pressure Levels)**
+
+| Variable | Description | Variable | Description |
+|----------|-------------|----------|-------------|
+| `q10` | 10hPa Specific Humidity | `q50` | 50hPa Specific Humidity |
+| `q200` | 200hPa Specific Humidity | `q500` | 500hPa Specific Humidity |
+| `q850` | 850hPa Specific Humidity | | |
+
+**Soil Moisture**
+
+| Variable | Description |
+|----------|-------------|
+| `swv_1` | Volumetric soil water layer 1 (0–7cm) |
+| `swv_2` | Volumetric soil water layer 2 (7–28cm) |
+| `swv_3` | Volumetric soil water layer 3 (28–100cm) |
+| `swv_4` | Volumetric soil water layer 4 (100–289cm) |
 
 **Notes**
 
@@ -783,7 +1057,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-hourly/monthly-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1940年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1940–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-Google-4285F4?style=flat-square)
 ![VPN](https://img.shields.io/badge/VPN-√-3126F0?style=flat-square)
 
@@ -802,7 +1076,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-hourly-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1940年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1940–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-CDS-00CED1?style=flat-square)
 
 🔗 [ERA5-pressure](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-pressure-levels?tab=download)
@@ -813,7 +1087,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-hourly-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1940年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1940–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://nsf-ncar-era5.s3.amazonaws.com/index.html#e5.oper.an.pl/) · 📅 Data delayed 3-4 months · 📝 [Python multi-threaded download script](./sources/s3_downloader_multi.py) (change `DATASET_PREFIX` to `e5.oper.an.pl`)
@@ -824,7 +1098,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-monthly_mean-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1940年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1940–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-CDS-00CED1?style=flat-square)
 
 🔗 [ERA5-pressure (monthly)](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-pressure-levels-monthly-means?tab=download)
@@ -835,7 +1109,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-hourly-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1940年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1940–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AWS-FF9900?style=flat-square)
 
 🔗 [AWS-S3](https://planette-era5.s3.amazonaws.com/index.html#era5/) · 📅 Data delayed 3-4 months · Data in zarr format · 📝 [Python Download Script](./sources/era5_planette_downloader.py)
@@ -846,7 +1120,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-hourly/monthly-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1940年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1940–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-Google-4285F4?style=flat-square)
 ![VPN](https://img.shields.io/badge/VPN-√-3126F0?style=flat-square)
 
@@ -864,7 +1138,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-6_hourly-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-2015年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-2015–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-UCAR-800080?style=flat-square)
 
 🔗 [FNL_UCAR](https://gdex.ucar.edu/datasets/d083003/dataaccess/#)
@@ -875,7 +1149,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 ![Resolution](https://img.shields.io/badge/Resolution-1°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-6_hourly-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1999年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1999–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-UCAR-800080?style=flat-square)
 
 🔗 [FNL_UCAR](https://gdex.ucar.edu/datasets/d083002/dataaccess/#)
@@ -891,7 +1165,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 ![Resolution](https://img.shields.io/badge/Resolution-1.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-hourly/monthly_mean-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1947年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1947–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-DIAS-9CF?style=flat-square)
 
 🔗 [JRA-3Q_DIAS](https://data.diasjp.net/dl/storages/filelist/dataset:645) · ⚠️ Login required
@@ -902,7 +1176,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 ![Resolution](https://img.shields.io/badge/Resolution-1.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-hourly-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1947年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1947–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-UCAR-800080?style=flat-square)
 
 🔗 [JRA-3Q_UCAR](https://gdex.ucar.edu/datasets/d640000/dataaccess/#)
@@ -913,7 +1187,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 ![Resolution](https://img.shields.io/badge/Resolution-1.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-hourly-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-2023年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-2023–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-UCAR-800080?style=flat-square)
 
 🔗 [JRA-3Q_UCAR](https://gdex.ucar.edu/datasets/d640001/dataaccess/#) · 🔄 Near real-time
@@ -924,7 +1198,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 ![Resolution](https://img.shields.io/badge/Resolution-1.25°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-monthly_mean-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1947年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1947–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-UCAR-800080?style=flat-square)
 
 🔗 [JRA-3Q_UCAR](https://gdex.ucar.edu/datasets/d640002/dataaccess/#)
@@ -936,7 +1210,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.5°-blue?style=flat-square)
 ![Temporal](https://img.shields.io/badge/Temporal-hourly/monthly-green?style=flat-square)
-![Period](https://img.shields.io/badge/Period-1980年至今-orange?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1980–present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NASA-FF0000?style=flat-square)
 
 🔗 [MERRA_GSFC](https://disc.gsfc.nasa.gov/datasets?project=MERRA-2) · [MERRA_FTP](https://goldsmr4.gesdisc.eosdis.nasa.gov/data/)
@@ -948,7 +1222,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>CRU TS</b> · Gridded Observations</summary>
 
-![Type](https://img.shields.io/badge/Type-格点化观测-blue?style=flat-square)
+![Type](https://img.shields.io/badge/Type-Gridded_Obs.-blue?style=flat-square)
 ![Resolution](https://img.shields.io/badge/Resolution-0.5°-green?style=flat-square)
 ![Period](https://img.shields.io/badge/Period-1901~now-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-UEA-00BFFF?style=flat-square)
@@ -960,7 +1234,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>GPCC</b> · Precipitation Dataset</summary>
 
-![Type](https://img.shields.io/badge/Type-降水-blue?style=flat-square)
+![Type](https://img.shields.io/badge/Type-Precipitation-blue?style=flat-square)
 ![Resolution](https://img.shields.io/badge/Resolution-0.25°~2.5°-green?style=flat-square)
 ![Period](https://img.shields.io/badge/Period-1891~now-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-DWD-00BFFF?style=flat-square)
@@ -977,9 +1251,9 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>ASOS/AWOS</b> · Global Airport Observations</summary>
 
-![Coverage](https://img.shields.io/badge/Coverage-全球机场-blue?style=flat-square)
-![Elements](https://img.shields.io/badge/Elements-多要素-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-实时-orange?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-Global_Airports-blue?style=flat-square)
+![Elements](https://img.shields.io/badge/Elements-Multi-element-green?style=flat-square)
+![Update](https://img.shields.io/badge/Update-Real-time-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NOAA-00CED1?style=flat-square)
 
 🔗 [NOAA](https://www.ncei.noaa.gov/maps/hourly/)
@@ -989,9 +1263,9 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>SYNOP</b> · Global Surface Observations</summary>
 
-![Coverage](https://img.shields.io/badge/Coverage-全球-blue?style=flat-square)
-![Elements](https://img.shields.io/badge/Elements-基本气象要素-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-3/6小时-orange?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-Global-blue?style=flat-square)
+![Elements](https://img.shields.io/badge/Elements-Basic_Met.-green?style=flat-square)
+![Update](https://img.shields.io/badge/Update-3/6_hourly-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-OGIMET-00BFFF?style=flat-square)
 
 🔗 [OGIMET](https://www.ogimet.com/)
@@ -1001,9 +1275,9 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>MADIS</b> · North American Multi-source Data</summary>
 
-![Coverage](https://img.shields.io/badge/Coverage-北美-blue?style=flat-square)
-![Elements](https://img.shields.io/badge/Elements-多源数据-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-实时-orange?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-N._America-blue?style=flat-square)
+![Elements](https://img.shields.io/badge/Elements-Multi-source-green?style=flat-square)
+![Update](https://img.shields.io/badge/Update-Real-time-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NOAA-00CED1?style=flat-square)
 
 🔗 [NOAA MADIS](https://madis.ncep.noaa.gov/)
@@ -1015,9 +1289,9 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>IGRA</b> · Global Sounding</summary>
 
-![Coverage](https://img.shields.io/badge/Coverage-全球-blue?style=flat-square)
-![Levels](https://img.shields.io/badge/Levels-标准层-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-每日2次-orange?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-Global-blue?style=flat-square)
+![Levels](https://img.shields.io/badge/Levels-Standard_Levels-green?style=flat-square)
+![Update](https://img.shields.io/badge/Update-2x daily-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NOAA-00CED1?style=flat-square)
 
 🔗 [NOAA IGRA](https://www.ncei.noaa.gov/access/weather/igra/)
@@ -1027,9 +1301,9 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>AMDAR</b> · Global Aircraft Observations</summary>
 
-![Coverage](https://img.shields.io/badge/Coverage-全球航线-blue?style=flat-square)
-![Levels](https://img.shields.io/badge/Levels-飞行层-green?style=flat-square)
-![Update](https://img.shields.io/badge/Update-实时-orange?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-Global_Airlines-blue?style=flat-square)
+![Levels](https://img.shields.io/badge/Levels-Flight_Levels-green?style=flat-square)
+![Update](https://img.shields.io/badge/Update-Real-time-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-WMO-9CF?style=flat-square)
 
 🔗 [WMO AMDAR](https://amdar.wmo.int/)
@@ -1041,8 +1315,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>MesoWest</b> · US Regional Station Network</summary>
 
-![Scale](https://img.shields.io/badge/Scale-数千站-blue?style=flat-square)
-![Region](https://img.shields.io/badge/Region-美国-green?style=flat-square)
+![Scale](https://img.shields.io/badge/Scale-Thousands-blue?style=flat-square)
+![Region](https://img.shields.io/badge/Region-USA-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-MesoWest-00BFFF?style=flat-square)
 
 🔗 [MesoWest](https://mesowest.utah.edu/)
@@ -1052,8 +1326,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>Weather Underground</b> · Global Personal Stations</summary>
 
-![Scale](https://img.shields.io/badge/Scale-全球个人站-blue?style=flat-square)
-![Region](https://img.shields.io/badge/Region-全球-green?style=flat-square)
+![Scale](https://img.shields.io/badge/Scale-Global_PWS-blue?style=flat-square)
+![Region](https://img.shields.io/badge/Region-Global-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-WUnderground-00BFFF?style=flat-square)
 
 🔗 [WUnderground](https://www.wunderground.com/)
@@ -1067,8 +1341,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>Himawari-8/9</b> · JMA · Asia-Pacific</summary>
 
-![Products](https://img.shields.io/badge/Products-云图/气溶胶-blue?style=flat-square)
-![Coverage](https://img.shields.io/badge/Coverage-亚太-green?style=flat-square)
+![Products](https://img.shields.io/badge/Products-Imagery/Aerosol-blue?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-Asia-Pacific-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-JAXA-9CF?style=flat-square)
 
 🔗 [JAXA](https://www.eorc.jaxa.jp/ptree/)
@@ -1078,8 +1352,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>GOES-16/18</b> · NOAA · Americas</summary>
 
-![Products](https://img.shields.io/badge/Products-多通道图像-blue?style=flat-square)
-![Coverage](https://img.shields.io/badge/Coverage-美洲-green?style=flat-square)
+![Products](https://img.shields.io/badge/Products-Multi-channel-blue?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-Americas-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NOAA-00CED1?style=flat-square)
 
 🔗 [NOAA GOES](https://www.noaa.gov/goes-16-and-goes-17-satellite-data)
@@ -1089,8 +1363,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>FY-4A/4B</b> · CMA · Asia</summary>
 
-![Products](https://img.shields.io/badge/Products-云图/降水-blue?style=flat-square)
-![Coverage](https://img.shields.io/badge/Coverage-亚洲-green?style=flat-square)
+![Products](https://img.shields.io/badge/Products-Imagery/Precip.-blue?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-Asia-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NSMC-9CF?style=flat-square)
 
 🔗 [NSMC](http://satellite.nsmc.org.cn/)
@@ -1103,7 +1377,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <summary><b>Suomi NPP</b> · NASA/NOAA</summary>
 
 ![Resolution](https://img.shields.io/badge/Resolution-750m-blue?style=flat-square)
-![Products](https://img.shields.io/badge/Products-VIIRS数据-green?style=flat-square)
+![Products](https://img.shields.io/badge/Products-VIIRS_Data-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NASA-FF0000?style=flat-square)
 
 🔗 [NASA LAADS](https://ladsweb.modaps.eosdis.nasa.gov/)
@@ -1114,7 +1388,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <summary><b>JPSS</b> · NOAA</summary>
 
 ![Resolution](https://img.shields.io/badge/Resolution-375m-blue?style=flat-square)
-![Products](https://img.shields.io/badge/Products-多光谱数据-green?style=flat-square)
+![Products](https://img.shields.io/badge/Products-Multi-spectral-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NOAA-00CED1?style=flat-square)
 
 🔗 [NOAA CLASS](https://www.avl.class.noaa.gov/)
@@ -1125,7 +1399,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <summary><b>Sentinel-3</b> · ESA</summary>
 
 ![Resolution](https://img.shields.io/badge/Resolution-300m-blue?style=flat-square)
-![Products](https://img.shields.io/badge/Products-海洋颜色-green?style=flat-square)
+![Products](https://img.shields.io/badge/Products-Ocean_Color-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-ESA-003399?style=flat-square)
 
 🔗 [Copernicus](https://scihub.copernicus.eu/)
@@ -1138,8 +1412,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <summary><b>GPM IMERG</b> · Global Precipitation</summary>
 
 ![Spatial](https://img.shields.io/badge/Spatial-0.1°-blue?style=flat-square)
-![Temporal](https://img.shields.io/badge/Temporal-30分钟-green?style=flat-square)
-![Coverage](https://img.shields.io/badge/Coverage-全球-orange?style=flat-square)
+![Temporal](https://img.shields.io/badge/Temporal-30min-green?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-Global-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NASA-FF0000?style=flat-square)
 
 🔗 [NASA GES DISC](https://disc.gsfc.nasa.gov/)
@@ -1150,8 +1424,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <summary><b>CMORPH</b> · Global Precipitation</summary>
 
 ![Spatial](https://img.shields.io/badge/Spatial-0.25°-blue?style=flat-square)
-![Temporal](https://img.shields.io/badge/Temporal-30分钟-green?style=flat-square)
-![Coverage](https://img.shields.io/badge/Coverage-全球-orange?style=flat-square)
+![Temporal](https://img.shields.io/badge/Temporal-30min-green?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-Global-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NOAA-00CED1?style=flat-square)
 
 🔗 [CPC](https://www.cpc.ncep.noaa.gov/products/janowiak/cmorph_description.html)
@@ -1165,8 +1439,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>NEXRAD</b> · US Weather Radar Network</summary>
 
-![Coverage](https://img.shields.io/badge/Coverage-美国-blue?style=flat-square)
-![Products](https://img.shields.io/badge/Products-基数据/产品-green?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-USA-blue?style=flat-square)
+![Products](https://img.shields.io/badge/Products-Base_Data/Products-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NOAA-00CED1?style=flat-square)
 
 🔗 [NOAA NCEI](https://www.ncdc.noaa.gov/nexradinv/)
@@ -1176,8 +1450,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>OPERA</b> · European Radar Network</summary>
 
-![Coverage](https://img.shields.io/badge/Coverage-欧洲-blue?style=flat-square)
-![Products](https://img.shields.io/badge/Products-合成产品-green?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-Europe-blue?style=flat-square)
+![Products](https://img.shields.io/badge/Products-Composites-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-EUMETNET-9CF?style=flat-square)
 
 🔗 [EUMETNET](https://www.eumetnet.eu/activities/observations-programme/current-activities/opera/)
@@ -1192,8 +1466,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>Argo</b> · Profiling Float Observations</summary>
 
-![Platform](https://img.shields.io/badge/Platform-剖面浮标-blue?style=flat-square)
-![Elements](https://img.shields.io/badge/Elements-温盐深-green?style=flat-square)
+![Platform](https://img.shields.io/badge/Platform-Profiling_Floats-blue?style=flat-square)
+![Elements](https://img.shields.io/badge/Elements-T/S/D-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-Argo-00BFFF?style=flat-square)
 
 🔗 [Argo GDAC](https://argo.ucsd.edu/data/argo-data/)
@@ -1203,8 +1477,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>TAO/TRITON</b> · Moored Buoy Array</summary>
 
-![Platform](https://img.shields.io/badge/Platform-锚定浮标-blue?style=flat-square)
-![Elements](https://img.shields.io/badge/Elements-海洋气象-green?style=flat-square)
+![Platform](https://img.shields.io/badge/Platform-Moored_Buoys-blue?style=flat-square)
+![Elements](https://img.shields.io/badge/Elements-Marine_Met.-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-NOAA-00CED1?style=flat-square)
 
 🔗 [PMEL](https://www.pmel.noaa.gov/tao/)
@@ -1217,7 +1491,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <summary><b>HYCOM</b> · US Navy Ocean Model</summary>
 
 ![Resolution](https://img.shields.io/badge/Resolution-1/12°-blue?style=flat-square)
-![Products](https://img.shields.io/badge/Products-海洋分析预报-green?style=flat-square)
+![Products](https://img.shields.io/badge/Products-Ocean_Analysis/FCST-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-HYCOM-00BFFF?style=flat-square)
 
 🔗 [HYCOM](https://www.hycom.org/)
@@ -1227,8 +1501,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>CMEMS</b> · EU Marine Monitoring and Forecasting</summary>
 
-![Resolution](https://img.shields.io/badge/Resolution-多种-blue?style=flat-square)
-![Products](https://img.shields.io/badge/Products-海洋监测预报-green?style=flat-square)
+![Resolution](https://img.shields.io/badge/Resolution-Various-blue?style=flat-square)
+![Products](https://img.shields.io/badge/Products-Marine_Monitoring-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-Copernicus-003399?style=flat-square)
 
 🔗 [Copernicus Marine](https://marine.copernicus.eu/)
@@ -1242,8 +1516,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>AirNow</b> · US Air Quality</summary>
 
-![Coverage](https://img.shields.io/badge/Coverage-美国-blue?style=flat-square)
-![Pollutants](https://img.shields.io/badge/Pollutants-主要污染物-green?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-USA-blue?style=flat-square)
+![Pollutants](https://img.shields.io/badge/Pollutants-Major_Pollutants-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-AirNow-00BFFF?style=flat-square)
 
 🔗 [AirNow](https://www.airnow.gov/)
@@ -1253,8 +1527,8 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <details>
 <summary><b>OpenAQ</b> · Global Air Quality</summary>
 
-![Coverage](https://img.shields.io/badge/Coverage-全球-blue?style=flat-square)
-![Pollutants](https://img.shields.io/badge/Pollutants-多种污染物-green?style=flat-square)
+![Coverage](https://img.shields.io/badge/Coverage-Global-blue?style=flat-square)
+![Pollutants](https://img.shields.io/badge/Pollutants-Multiple_Pollutants-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-OpenAQ-00BFFF?style=flat-square)
 
 🔗 [OpenAQ](https://openaq.org/)
@@ -1267,7 +1541,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <summary><b>CAMS</b> · ECMWF Global Air Quality Forecast</summary>
 
 ![Resolution](https://img.shields.io/badge/Resolution-0.4°-blue?style=flat-square)
-![Products](https://img.shields.io/badge/Products-全球空气质量预报-green?style=flat-square)
+![Products](https://img.shields.io/badge/Products-Global_AQ_Forecast-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-CAMS-00CED1?style=flat-square)
 
 🔗 [CAMS](https://atmosphere.copernicus.eu/)
@@ -1282,7 +1556,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <summary><b>Herbie</b> · Python · GFS/HRRR Data Download</summary>
 
 ![Language](https://img.shields.io/badge/Language-Python-blue?style=flat-square)
-![Function](https://img.shields.io/badge/Function-GFS/HRRR数据下载-green?style=flat-square)
+![Function](https://img.shields.io/badge/Function-GFS/HRRR_Download-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-GitHub-9CF?style=flat-square)
 
 🔗 [GitHub](https://github.com/blaylockbk/Herbie)
@@ -1293,7 +1567,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <summary><b>Siphon</b> · Python · Remote Data Access</summary>
 
 ![Language](https://img.shields.io/badge/Language-Python-blue?style=flat-square)
-![Function](https://img.shields.io/badge/Function-远程数据访问-green?style=flat-square)
+![Function](https://img.shields.io/badge/Function-Remote_Data_Access-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-Unidata-9CF?style=flat-square)
 
 🔗 [Unidata](https://github.com/Unidata/siphon)
@@ -1304,7 +1578,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <summary><b>cfgrib</b> · Python · GRIB File Processing</summary>
 
 ![Language](https://img.shields.io/badge/Language-Python-blue?style=flat-square)
-![Function](https://img.shields.io/badge/Function-GRIB文件处理-green?style=flat-square)
+![Function](https://img.shields.io/badge/Function-GRIB_Processing-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-ECMWF-00CED1?style=flat-square)
 
 🔗 [ECMWF](https://github.com/ecmwf/cfgrib)
@@ -1317,7 +1591,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <summary><b>MetPy</b> · Python · Meteorological Data Analysis & Visualization</summary>
 
 ![Language](https://img.shields.io/badge/Language-Python-blue?style=flat-square)
-![Function](https://img.shields.io/badge/Function-气象数据分析可视化-green?style=flat-square)
+![Function](https://img.shields.io/badge/Function-Met._Analysis_&_Vis.-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-Unidata-9CF?style=flat-square)
 
 🔗 [Unidata](https://github.com/Unidata/MetPy)
@@ -1328,7 +1602,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 <summary><b>Cartopy</b> · Python · Map Plotting</summary>
 
 ![Language](https://img.shields.io/badge/Language-Python-blue?style=flat-square)
-![Function](https://img.shields.io/badge/Function-地图制图-green?style=flat-square)
+![Function](https://img.shields.io/badge/Function-Map_Plotting-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-SciTools-9CF?style=flat-square)
 
 🔗 [SciTools](https://github.com/SciTools/cartopy)

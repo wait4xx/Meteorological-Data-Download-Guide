@@ -32,6 +32,8 @@ import signal
 import hashlib
 import logging
 import argparse
+import threading
+from contextlib import contextmanager
 import requests
 import xml.etree.ElementTree as ET
 from datetime import datetime
@@ -67,24 +69,63 @@ GRID_OPTIONS = ["0p25latx0p25lon"]
 
 # ==================== 单位转换 ====================
 UNIT_CONVERSIONS = {
+    # --- 地面变量 ---
     "t2m":  {"factor": 1,           "offset": -273.15,     "from": "K",       "to": "degC",  "name": "2m Temperature"},
-    "d2m":  {"factor": 1,           "offset": -273.15,     "from": "K",       "to": "degC",  "name": "2m Dewpoint Temperature"},
-    "tp":   {"factor": 1000,        "offset": 0,            "from": "m",       "to": "mm",    "name": "Total Precipitation"},
+    "td2m": {"factor": 1,           "offset": -273.15,     "from": "K",       "to": "degC",  "name": "2m Dewpoint Temperature"},
+    "ts":   {"factor": 1,           "offset": -273.15,     "from": "K",       "to": "degC",  "name": "Surface Temperature"},
+    "sst":  {"factor": 1,           "offset": -273.15,     "from": "K",       "to": "degC",  "name": "Sea Surface Temperature"},
     "sp":   {"factor": 0.01,        "offset": 0,            "from": "Pa",      "to": "hPa",   "name": "Surface Pressure"},
     "msl":  {"factor": 0.01,        "offset": 0,            "from": "Pa",      "to": "hPa",   "name": "Mean Sea Level Pressure"},
+    "slp":  {"factor": 0.01,        "offset": 0,            "from": "Pa",      "to": "hPa",   "name": "Sea Level Pressure"},
+    "ps":   {"factor": 0.01,        "offset": 0,            "from": "Pa",      "to": "hPa",   "name": "Surface Pressure"},
     "u10m": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "10m U-component Wind"},
     "v10m": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "10m V-component Wind"},
-    "u850": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "850hPa U-component Wind"},
-    "v850": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "850hPa V-component Wind"},
+    # --- 温度（气压层）K → °C ---
+    "t10":  {"factor": 1,           "offset": -273.15,     "from": "K",       "to": "degC",  "name": "10hPa Temperature"},
+    "t50":  {"factor": 1,           "offset": -273.15,     "from": "K",       "to": "degC",  "name": "50hPa Temperature"},
+    "t100": {"factor": 1,           "offset": -273.15,     "from": "K",       "to": "degC",  "name": "100hPa Temperature"},
+    "t200": {"factor": 1,           "offset": -273.15,     "from": "K",       "to": "degC",  "name": "200hPa Temperature"},
+    "t500": {"factor": 1,           "offset": -273.15,     "from": "K",       "to": "degC",  "name": "500hPa Temperature"},
+    "t700": {"factor": 1,           "offset": -273.15,     "from": "K",       "to": "degC",  "name": "700hPa Temperature"},
     "t850": {"factor": 1,           "offset": -273.15,     "from": "K",       "to": "degC",  "name": "850hPa Temperature"},
+    # --- 位势（气压层）m²/s² → dagpm ---
+    "z10":  {"factor": 1/98.0665,   "offset": 0,            "from": "m2 s-2",  "to": "dagpm", "name": "10hPa Geopotential Height"},
+    "z50":  {"factor": 1/98.0665,   "offset": 0,            "from": "m2 s-2",  "to": "dagpm", "name": "50hPa Geopotential Height"},
+    "z200": {"factor": 1/98.0665,   "offset": 0,            "from": "m2 s-2",  "to": "dagpm", "name": "200hPa Geopotential Height"},
+    "z300": {"factor": 1/98.0665,   "offset": 0,            "from": "m2 s-2",  "to": "dagpm", "name": "300hPa Geopotential Height"},
     "z500": {"factor": 1/98.0665,   "offset": 0,            "from": "m2 s-2",  "to": "dagpm", "name": "500hPa Geopotential Height"},
-    "r500": {"factor": 1,           "offset": 0,            "from": "%",       "to": "%",     "name": "500hPa Relative Humidity"},
-    "slp":  {"factor": 0.01,        "offset": 0,            "from": "Pa",      "to": "hPa",   "name": "Sea Level Pressure"},
-    "sst":  {"factor": 1,           "offset": -273.15,     "from": "K",       "to": "degC",  "name": "Sea Surface Temperature"},
+    "z700": {"factor": 1/98.0665,   "offset": 0,            "from": "m2 s-2",  "to": "dagpm", "name": "700hPa Geopotential Height"},
+    "z850": {"factor": 1/98.0665,   "offset": 0,            "from": "m2 s-2",  "to": "dagpm", "name": "850hPa Geopotential Height"},
+    # --- 风（气压层）保持 m/s ---
+    "u10":  {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "10hPa U-component Wind"},
+    "u50":  {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "50hPa U-component Wind"},
+    "u100": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "100hPa U-component Wind"},
+    "u200": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "200hPa U-component Wind"},
+    "u500": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "500hPa U-component Wind"},
+    "u700": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "700hPa U-component Wind"},
+    "u850": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "850hPa U-component Wind"},
+    "v10":  {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "10hPa V-component Wind"},
+    "v50":  {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "50hPa V-component Wind"},
+    "v100": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "100hPa V-component Wind"},
+    "v200": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "200hPa V-component Wind"},
+    "v500": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "500hPa V-component Wind"},
+    "v700": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "700hPa V-component Wind"},
+    "v850": {"factor": 1,           "offset": 0,            "from": "m s-1",   "to": "m s-1", "name": "850hPa V-component Wind"},
+    # --- 比湿（气压层）保持 kg/kg ---
+    "q10":  {"factor": 1,           "offset": 0,            "from": "kg kg-1", "to": "kg kg-1", "name": "10hPa Specific Humidity"},
+    "q50":  {"factor": 1,           "offset": 0,            "from": "kg kg-1", "to": "kg kg-1", "name": "50hPa Specific Humidity"},
+    "q200": {"factor": 1,           "offset": 0,            "from": "kg kg-1", "to": "kg kg-1", "name": "200hPa Specific Humidity"},
+    "q500": {"factor": 1,           "offset": 0,            "from": "kg kg-1", "to": "kg kg-1", "name": "500hPa Specific Humidity"},
+    "q850": {"factor": 1,           "offset": 0,            "from": "kg kg-1", "to": "kg kg-1", "name": "850hPa Specific Humidity"},
 }
 
 # 临时文件列表 (用于中断清理)
 _temp_files: List[Path] = []
+# NetCDF4/HDF5 写锁 — HDF5 C 库非线程安全
+_nc_write_lock = threading.Lock()
+_temp_files_lock = threading.Lock()
+# 进度条输出锁 — 防止并发模式下进度条交叉乱码
+_progress_lock = threading.Lock()
 
 
 # ==================== 日志 ====================
@@ -103,7 +144,9 @@ logger = logging.getLogger(__name__)
 
 # ==================== 信号处理 ====================
 def _cleanup_handler(signum, frame):
-    for p in _temp_files:
+    with _temp_files_lock:
+        files = list(_temp_files)
+    for p in files:
         if p.exists():
             try:
                 p.unlink()
@@ -111,6 +154,20 @@ def _cleanup_handler(signum, frame):
                 pass
     logger.warning("User interrupted, cleaned up temp files")
     sys.exit(130)
+
+
+@contextmanager
+def _suppress_hdf5_diag():
+    """Suppress harmless HDF5 diagnostic output (file existence checks) during NetCDF operations."""
+    devnull_fd = os.open(os.devnull, os.O_WRONLY)
+    old_stderr_fd = os.dup(2)
+    os.dup2(devnull_fd, 2)
+    try:
+        yield
+    finally:
+        os.dup2(old_stderr_fd, 2)
+        os.close(devnull_fd)
+        os.close(old_stderr_fd)
 
 
 # ==================== S3 发现 ====================
@@ -220,9 +277,11 @@ def validate_data(ds: xr.Dataset, variable: str) -> Dict[str, Any]:
     val_mean = float(np.nanmean(data.values))
 
     logger.info(f"  Validation: {total:,} points | NaN={nan_ratio:.2%} | "
-                f"range=[{val_min:.2f}, {val_max:.2f}] | mean={val_mean:.2f}")
+                f"range=[{val_min:.6g}, {val_max:.6g}] | mean={val_mean:.6g}")
     if nan_ratio > 0.5:
         logger.warning(f"  High NaN ratio ({nan_ratio:.1%}), check data integrity")
+    if val_min == 0 and val_max == 0:
+        logger.warning(f"  All data values are zero — variable may not be available in source dataset")
     return {"total": total, "nan_ratio": nan_ratio, "min": val_min, "max": val_max, "mean": val_mean}
 
 
@@ -311,28 +370,40 @@ class ERA5Downloader:
         h, m = divmod(m, 60)
         return f"{h}h{m:02d}m"
 
-    def _load_with_progress(self, ds: xr.Dataset) -> xr.Dataset:
-        """多线程并发从 S3 加载数据到内存，实时显示进度和速度"""
+    def _load_with_progress(self, ds: xr.Dataset, concurrent: bool = False) -> xr.Dataset:
+        """多线程并发从 S3 加载数据到内存，实时显示进度"""
         n_time = len(ds.time)
-        total_bytes = sum(ds[v].nbytes for v in ds.data_vars)
-        total_mb = total_bytes / 1024 / 1024
+        est_bytes = sum(ds[v].nbytes for v in ds.data_vars)
+        est_mb = est_bytes / 1024 / 1024
+        var = self.variable
 
-        logger.info(f"  Downloading {total_mb:.1f} MB ({n_time} steps, {self.workers} workers)...")
+        logger.info(f"  Loading {n_time} steps (~{est_mb:.1f} MB in-memory, {self.workers} workers)...")
 
-        # 按 batch 分配任务，每个 worker 处理若干时间步
         def _load_range(start_end):
             s, e = start_end
             return ds.isel(time=slice(s, e)).compute()
 
-        # 划分 batch
         batch_size = max(1, (n_time + self.workers - 1) // self.workers)
-        batches = []
-        for i in range(0, n_time, batch_size):
-            batches.append((i, min(i + batch_size, n_time)))
+        batches = [(i, min(i + batch_size, n_time)) for i in range(0, n_time, batch_size)]
 
         t0 = time.time()
         results = [None] * len(batches)
-        completed = 0
+        done_indices = set()
+
+        def _fmt_progress(completed, done_steps, elapsed, eta):
+            bar_len = 30
+            filled = int(bar_len * completed / len(batches))
+            bar = "█" * filled + "░" * (bar_len - filled)
+            pct = completed / len(batches) * 100
+            if concurrent:
+                return (f"  [{var}] [{bar}] {pct:5.1f}% | "
+                        f"{done_steps}/{n_time} steps | "
+                        f"elapsed {self._format_eta(elapsed)} | "
+                        f"ETA {self._format_eta(eta)}")
+            return (f"\r  [{bar}] {pct:5.1f}% | "
+                    f"{done_steps}/{n_time} steps | "
+                    f"elapsed {self._format_eta(elapsed)} | "
+                    f"ETA {self._format_eta(eta)}    ")
 
         with ThreadPoolExecutor(max_workers=self.workers) as pool:
             future_to_idx = {pool.submit(_load_range, b): idx for idx, b in enumerate(batches)}
@@ -340,40 +411,35 @@ class ERA5Downloader:
             for future in as_completed(future_to_idx):
                 idx = future_to_idx[future]
                 results[idx] = future.result()
-                completed += 1
+                done_indices.add(idx)
+                completed = len(done_indices)
 
                 elapsed = time.time() - t0
-                done_steps = sum(b[1] - b[0] for b in batches[:completed])
-                done_mb = total_mb * done_steps / n_time
-                speed = done_mb / elapsed if elapsed > 0 else 0
+                done_steps = sum(batches[i][1] - batches[i][0] for i in done_indices)
                 eta = elapsed / completed * (len(batches) - completed)
 
-                bar_len = 30
-                filled = int(bar_len * completed / len(batches))
-                bar = "█" * filled + "░" * (bar_len - filled)
-                pct = completed / len(batches) * 100
+                if concurrent:
+                    with _progress_lock:
+                        print(_fmt_progress(completed, done_steps, elapsed, eta))
+                else:
+                    print(_fmt_progress(completed, done_steps, elapsed, eta), end="", flush=True)
 
-                print(
-                    f"\r  [{bar}] {pct:5.1f}% | "
-                    f"{done_mb:.1f}/{total_mb:.1f} MB | "
-                    f"{speed:.3f} MB/s | "
-                    f"ETA {self._format_eta(eta)} | "
-                    f"{done_steps}/{n_time} steps    ",
-                    end="", flush=True,
-                )
-
-        print()
+        if not concurrent:
+            print()
 
         elapsed_total = time.time() - t0
-        avg_speed = total_mb / elapsed_total if elapsed_total > 0 else 0
-        logger.info(f"  Downloaded {total_mb:.1f} MB in {self._format_eta(elapsed_total)} ({avg_speed:.3f} MB/s avg)")
+        actual_bytes = sum(sum(r[v].nbytes for v in r.data_vars) for r in results if r is not None)
+        actual_mb = actual_bytes / 1024 / 1024
 
-        return xr.concat(results, dim="time")
+        logger.info(f"  Loaded {actual_mb:.1f} MB in {self._format_eta(elapsed_total)}")
+
+        return xr.concat(results, dim="time", data_vars="all")
 
     def _export_netcdf(self, ds: xr.Dataset, output_path: str, raw_bytes: int, compress: bool = True) -> dict:
         output_file = Path(output_path)
         output_file.parent.mkdir(parents=True, exist_ok=True)
-        _temp_files.append(output_file)
+        with _temp_files_lock:
+            _temp_files.append(output_file)
 
         encoding = {}
         if compress:
@@ -387,37 +453,41 @@ class ERA5Downloader:
                 }
 
         t0 = time.time()
-        ds.to_netcdf(
-            output_file,
-            format="NETCDF4",
-            engine="netcdf4",
-            encoding=encoding if encoding else None,
-            unlimited_dims=["time"],
-        )
+        with _nc_write_lock, _suppress_hdf5_diag():
+            ds.to_netcdf(
+                output_file,
+                format="NETCDF4",
+                engine="netcdf4",
+                encoding=encoding if encoding else None,
+                unlimited_dims=["time"],
+            )
         elapsed = time.time() - t0
 
         size_mb = output_file.stat().st_size / 1024 / 1024
         raw_mb = raw_bytes / 1024 / 1024
         ratio = raw_mb / size_mb if size_mb > 0 else 1.0
 
-        logger.info(f"  Written: {size_mb:.2f} MB (ratio: {ratio:.1f}x) in {elapsed:.1f}s")
+        logger.info(f"  Written: {size_mb:.2f} MB (compressed from {raw_mb:.1f} MB, {ratio:.1f}x) in {elapsed:.1f}s")
 
-        if output_file in _temp_files:
-            _temp_files.remove(output_file)
+        with _temp_files_lock:
+            if output_file in _temp_files:
+                _temp_files.remove(output_file)
         return {"elapsed": elapsed, "size_mb": size_mb, "ratio": ratio}
 
     def _export_zarr(self, ds: xr.Dataset, output_path: str) -> dict:
         output_file = Path(output_path)
         output_file.parent.mkdir(parents=True, exist_ok=True)
-        _temp_files.append(output_file)
+        with _temp_files_lock:
+            _temp_files.append(output_file)
 
         t0 = time.time()
         ds.to_zarr(output_file, mode="w")
         elapsed = time.time() - t0
 
         logger.info(f"  Written Zarr in {elapsed:.1f}s")
-        if output_file in _temp_files:
-            _temp_files.remove(output_file)
+        with _temp_files_lock:
+            if output_file in _temp_files:
+                _temp_files.remove(output_file)
         return {"elapsed": elapsed}
 
     def download(
@@ -428,6 +498,7 @@ class ERA5Downloader:
         output_format: str = "netcdf4",
         validate: bool = True,
         compress: bool = True,
+        concurrent: bool = False,
     ) -> str:
         logger.info(f"Connecting: {self.s3_url}")
 
@@ -456,16 +527,31 @@ class ERA5Downloader:
         # 单位转换 (延迟计算)
         ds = self._apply_unit_conversion(ds)
 
+        # 坐标变量属性补全
+        if "lon" in ds.coords and "units" not in ds.lon.attrs:
+            ds.lon.attrs.update({"units": "degrees_east", "long_name": "longitude"})
+        if "lat" in ds.coords and "units" not in ds.lat.attrs:
+            ds.lat.attrs.update({"units": "degrees_north", "long_name": "latitude"})
+
         # 全局属性
-        ds.attrs.update({
+        global_attrs = {
             "source": "Planette ERA5 Archive (s3://planette-era5)",
             "original_source": "ECMWF ERA5 Reanalysis",
             "downloaded_by": f"era5_planette_downloader v{__version__}",
             "download_time": datetime.now().isoformat(),
-        })
+        }
+        if time_range:
+            global_attrs["time_range"] = f"{time_range[0]} to {time_range[1]}"
+        if region:
+            lon_min, lon_max, lat_min, lat_max = region
+            global_attrs["geospatial_lon_min"] = lon_min
+            global_attrs["geospatial_lon_max"] = lon_max
+            global_attrs["geospatial_lat_min"] = lat_min
+            global_attrs["geospatial_lat_max"] = lat_max
+        ds.attrs.update(global_attrs)
 
         # 逐时间步加载到内存 (带实时进度)
-        ds_loaded = self._load_with_progress(ds)
+        ds_loaded = self._load_with_progress(ds, concurrent=concurrent)
 
         # 本地导出
         logger.info(f"  Writing to {output_path}...")
@@ -477,9 +563,10 @@ class ERA5Downloader:
         # 校验 (从本地文件读取)
         if validate and output_format == "netcdf4":
             logger.info("  Validating...")
-            ds_check = xr.open_dataset(output_path)
-            validate_data(ds_check, self.variable)
-            ds_check.close()
+            with _nc_write_lock, _suppress_hdf5_diag():
+                ds_check = xr.open_dataset(output_path)
+                validate_data(ds_check, self.variable)
+                ds_check.close()
 
         # 标记完成并清理 checkpoint
         if ckpt:
@@ -538,6 +625,7 @@ def download_one(var: str, args, available_vars: Optional[List[str]] = None) -> 
             output_format=fmt,
             validate=not args.no_validate,
             compress=not args.no_compress,
+            concurrent=getattr(args, "concurrent", False),
         )
         return (var, True, out)
     except KeyboardInterrupt:
@@ -570,7 +658,7 @@ Examples:
   %(prog)s -v t2m -f month -t 2020-01-01 2024-12-31 -r 70 140 15 55 -o ./t2m.nc
 
   # Multi-variable concurrent download
-  %(prog)s -v t2m tp slp -f month -o ./output/ --auto-name --concurrent
+  %(prog)s -v t2m pr slp -f month -o ./output/ --auto-name --concurrent
 
   # Export as Zarr
   %(prog)s -v t2m -f day -o ./t2m.zarr --format zarr
@@ -581,7 +669,7 @@ Examples:
   # Show data tree for a variable
   %(prog)s -v t2m --list-tree
 
-Variables: t2m, d2m, tp, sp, msl, slp, sst, u10m, v10m, u850, v850, t850, z500, r500
+Variables: t2m, td2m, ts, sst, pr, sp, msl, slp, ps, u10m, v10m, u850, v850, t850, z500
 Frequencies: day, 7day, month, 3month
 """,
     )

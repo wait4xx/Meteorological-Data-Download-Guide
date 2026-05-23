@@ -413,13 +413,17 @@ def get_url(data_symbol):
         url_input = "/atmos/"
 
 
+    # 保存基础路径，每次循环重新计算
+    base_url_input = url_input
+
     # 生成最近 4 个可能的时次（按优先级排序）
     for i in range(4):
         dt = time_now - timedelta(hours=6 * i)
         date_str = dt.strftime("%Y%m%d")
         cycle = dt.hour // 6  # 0,1,2,3 → 0,6,12,18
         hour_str = f"{cycle * 6:02d}"
-        
+
+        url_input = base_url_input
         if data_symbol == 'IFS' and cycle in (0, 2):  # 00Z, 12Z → oper
             url_input = url_input.replace("scda", "oper")
         if data_symbol in ['IFS', 'EFS', 'AIFS', 'AIEFS']:
