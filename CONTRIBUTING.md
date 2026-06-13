@@ -4,6 +4,8 @@
 
 欢迎来到公开气象数据资源库！感谢你愿意为这个项目贡献一份力量。本指南将帮助你了解如何为项目做出贡献。
 
+> 📄 **许可协议**：本项目采用 [**MIT License**](LICENSE) 开源，提交贡献即表示你同意在 MIT 协议下发布你的内容。请注意：MIT 仅覆盖本仓库自身的内容与代码，所列第三方数据源各有独立许可，贡献时请勿引入违反其条款的内容。
+
 ## 📋 目录
 
 - [行为准则](#行为准则)
@@ -85,6 +87,13 @@
 
 </details>
 ```
+
+> 💡 **OPeNDAP / THREDDS 数据源**：裸 OPeNDAP URL 在浏览器直接打开会返回 HTTP 400，请改用「可浏览目录 + OPeNDAP 代码」格式：
+> ```markdown
+> 🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/xxx/catalog.html) · OPeNDAP `https://.../dodsC/Datasets/xxx/file.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+> ```
+
+> 🔎 **提交前务必验证链接可达**：将候选 URL 写入文件后运行 `bash test_codes/check_readme_links.sh test_codes/_candidates_xxx.txt`，仅保留 ✅ 的源。
 
 **徽章颜色规范：**
 

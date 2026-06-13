@@ -1,17 +1,30 @@
+<div align="center">
+
 # 🌤️ 公开气象数据下载资源库
 
-**中文** | **[English](README_EN.md)**
+**一站式汇集全球公开气象 · 海洋 · 气候数据的下载渠道、脚本与工具**
 
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](CONTRIBUTING.md)
-[![GitHub Stars](https://img.shields.io/github/stars/wait4xx/Meteorological-Data-Download-Guide.svg?style=flat-square)](https://github.com/wait4xx/Meteorological-Data-Download-Guide)
-[![GitHub Forks](https://img.shields.io/github/forks/wait4xx/Meteorological-Data-Download-Guide.svg?style=flat-square)](https://github.com/wait4xx/Meteorological-Data-Download-Guide)
-[![Status](https://img.shields.io/badge/状态-持续更新中-blue.svg?style=flat-square)](https://github.com/wait4xx/Meteorological-Data-Download-Guide)
+[![GitHub Stars](https://img.shields.io/github/stars/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/network/members)
+[![License: MIT](https://img.shields.io/github/license/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](#许可证)
+[![Last Commit](https://img.shields.io/github/last-commit/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=git)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/commits)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge&logo=github)](CONTRIBUTING.md)
 
-> 一个收集整理各类公开气象数据下载网址的资源库，旨在为气象研究、数据分析和应用开发提供便捷的数据获取渠道。
+🌍 全球数据源 · 📥 配套下载脚本 · 🔄 持续更新 · 🤝 欢迎贡献
+
+`气象数据` `数值预报` `大模型` `再分析` `气候` `观测` `卫星` `雷达` `空气质量` `海洋数据` `海洋观测` `SST/海冰` `海洋模式`
+
+**简体中文** · [English](README_EN.md)
+
+</div>
+
+> 📌 收集整理各类公开气象数据下载网址，为气象研究、数据分析与应用开发提供便捷的数据获取渠道。
 
 ---
 
 ### 📢 最新动态
+> **2026-06-13** · 🎉 重大更新：新增 18 个公开数据源（气候 / 观测 / 卫星 / 海洋 / 空气质量）；开源工具区扩充至 20 个并改为分类表格；新增 MIT 许可证与 Star History 星标曲线；中英双语文档全面同步
+>
 > **2026-05-21** · 📝 新增 Planette ERA5 AWS S3 下载脚本用于下载 ERA5 日平均、周平均、月平均数据（`era5_planette_downloader.py`），支持多变量并发、单位转换、实时进度
 >
 > **2026-04-11** · 📝 新增 ERA5 AWS S3 多线程下载脚本使用教程（`s3_downloader_multi.py`）
@@ -26,18 +39,21 @@
 
 ### 🔧 项目进展
 
-| 类别 | 状态 |
-|:-----|:----:|
-| 数值预报数据 | ✅ |
-| 大模型预报数据 | ✅ |
-| 再分析数据 | ✅ |
-| 实时观测数据 | 🔜 |
-| 卫星数据 | 🔜 |
-| 雷达数据 | 🔜 |
-| 气候数据 | 🔜 |
-| 海洋气象数据 | 🔜 |
-| 空气质量数据 | 🔜 |
-| 开源代码与工具 | 🔜 |
+| 大类 | 类别 | 状态 |
+|:----:|:-----|:----:|
+| 🌐 气象 | 数值预报 | ✅ |
+| | 大模型预报 | ✅ |
+| | 再分析 | ✅ |
+| | 气候数据 | ✅ |
+| | 实况观测 | ✅ |
+| | 卫星 | ✅ |
+| | 雷达 | ✅ |
+| | 空气质量 | ✅ |
+| 🌊 海洋 | 海洋观测 | ✅ |
+| | 海表温度与海冰 | ✅ |
+| | 海洋模式 | ✅ |
+| | 海洋水色 | ✅ |
+| 🛠️ 工具 | 开源代码与工具 | ✅ |
 
 ---
 
@@ -45,14 +61,15 @@
 
 | 数据类型 | 工具与社区 |
 |:--------:|:----------:|
-| [数值预报](#数值预报数据) · [大模型](#大模型预报数据) · [再分析数据](#气候与再分析数据) | [贡献指南](#贡献指南) · [许可证](#许可证) |
-| [实况观测](#实况观测数据) · [海洋气象](#海洋气象数据) · [空气质量](#空气质量数据) | [开源工具](#开源代码与工具) |
-| [卫星数据](#卫星数据) · [雷达数据](#雷达数据) | [致谢](#致谢) |
+| **[🌐 气象数据](#气象数据)** · [数值预报](#数值预报) · [大模型](#大模型预报) · [再分析](#再分析) · [气候](#气候数据) · [观测](#实况观测) · [卫星](#卫星) · [雷达](#雷达) · [空气质量](#空气质量) | [贡献指南](#贡献指南) · [许可证](#许可证) |
+| **[🌊 海洋数据](#海洋数据)** · [海洋观测](#海洋观测) · [SST/海冰](#海表温度与海冰) · [海洋模式](#海洋模式) · [海洋水色](#海洋水色) | [开源工具](#开源代码与工具) · [致谢](#致谢) |
 
 
-## 数值预报数据
+## 气象数据
 
-### 实时预报数据
+### 数值预报
+
+#### 实时预报数据
 
 <details>
 <summary><b>ECMWF</b> · 欧洲中期天气预报中心</summary>
@@ -107,28 +124,6 @@
 **GFS** · 确定性预报
 
 ![分辨率](https://img.shields.io/badge/分辨率-0.25°-blue?style=flat-square)
-![时效](https://img.shields.io/badge/时效-0~120h(1h)-green?style=flat-square)
-![更新](https://img.shields.io/badge/更新-每日4次-orange?style=flat-square)
-![来源](https://img.shields.io/badge/来源-OpeNDAP-00BFFF?style=flat-square)
-
-🔗 [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_0p25_1hr/) · 📅 最近 10 日 · 📝 [Python/xarray 示例](./sources/download_from_opendap.py)
-
----
-
-**GFS** · 确定性预报
-
-![分辨率](https://img.shields.io/badge/分辨率-0.25°-blue?style=flat-square)
-![时效](https://img.shields.io/badge/时效-0~384h(3h)-green?style=flat-square)
-![更新](https://img.shields.io/badge/更新-每日4次-orange?style=flat-square)
-![来源](https://img.shields.io/badge/来源-OpeNDAP-00BFFF?style=flat-square)
-
-🔗 [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_0p25/) · 📅 最近 10 日 · 📝 [Python/xarray 示例](./sources/download_from_opendap.py)
-
----
-
-**GFS** · 确定性预报
-
-![分辨率](https://img.shields.io/badge/分辨率-0.25°-blue?style=flat-square)
 ![时效](https://img.shields.io/badge/时效-0~120h(1h)_120~384h(3h)-green?style=flat-square)
 ![更新](https://img.shields.io/badge/更新-每日4次-orange?style=flat-square)
 ![来源](https://img.shields.io/badge/来源-NOAA-00CED1?style=flat-square)
@@ -137,25 +132,12 @@
 
 ---
 
-**GFS** · 确定性预报
+**GFS OPeNDAP** · ⚠️ 已退役
 
-![分辨率](https://img.shields.io/badge/分辨率-0.5°-blue?style=flat-square)
-![时效](https://img.shields.io/badge/时效-0~384h(3h)-green?style=flat-square)
-![更新](https://img.shields.io/badge/更新-每日4次-orange?style=flat-square)
-![来源](https://img.shields.io/badge/来源-OpeNDAP-00BFFF?style=flat-square)
+![状态](https://img.shields.io/badge/状态-已退役-red?style=flat-square)
+![来源](https://img.shields.io/badge/来源-NOMADS_OpeNDAP-lightgrey?style=flat-square)
 
-🔗 [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_0p50/) · 📅 最近 10 日 · 📝 [Python/xarray 示例](./sources/download_from_opendap.py)
-
----
-
-**GFS** · 确定性预报
-
-![分辨率](https://img.shields.io/badge/分辨率-1°-blue?style=flat-square)
-![时效](https://img.shields.io/badge/时效-0~384h(3h)-green?style=flat-square)
-![更新](https://img.shields.io/badge/更新-每日4次-orange?style=flat-square)
-![来源](https://img.shields.io/badge/来源-OpeNDAP-00BFFF?style=flat-square)
-
-🔗 [GFS_OpeNDAP](https://nomads.ncep.noaa.gov/dods/gfs_1p00/) · 📅 最近 10 日 · 📝 [Python/xarray 示例](./sources/download_from_opendap.py)
+> ❌ NOMADS GFS OPeNDAP 端点（`gfs_0p25_1hr` / `gfs_0p25` / `gfs_0p50` / `gfs_1p00`）已于 2025 年全部退役（Service Change Notice 25-81）。替代方案：上方 [GFS_NOAA](https://nomads.ncep.noaa.gov/pub/data/nccf/com/gfs/) 原始 GRIB、[GFS_UCAR](https://motherlode.ucar.edu/native/grid/NCEP/GFS/) THREDDS；历史气候/再分析数据见下方 [NOAA PSL THREDDS](#气候与再分析数据)。
 
 ---
 
@@ -214,7 +196,7 @@
 </details>
 
 
-### 历史预报数据
+#### 历史预报数据
 
 <details>
 <summary><b>ECMWF</b> · 欧洲中期天气预报中心</summary>
@@ -340,9 +322,9 @@
 
 </details>
 
-## 大模型预报数据
+### 大模型预报
 
-### 实时数据
+#### 实时数据
 
 <details>
 <summary><b>ECMWF</b> · 欧洲中期天气预报中心</summary>
@@ -447,7 +429,7 @@
 
 </details>
 
-### 历史数据
+#### 历史数据
 
 <details>
 <summary><b>ECMWF</b> · 欧洲中期天气预报中心</summary>
@@ -525,9 +507,7 @@
 
 </details>
 
-## 气候与再分析数据
-
-### 再分析数据集
+### 再分析
 
 <details>
 <summary><b>ERA5-land</b> · ECMWF 地面再分析 </summary>
@@ -1244,7 +1224,62 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 </details>
 
-### 气候数据集
+<details>
+<summary><b>NCEP/NCAR R1</b> · 经典全球再分析 · OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-2.5°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-逐日/月均-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1948年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
+
+地面（slp/air/pr_wtr/rhum）、气压层 17 层（hgt/uwnd/vwnd/air/shum）；另有 2m 气温、土壤湿度、对流层顶、硫酸盐 AOD 等变量。逐日数据按年分文件。
+
+🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/ncep.reanalysis.derived/surface/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis.derived/surface/air.mon.mean.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>NCEP/DOE R2</b> · R1 改进版 · OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-2.5°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-逐日/月均-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1979年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
+
+🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/ncep.reanalysis2.derived/surface/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis2.derived/surface/mslp.mon.mean.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>NARR</b> · 北美区域再分析 · OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-~32km-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-逐日/3小时-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1979年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
+
+⚠️ Lambert Conformal 投影，lat/lon 为 2D 数组，需额外处理。
+
+🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/NARR/monolevel/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/NARR/monolevel/air.2m.2024.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>20th Century Reanalysis V2/V2c</b> · 长历史再分析 · OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-~2°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-逐日-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1851~2014-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
+
+用地表气压观测同化的历史再分析，时间跨度极长。
+
+🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/20thC_ReanV2c/Dailies/pressure/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/20thC_ReanV2c/Dailies/pressure/hgt.2014.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+
+### 气候数据
 
 <details>
 <summary><b>CRU TS</b> · 格点化观测</summary>
@@ -1270,10 +1305,150 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 </details>
 
+<details>
+<summary><b>GPCP</b> · 全球降水气候学（卫星+站）· OPeNDAP</summary>
 
-## 实况观测数据
+![分辨率](https://img.shields.io/badge/分辨率-2.5°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-月均-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1979年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
 
-### 地面观测
+结合卫星与地面观测的全球降水产品。
+
+🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/gpcp/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/gpcp/precip.mon.mean.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>CPC 全球降水/最高温</b> · 高分辨率格点观测 · OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-0.5°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-逐日-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1979年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
+
+站基格点化产品，`precip`（降水）/`tmax`（最高温），分辨率比 GPCP（2.5°）高 5 倍。
+
+🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/cpc_global_precip/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/cpc_global_precip/precip.2024.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>CPC Blended OLR</b> · 向外长波辐射 · OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-1.0°/2.5°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-逐日-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1979年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
+
+台风/热带对流研究核心数据，`olr`（W/m²）。
+
+🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/cpc_blended_olr-1deg/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/cpc_blended_olr-1deg/olr.day.mean.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>Dai PDSI</b> · Palmer 干旱指数 · OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-2.5°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-月均-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1850年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
+
+仅陆地，时间跨度 170+ 年的长期干旱监测数据。
+
+🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/dai_pdsi/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/dai_pdsi/pdsi.mon.mean.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>NOAA 全球温度异常</b> · 气候监测 · OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-5.0°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-月均-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1880年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
+
+全球地表温度异常（`air`，°C），气候变化监测基础数据。
+
+🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/noaaglobaltemp/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/noaaglobaltemp/air.mon.anom.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>JMA 全球温度异常</b> · 气候监测 · OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-5.0°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-月均-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1891年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
+
+日本气象厅全球地表温度异常（`air`，°C），与 NOAA 温度异常互为交叉验证。
+
+🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/jmatemp/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/jmatemp/air.mon.anom.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>Berkeley Earth</b> · 独立全球地表温度</summary>
+
+![类型](https://img.shields.io/badge/类型-地表温度-blue?style=flat-square)
+![分辨率](https://img.shields.io/badge/分辨率-1°-green?style=flat-square)
+![时段](https://img.shields.io/badge/时段-1753~现在-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-Berkeley_Earth-00BFFF?style=flat-square)
+
+独立构建的全球陆地与海洋表面温度数据集，常用于气候变暖交叉验证。
+
+🔗 [Berkeley Earth](http://berkeleyearth.org/data/)
+
+</details>
+
+<details>
+<summary><b>HadCRUT5</b> · Met Office 陆海温度</summary>
+
+![类型](https://img.shields.io/badge/类型-陆海温度-blue?style=flat-square)
+![分辨率](https://img.shields.io/badge/分辨率-5°-green?style=flat-square)
+![时段](https://img.shields.io/badge/时段-1850~现在-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-Met_Office-00BFFF?style=flat-square)
+
+英国气象局 Hadley 中心与东英吉利大学 CRU 联合维护，含集合版不确定性评估。
+
+🔗 [HadCRUT5](https://www.metoffice.gov.uk/hadobs/hadcrut5/)
+
+</details>
+
+<details>
+<summary><b>GHCN-Daily</b> · 全球历史气候网络（日值）</summary>
+
+![类型](https://img.shields.io/badge/类型-台站观测-blue?style=flat-square)
+![要素](https://img.shields.io/badge/要素-气温/降水/积雪-green?style=flat-square)
+![时段](https://img.shields.io/badge/时段-1763~现在-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-NCEI-00CED1?style=flat-square)
+
+全球陆地气象站逐日观测（气温、降水、积雪等），长期气候研究的台站基础数据。
+
+🔗 [NCEI GHCN-Daily](https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily)
+
+</details>
+
+<details>
+<summary><b>GHCN-Monthly</b> · 全球历史气候网络（月值）</summary>
+
+![类型](https://img.shields.io/badge/类型-台站观测-blue?style=flat-square)
+![要素](https://img.shields.io/badge/要素-气温/降水-green?style=flat-square)
+![时段](https://img.shields.io/badge/时段-1680~现在-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-NCEI-00CED1?style=flat-square)
+
+全球陆地气象站月平均统计，适合长期趋势与年代际变化分析。
+
+🔗 [NCEI GHCN-Monthly](https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-monthly)
+
+</details>
+
+
+### 实况观测
+
+#### 地面观测
 
 <details>
 <summary><b>ASOS/AWOS</b> · 全球机场观测</summary>
@@ -1311,7 +1486,35 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 </details>
 
-### 高空观测
+<details>
+<summary><b>NOAA ISD</b> · 全球综合地面数据库</summary>
+
+![覆盖](https://img.shields.io/badge/覆盖-全球2万+站-blue?style=flat-square)
+![要素](https://img.shields.io/badge/要素-多要素逐时-green?style=flat-square)
+![时段](https://img.shields.io/badge/时段-1901~现在-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-NCEI-00CED1?style=flat-square)
+
+整合全球地面气象站的小时级观测（气温、露点、风、气压、能见度、天气现象等）。
+
+🔗 [NOAA ISD](https://www.ncei.noaa.gov/products/land-based-station/integrated-surface-database)
+
+</details>
+
+<details>
+<summary><b>Iowa Environmental Mesonet</b> · 多源气象聚合</summary>
+
+![覆盖](https://img.shields.io/badge/覆盖-美国为主-blue?style=flat-square)
+![要素](https://img.shields.io/badge/要素-ASOS/NWS/雷达-green?style=flat-square)
+![更新](https://img.shields.io/badge/更新-近实时-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-IEM-00BFFF?style=flat-square)
+
+聚合 ASOS/METAR、NWS 警报、雷达拼图、道路交通气象等，提供便捷的归档与接口。
+
+🔗 [IEM](https://mesonet.agron.iastate.edu/)
+
+</details>
+
+#### 高空观测
 
 <details>
 <summary><b>IGRA</b> · 全球探空</summary>
@@ -1321,7 +1524,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 ![更新](https://img.shields.io/badge/更新-每日2次-orange?style=flat-square)
 ![来源](https://img.shields.io/badge/来源-NOAA-00CED1?style=flat-square)
 
-🔗 [NOAA IGRA](https://www.ncei.noaa.gov/access/weather/igra/)
+🔗 [NOAA IGRA](https://www.ncei.noaa.gov/data/integrated-global-radiosonde-archive/)
 
 </details>
 
@@ -1333,11 +1536,11 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 ![更新](https://img.shields.io/badge/更新-实时-orange?style=flat-square)
 ![来源](https://img.shields.io/badge/来源-WMO-9CF?style=flat-square)
 
-🔗 [WMO AMDAR](https://amdar.wmo.int/)
+🔗 [WMO AMDAR](https://community.wmo.int/en/activity-areas/aircraft-based-observations)
 
 </details>
 
-### 自动气象站
+#### 自动气象站
 
 <details>
 <summary><b>MesoWest</b> · 美国区域站网</summary>
@@ -1361,9 +1564,9 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 </details>
 
-## 卫星数据
+### 卫星
 
-### 地球同步卫星
+#### 地球同步卫星
 
 <details>
 <summary><b>Himawari-8/9</b> · JMA · 亚太</summary>
@@ -1383,7 +1586,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 ![覆盖](https://img.shields.io/badge/覆盖-美洲-green?style=flat-square)
 ![来源](https://img.shields.io/badge/来源-NOAA-00CED1?style=flat-square)
 
-🔗 [NOAA GOES](https://www.noaa.gov/goes-16-and-goes-17-satellite-data)
+🔗 [NOAA STAR GOES](https://www.star.nesdis.noaa.gov/goes/)
 
 </details>
 
@@ -1398,7 +1601,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 </details>
 
-### 极轨卫星
+#### 极轨卫星
 
 <details>
 <summary><b>Suomi NPP</b> · NASA/NOAA</summary>
@@ -1418,22 +1621,24 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 ![产品](https://img.shields.io/badge/产品-多光谱数据-green?style=flat-square)
 ![来源](https://img.shields.io/badge/来源-NOAA-00CED1?style=flat-square)
 
-🔗 [NOAA CLASS](https://www.avl.class.noaa.gov/)
+🔗 [NOAA STAR JPSS](https://www.star.nesdis.noaa.gov/jpss/)
 
 </details>
 
 <details>
-<summary><b>Sentinel-3</b> · ESA</summary>
+<summary><b>MODIS</b> · NASA Terra/Aqua 大气产品</summary>
 
-![分辨率](https://img.shields.io/badge/分辨率-300m-blue?style=flat-square)
-![产品](https://img.shields.io/badge/产品-海洋颜色-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-ESA-003399?style=flat-square)
+![分辨率](https://img.shields.io/badge/分辨率-250m~1km-blue?style=flat-square)
+![产品](https://img.shields.io/badge/产品-气溶胶/云/水汽-green?style=flat-square)
+![来源](https://img.shields.io/badge/来源-NASA-FF0000?style=flat-square)
 
-🔗 [Copernicus](https://scihub.copernicus.eu/)
+Terra/Aqua 卫星 MODIS 传感器大气产品（气溶胶光学厚度、云属性、可降水量等）。
+
+🔗 [NASA LAADS DAAC](https://ladsweb.modaps.eosdis.nasa.gov/)
 
 </details>
 
-### 卫星降水产品
+#### 卫星降水产品
 
 <details>
 <summary><b>GPM IMERG</b> · 全球降水</summary>
@@ -1459,9 +1664,9 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 </details>
 
-## 雷达数据
+### 雷达
 
-### 天气雷达
+#### 天气雷达
 
 <details>
 <summary><b>NEXRAD</b> · 美国天气雷达网</summary>
@@ -1485,8 +1690,86 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 </details>
 
+### 空气质量
 
-## 海洋气象数据
+#### 空气质量监测
+
+<details>
+<summary><b>AirNow</b> · 美国空气质量</summary>
+
+![覆盖](https://img.shields.io/badge/覆盖-美国-blue?style=flat-square)
+![污染物](https://img.shields.io/badge/污染物-主要污染物-green?style=flat-square)
+![来源](https://img.shields.io/badge/来源-AirNow-00BFFF?style=flat-square)
+
+🔗 [AirNow](https://www.airnow.gov/)
+
+</details>
+
+<details>
+<summary><b>OpenAQ</b> · 全球空气质量</summary>
+
+![覆盖](https://img.shields.io/badge/覆盖-全球-blue?style=flat-square)
+![污染物](https://img.shields.io/badge/污染物-多种污染物-green?style=flat-square)
+![来源](https://img.shields.io/badge/来源-OpenAQ-00BFFF?style=flat-square)
+
+🔗 [OpenAQ](https://openaq.org/)
+
+</details>
+
+<details>
+<summary><b>EPA AirData</b> · 美国室外空气质量</summary>
+
+![覆盖](https://img.shields.io/badge/覆盖-美国-blue?style=flat-square)
+![污染物](https://img.shields.io/badge/污染物-PM2.5/O3/SO2/NO2/CO-green?style=flat-square)
+![来源](https://img.shields.io/badge/来源-EPA-00BFFF?style=flat-square)
+
+美国环保署监测网逐时/逐日空气质量数据，含历史归档下载。
+
+🔗 [EPA AirData](https://www.epa.gov/outdoor-air-quality-data)
+
+</details>
+
+<details>
+<summary><b>WAQI</b> · 全球空气质量指数</summary>
+
+![覆盖](https://img.shields.io/badge/覆盖-全球-blue?style=flat-square)
+![污染物](https://img.shields.io/badge/污染物-PM2.5/PM10/AQI-green?style=flat-square)
+![来源](https://img.shields.io/badge/来源-WAQI-00BFFF?style=flat-square)
+
+聚合全球数千个监测站的实时 AQI，提供 API 与历史查询。
+
+🔗 [WAQI](https://waqi.info/)
+
+</details>
+
+<details>
+<summary><b>EEA Air Quality</b> · 欧洲空气质量</summary>
+
+![覆盖](https://img.shields.io/badge/覆盖-欧洲-blue?style=flat-square)
+![污染物](https://img.shields.io/badge/污染物-PM/NO2/O3/SO2-green?style=flat-square)
+![来源](https://img.shields.io/badge/来源-EEA-003399?style=flat-square)
+
+欧洲环境署成员国监测站逐时空气质量观测与历史归档。
+
+🔗 [EEA Air Index](https://airindex.eea.europa.eu/)
+
+</details>
+
+#### 空气质量模式
+
+<details>
+<summary><b>CAMS</b> · ECMWF 全球空气质量预报</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-0.4°-blue?style=flat-square)
+![产品](https://img.shields.io/badge/产品-全球空气质量预报-green?style=flat-square)
+![来源](https://img.shields.io/badge/来源-CAMS-00CED1?style=flat-square)
+
+🔗 [CAMS](https://atmosphere.copernicus.eu/)
+
+</details>
+
+
+## 海洋数据
 
 ### 海洋观测
 
@@ -1512,6 +1795,105 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 </details>
 
+<details>
+<summary><b>NDBC</b> · 国家资料浮标中心</summary>
+
+![平台](https://img.shields.io/badge/平台-浮标/岸站-blue?style=flat-square)
+![要素](https://img.shields.io/badge/要素-风/浪/SST/气压-green?style=flat-square)
+![来源](https://img.shields.io/badge/来源-NOAA-00CED1?style=flat-square)
+
+美国沿海及全球浮标/岸站实时与历史海洋气象观测。
+
+🔗 [NOAA NDBC](https://www.ndbc.noaa.gov/)
+
+</details>
+
+<details>
+<summary><b>WOD</b> · World Ocean Database 海洋剖面</summary>
+
+![平台](https://img.shields.io/badge/平台-CTD/XBT/Argo-blue?style=flat-square)
+![要素](https://img.shields.io/badge/要素-温盐深/氧气/营养盐-green?style=flat-square)
+![时段](https://img.shields.io/badge/时段-1772~现在-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-NCEI-00CED1?style=flat-square)
+
+NCEI 维护的全球最大海洋剖面数据库，整合历年温盐深、化学要素观测。
+
+🔗 [NCEI WOD](https://www.ncei.noaa.gov/products/world-ocean-database)
+
+</details>
+
+### 海表温度与海冰
+
+<details>
+<summary><b>OISST v2</b> · 高分辨率海表温度 + 海冰浓度 · OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-0.25°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-逐日-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1981年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
+
+`sst`（海温）与 `icec`（海冰浓度）共享 0.25° 网格；另有 1° 月均版本。逐日数据按年分文件。
+
+🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/noaa.oisst.v2.highres/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/noaa.oisst.v2.highres/sst.day.mean.2024.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>ERSST</b> · 重建海表温度（v3/v4/v5/v6）· OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-2.0°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-月均-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1854年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
+
+基于观测重建的全球海表温度，提供 v3/v4/v5/v6 多版本（推荐 v6）。
+
+🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/noaa.ersst.v6/catalog.html) · OPeNDAP（v3–v6，换版本号）`https://psl.noaa.gov/thredds/dodsC/Datasets/noaa.ersst.v6/sst.mnmean.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>COBE / COBE2</b> · 日本气象厅海表温度 · OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-1.0°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-月均-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1850年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
+
+JMA 长期历史海温重建（COBE2 为现行版，COBE 为前身）。
+
+🔗 📂 [COBE2 目录](https://psl.noaa.gov/thredds/catalog/Datasets/COBE2/catalog.html) · [COBE 目录](https://psl.noaa.gov/thredds/catalog/Datasets/COBE/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/COBE2/sst.mon.mean.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>Kaplan SST</b> · 重建海表温度异常 · OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-5.0°-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-月均-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-1856年至今-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-PSL_THREDDS-00CED1?style=flat-square)
+
+粗网格（5°）SST 异常重建，适合长期趋势研究。
+
+🔗 📂 [目录](https://psl.noaa.gov/thredds/catalog/Datasets/kaplan_sst/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/kaplan_sst/sst.mon.anom.nc` · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>CoastWatch IMS 海冰</b> · 北极积雪/海冰 1km · OPeNDAP</summary>
+
+![分辨率](https://img.shields.io/badge/分辨率-1km-blue?style=flat-square)
+![时间分辨率](https://img.shields.io/badge/时间分辨率-15天-green?style=flat-square)
+![时间范围](https://img.shields.io/badge/时间范围-2006~2020-orange?style=flat-square)
+![来源](https://img.shields.io/badge/来源-CoastWatch-00CED1?style=flat-square)
+
+NOAA CoastWatch ERDDAP 托管的 IMS（Interactive Multisensor Snow and Ice Mapping）产品，`IMS_mean`（积雪/海冰存在）。
+
+🔗 [IMS 1km 海冰](https://coastwatch.noaa.gov/erddap/griddap/ims1k_15day_baseline_stats) · 📝 [下载脚本](./sources/download_from_opendap.py)
+
+</details>
+
 ### 海洋模式
 
 <details>
@@ -1521,7 +1903,7 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 ![产品](https://img.shields.io/badge/产品-海洋分析预报-green?style=flat-square)
 ![来源](https://img.shields.io/badge/来源-HYCOM-00BFFF?style=flat-square)
 
-🔗 [HYCOM](https://www.hycom.org/)
+🔗 [HYCOM 项目](https://www.hycom.org/) · [THREDDS 数据目录](https://tds.hycom.org/thredds/catalog.html)
 
 </details>
 
@@ -1536,146 +1918,199 @@ python era5_planette_downloader.py -v t2m -f day -o ./t2m.zarr --format zarr
 
 </details>
 
-## 空气质量数据
-
-### 空气质量监测
+### 海洋水色
 
 <details>
-<summary><b>AirNow</b> · 美国空气质量</summary>
+<summary><b>Sentinel-3</b> · ESA · 海洋颜色</summary>
 
-![覆盖](https://img.shields.io/badge/覆盖-美国-blue?style=flat-square)
-![污染物](https://img.shields.io/badge/污染物-主要污染物-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-AirNow-00BFFF?style=flat-square)
+![分辨率](https://img.shields.io/badge/分辨率-300m-blue?style=flat-square)
+![产品](https://img.shields.io/badge/产品-海洋颜色-green?style=flat-square)
+![来源](https://img.shields.io/badge/来源-ESA-003399?style=flat-square)
 
-🔗 [AirNow](https://www.airnow.gov/)
+🔗 [Copernicus Data Space](https://dataspace.copernicus.eu/)
 
 </details>
 
 <details>
-<summary><b>OpenAQ</b> · 全球空气质量</summary>
+<summary><b>NASA OB.DAAC</b> · 海洋水色</summary>
 
-![覆盖](https://img.shields.io/badge/覆盖-全球-blue?style=flat-square)
-![污染物](https://img.shields.io/badge/污染物-多种污染物-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-OpenAQ-00BFFF?style=flat-square)
+![分辨率](https://img.shields.io/badge/分辨率-1km~4km-blue?style=flat-square)
+![产品](https://img.shields.io/badge/产品-叶绿素/透明度/SST-green?style=flat-square)
+![来源](https://img.shields.io/badge/来源-NASA-FF0000?style=flat-square)
 
-🔗 [OpenAQ](https://openaq.org/)
+MODIS-Aqua / Sentinel-3 / OC-CCI 海洋水色产品（叶绿素 a、透明度、固有光学量）。
+
+🔗 [NASA OceanColor](https://oceancolor.gsfc.nasa.gov/)
 
 </details>
 
-### 空气质量模式
-
 <details>
-<summary><b>CAMS</b> · ECMWF 全球空气质量预报</summary>
+<summary><b>CoastWatch ERDDAP</b> · NOAA 海岸带数据</summary>
 
-![分辨率](https://img.shields.io/badge/分辨率-0.4°-blue?style=flat-square)
-![产品](https://img.shields.io/badge/产品-全球空气质量预报-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-CAMS-00CED1?style=flat-square)
+![分辨率](https://img.shields.io/badge/分辨率-多种-blue?style=flat-square)
+![产品](https://img.shields.io/badge/产品-叶绿素/SST/海冰-green?style=flat-square)
+![来源](https://img.shields.io/badge/来源-CoastWatch-00CED1?style=flat-square)
 
-🔗 [CAMS](https://atmosphere.copernicus.eu/)
+NOAA CoastWatch ERDDAP 服务器，提供海洋水色、SST、海冰等格点数据（griddap 可浏览下载）。
+
+🔗 [CoastWatch ERDDAP](https://coastwatch.noaa.gov/erddap/index.html)
 
 </details>
 
 ## 开源代码与工具
 
-### 数据下载与处理
-
-<details>
-<summary><b>Herbie</b> · Python · GFS/HRRR 数据下载</summary>
-
-![语言](https://img.shields.io/badge/语言-Python-blue?style=flat-square)
-![功能](https://img.shields.io/badge/功能-GFS/HRRR数据下载-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-GitHub-9CF?style=flat-square)
-
-🔗 [GitHub](https://github.com/blaylockbk/Herbie)
-
-</details>
-
-<details>
-<summary><b>Siphon</b> · Python · 远程数据访问</summary>
-
-![语言](https://img.shields.io/badge/语言-Python-blue?style=flat-square)
-![功能](https://img.shields.io/badge/功能-远程数据访问-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-Unidata-9CF?style=flat-square)
-
-🔗 [Unidata](https://github.com/Unidata/siphon)
-
-</details>
-
-<details>
-<summary><b>cfgrib</b> · Python · GRIB 文件处理</summary>
-
-![语言](https://img.shields.io/badge/语言-Python-blue?style=flat-square)
-![功能](https://img.shields.io/badge/功能-GRIB文件处理-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-ECMWF-00CED1?style=flat-square)
-
-🔗 [ECMWF](https://github.com/ecmwf/cfgrib)
-
-</details>
-
-### 可视化与分析
-
-<details>
-<summary><b>MetPy</b> · Python · 气象数据分析可视化</summary>
-
-![语言](https://img.shields.io/badge/语言-Python-blue?style=flat-square)
-![功能](https://img.shields.io/badge/功能-气象数据分析可视化-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-Unidata-9CF?style=flat-square)
-
-🔗 [Unidata](https://github.com/Unidata/MetPy)
-
-</details>
-
-<details>
-<summary><b>Cartopy</b> · Python · 地图制图</summary>
-
-![语言](https://img.shields.io/badge/语言-Python-blue?style=flat-square)
-![功能](https://img.shields.io/badge/功能-地图制图-green?style=flat-square)
-![来源](https://img.shields.io/badge/来源-SciTools-9CF?style=flat-square)
-
-🔗 [SciTools](https://github.com/SciTools/cartopy)
-
-</details>
-
-## 贡献指南
-
-我们欢迎并感谢所有形式的贡献！请参阅 [CONTRIBUTING.md](CONTRIBUTING.md) 了解详细指南。
-
-### 参与方式
-
-| 🐛 报告问题 | 📦 添加资源 | 📝 改进文档 | 💬 分享用例 |
-|:----------:|:----------:|:----------:|:----------:|
-| 通过 [Issues](https://github.com/wait4xx/Meteorological-Data-Download-Guide/issues) 反馈 | 提交 Pull Request | 帮助完善或翻译 | 在 Discussions 分享 |
-
-### 提交规范
-
-> ✓ 链接有效且可公开访问 · ✓ 清晰的数据描述 · ✓ 遵循现有分类格式 · ✓ 注明许可限制  
-
-## 许可证
-
-> ⚠️ 本资源库中列出的数据源可能有各自的使用条款和许可协议，使用前请务必查阅并遵守相应数据提供方的规定。
-
-## 致谢
-
-感谢所有数据提供机构以及为本项目做出贡献的开发者们！
-
 <div align="center">
 
-![CMA](https://img.shields.io/badge/CMA-中国气象局-blue?style=flat-square)
-![NOAA](https://img.shields.io/badge/NOAA-美国国家海洋和大气管理局-green?style=flat-square)
-![ECMWF](https://img.shields.io/badge/ECMWF-欧洲中期天气预报中心-orange?style=flat-square)
-![ESA](https://img.shields.io/badge/ESA-欧洲空间局-purple?style=flat-square)
-![NASA](https://img.shields.io/badge/NASA-美国国家航空航天局-red?style=flat-square)
-![Google Cloud](https://img.shields.io/badge/Google-Cloud-4285F4?style=flat-square)
-![AWS](https://img.shields.io/badge/AWS-Amazon-FF9900?style=flat-square)
+<i>精选气象与地球科学开源工具，覆盖 <b>数据下载 → 格式处理 → 物理分析 → 可视化</b> 全流程</i>
 
 </div>
 
 ---
 
-> ⚠️ **注意**：数据链接和可用性可能会发生变化。如发现失效链接或有新资源推荐，请通过 [Issues](https://github.com/wait4xx/Meteorological-Data-Download-Guide/issues) 告知我们。
+#### 🔽 数据下载与访问
+
+| 工具 | 功能 | ⭐ Stars | 📅 最近更新 |
+|:-----|:-----|:-------:|:----------:|
+| [**cdsapi**](https://github.com/ecmwf/cdsapi) | ECMWF Climate Data Store 官方接口（ERA5 等） | ![GitHub Stars](https://img.shields.io/github/stars/ecmwf/cdsapi?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/ecmwf/cdsapi?style=flat-square) |
+| [**ecmwf-opendata**](https://github.com/ecmwf/ecmwf-opendata) | ECMWF 实时开放数据（IFS / EFS / AIFS） | ![GitHub Stars](https://img.shields.io/github/stars/ecmwf/ecmwf-opendata?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/ecmwf/ecmwf-opendata?style=flat-square) |
+| [**Herbie**](https://github.com/blaylockbk/Herbie) | 下载 NOAA HRRR / GFS 等模式数据 | ![GitHub Stars](https://img.shields.io/github/stars/blaylockbk/Herbie?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/blaylockbk/Herbie?style=flat-square) |
+| [**Siphon**](https://github.com/Unidata/siphon) | THREDDS / OPeNDAP 远程数据访问 | ![GitHub Stars](https://img.shields.io/github/stars/Unidata/siphon?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/Unidata/siphon?style=flat-square) |
+| [**satpy**](https://github.com/pytroll/satpy) | 多源卫星数据读取与定标 | ![GitHub Stars](https://img.shields.io/github/stars/pytroll/satpy?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/pytroll/satpy?style=flat-square) |
+
+#### 📊 格点数据处理
+
+| 工具 | 功能 | ⭐ Stars | 📅 最近更新 |
+|:-----|:-----|:-------:|:----------:|
+| [**xarray**](https://github.com/pydata/xarray) | NetCDF / GRIB 多维数组处理（事实标准） | ![GitHub Stars](https://img.shields.io/github/stars/pydata/xarray?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/pydata/xarray?style=flat-square) |
+| [**cfgrib**](https://github.com/ecmwf/cfgrib) | 将 GRIB 映射为 xarray 数据集 | ![GitHub Stars](https://img.shields.io/github/stars/ecmwf/cfgrib?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/ecmwf/cfgrib?style=flat-square) |
+| [**netCDF4**](https://github.com/Unidata/netcdf4-python) | 经典 NetCDF 读写库 | ![GitHub Stars](https://img.shields.io/github/stars/Unidata/netcdf4-python?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/Unidata/netcdf4-python?style=flat-square) |
+| [**pygrib**](https://github.com/jswhit/pygrib) | GRIB1 / GRIB2 数据读写 | ![GitHub Stars](https://img.shields.io/github/stars/jswhit/pygrib?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/jswhit/pygrib?style=flat-square) |
+| [**dask**](https://github.com/dask/dask) | 大规模并行计算（xarray 后端） | ![GitHub Stars](https://img.shields.io/github/stars/dask/dask?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/dask/dask?style=flat-square) |
+
+#### 🌡️ 气象分析与计算
+
+| 工具 | 功能 | ⭐ Stars | 📅 最近更新 |
+|:-----|:-----|:-------:|:----------:|
+| [**MetPy**](https://github.com/Unidata/MetPy) | 气象计算、分析与可视化 | ![GitHub Stars](https://img.shields.io/github/stars/Unidata/MetPy?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/Unidata/MetPy?style=flat-square) |
+| [**WRF-python**](https://github.com/NCAR/wrf-python) | WRF 模式后处理诊断量计算 | ![GitHub Stars](https://img.shields.io/github/stars/NCAR/wrf-python?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/NCAR/wrf-python?style=flat-square) |
+| [**xwrf**](https://github.com/xarray-contrib/xwrf) | WRF 数据 xarray 后处理 | ![GitHub Stars](https://img.shields.io/github/stars/xarray-contrib/xwrf?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/xarray-contrib/xwrf?style=flat-square) |
+| [**tropycal**](https://github.com/tropycal/tropycal) | 热带气旋追踪与分析 | ![GitHub Stars](https://img.shields.io/github/stars/tropycal/tropycal?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/tropycal/tropycal?style=flat-square) |
+
+#### 📡 雷达数据处理
+
+| 工具 | 功能 | ⭐ Stars | 📅 最近更新 |
+|:-----|:-----|:-------:|:----------:|
+| [**Py-ART**](https://github.com/ARM-DOE/pyart) | 天气雷达数据处理（ARM） | ![GitHub Stars](https://img.shields.io/github/stars/ARM-DOE/pyart?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/ARM-DOE/pyart?style=flat-square) |
+| [**wradlib**](https://github.com/wradlib/wradlib) | 雷达数据反演与分析 | ![GitHub Stars](https://img.shields.io/github/stars/wradlib/wradlib?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/wradlib/wradlib?style=flat-square) |
+| [**ACT**](https://github.com/ARM-DOE/ACT) | ARM 大气数据工具包 | ![GitHub Stars](https://img.shields.io/github/stars/ARM-DOE/ACT?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/ARM-DOE/ACT?style=flat-square) |
+
+#### 🎨 可视化与制图
+
+| 工具 | 功能 | ⭐ Stars | 📅 最近更新 |
+|:-----|:-----|:-------:|:----------:|
+| [**Cartopy**](https://github.com/SciTools/cartopy) | 地图投影与地理制图 | ![GitHub Stars](https://img.shields.io/github/stars/SciTools/cartopy?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/SciTools/cartopy?style=flat-square) |
+| [**proplot**](https://github.com/proplot-dev/proplot) | 出版级科研绘图 | ![GitHub Stars](https://img.shields.io/github/stars/proplot-dev/proplot?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/proplot-dev/proplot?style=flat-square) |
+| [**geoviews**](https://github.com/holoviz/geoviews) | 交互式地理可视化 | ![GitHub Stars](https://img.shields.io/github/stars/holoviz/geoviews?style=flat-square&logo=github) | ![Last Commit](https://img.shields.io/github/last-commit/holoviz/geoviews?style=flat-square) |
+
+## 贡献指南
 
 <div align="center">
 
-**⭐ 如果这个项目对您有帮助，请给我们一个星标！**
+我们欢迎并感谢所有形式的贡献！请参阅 [**CONTRIBUTING.md**](CONTRIBUTING.md) 了解详细指南。
+
+<br/>
+
+[![报告问题](https://img.shields.io/badge/报告问题-Issues-e05d44?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/issues)
+[![添加资源](https://img.shields.io/badge/添加资源-Pull_Request-2962ff?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/pulls)
+[![分享用例](https://img.shields.io/badge/分享用例-Discussions-9CF?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/discussions)
+
+<br/>
+
+**📋 提交规范**
+
+`✓ 链接有效`　`✓ 描述清晰`　`✓ 格式统一`　`✓ 注明许可`
+
+</div>
+
+---
+
+## 许可证
+
+<div align="center">
+
+![License: MIT](https://img.shields.io/github/license/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)
+
+本资源库采用 **MIT License** 开源，适用于本仓库的**指南内容与下载脚本**。
+
+</div>
+
+> ⚠️ **重要区分**：MIT 协议仅覆盖本仓库自身的内容与代码；清单中链接的第三方数据源（ERA5、NOAA、CMEMS 等）**各有其独立的使用条款与许可协议**，使用数据前请务必查阅并遵守相应数据提供方的规定。本仓库不持有任何数据所有权。
+
+---
+
+## 致谢
+
+<div align="center">
+
+感谢以下数据提供机构，以及每一位为本项目贡献力量的开发者 ✨
+
+<br/>
+
+![CMA](https://img.shields.io/badge/CMA-中国气象局-blue?style=flat-square)
+![NOAA](https://img.shields.io/badge/NOAA-美国国家海洋和大气管理局-green?style=flat-square)
+![ECMWF](https://img.shields.io/badge/ECMWF-欧洲中期天气预报中心-orange?style=flat-square)
+![NASA](https://img.shields.io/badge/NASA-美国国家航空航天局-red?style=flat-square)
+![ESA](https://img.shields.io/badge/ESA-欧洲空间局-purple?style=flat-square)
+![NCEI](https://img.shields.io/badge/NCEI-环境信息中心-00CED1?style=flat-square)
+![DWD](https://img.shields.io/badge/DWD-德国气象局-9CF?style=flat-square)
+![Met Office](https://img.shields.io/badge/Met_Office-英国气象局-00BFFF?style=flat-square)
+![JMA](https://img.shields.io/badge/JMA-日本气象厅-9CF?style=flat-square)
+![Copernicus](https://img.shields.io/badge/Copernicus-欧盟哥白尼-003399?style=flat-square)
+
+<br/>
+
+![Google Cloud](https://img.shields.io/badge/Google_Cloud-4285F4?style=flat-square&logo=googlecloud&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-FF9900?style=flat-square&logo=amazonaws&logoColor=white)
+
+</div>
+
+---
+
+<div align="center">
+
+<h3>💖 支持本项目</h3>
+
+如果这个资源库对您有帮助，欢迎点亮 Star、Fork 或分享给同行！
+
+<br/>
+
+[![GitHub Stars](https://img.shields.io/github/stars/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/network/members)
+[![GitHub Watchers](https://img.shields.io/github/watchers/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/watchers)
+[![Discussions](https://img.shields.io/badge/Discussions-分享用例-9CF?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/discussions)
+
+</div>
+
+---
+
+<div align="center">
+
+<h3>📈 Star History</h3>
+
+<a href="https://star-history.com/#wait4xx/Meteorological-Data-Download-Guide&Date">
+<img src="https://api.star-history.com/svg?repos=wait4xx/Meteorological-Data-Download-Guide&type=Date" alt="Star History" width="600">
+</a>
+
+</div>
+
+---
+
+<div align="center">
+
+<sub>🔄 数据链接与可用性可能随时间变化 · 发现失效链接或有新资源推荐，请通过 <a href="https://github.com/wait4xx/Meteorological-Data-Download-Guide/issues">Issues</a> 告知我们</sub>
+
+<br/><br/>
+
+<sub><b>Made with ❤️ for the meteorology community</b> · 数据可用性以各提供方为准</sub>
 
 </div>

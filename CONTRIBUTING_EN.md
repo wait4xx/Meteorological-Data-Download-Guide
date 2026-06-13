@@ -4,6 +4,8 @@
 
 Welcome to the Public Meteorological Data repository! Thank you for your willingness to contribute to this project. This guide will help you understand how to make contributions.
 
+> 📄 **License**: This project is open-sourced under the [**MIT License**](LICENSE). By submitting a contribution you agree to release it under the MIT license. Note: MIT covers only this repository's own content and code; the listed third-party data sources each have their own licenses — please do not introduce content that violates their terms.
+
 ## 📋 Table of Contents
 
 - [Code of Conduct](#code-of-conduct)
@@ -85,6 +87,13 @@ When adding a new data source, please ensure:
 
 </details>
 ```
+
+> 💡 **OPeNDAP / THREDDS sources**: A bare OPeNDAP URL returns HTTP 400 when opened directly in a browser — use the "browsable catalog + OPeNDAP code" format instead:
+> ```markdown
+> 🔗 📂 [Catalog](https://psl.noaa.gov/thredds/catalog/Datasets/xxx/catalog.html) · OPeNDAP `https://.../dodsC/Datasets/xxx/file.nc` · 📝 [Script](./sources/download_from_opendap.py)
+> ```
+
+> 🔎 **Always verify links before submitting**: write candidate URLs to a file and run `bash test_codes/check_readme_links.sh test_codes/_candidates_xxx.txt`, keeping only ✅ sources.
 
 **Badge Color Standards:**
 
