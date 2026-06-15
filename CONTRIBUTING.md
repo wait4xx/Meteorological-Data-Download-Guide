@@ -148,8 +148,8 @@
 1. 点击 GitHub 页面右上角的 "Fork" 按钮
 2. 将项目克隆到本地：
 ```bash
-git clone https://github.com/wait4xx/Meteorological-Data-Download-Guide.git
-cd Meteorological-Data-Download-Guide
+git clone https://github.com/wait4xx/open-earth-data-guide.git
+cd open-earth-data-guide
 ```
 
 ### 2. 创建分支

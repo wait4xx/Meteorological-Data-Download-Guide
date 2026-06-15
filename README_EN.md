@@ -4,10 +4,10 @@
 
 **A one-stop collection of download channels, scripts and tools for public meteorological · oceanographic · climate data**
 
-[![GitHub Stars](https://img.shields.io/github/stars/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/network/members)
-[![License: MIT](https://img.shields.io/github/license/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](#license)
-[![Last Commit](https://img.shields.io/github/last-commit/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=git)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/commits)
+[![GitHub Stars](https://img.shields.io/github/stars/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/network/members)
+[![License: MIT](https://img.shields.io/github/license/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](#license)
+[![Last Commit](https://img.shields.io/github/last-commit/wait4xx/open-earth-data-guide?style=for-the-badge&logo=git)](https://github.com/wait4xx/open-earth-data-guide/commits)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge&logo=github)](CONTRIBUTING_EN.md)
 
 🌍 Global data sources · 📥 Companion scripts · 🔄 Continuously updated · 🤝 Contributions welcome
@@ -1673,9 +1673,9 @@ All forms of contribution are welcome and appreciated! See [**CONTRIBUTING_EN.md
 
 <br/>
 
-[![Report Issues](https://img.shields.io/badge/Report_Issues-Issues-e05d44?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/issues)
-[![Add Resources](https://img.shields.io/badge/Add_Resources-Pull_Request-2962ff?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/pulls)
-[![Share Use Cases](https://img.shields.io/badge/Share_Use_Cases-Discussions-9CF?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/discussions)
+[![Report Issues](https://img.shields.io/badge/Report_Issues-Issues-e05d44?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/issues)
+[![Add Resources](https://img.shields.io/badge/Add_Resources-Pull_Request-2962ff?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/pulls)
+[![Share Use Cases](https://img.shields.io/badge/Share_Use_Cases-Discussions-9CF?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/discussions)
 
 <br/>
 
@@ -1691,7 +1691,7 @@ All forms of contribution are welcome and appreciated! See [**CONTRIBUTING_EN.md
 
 <div align="center">
 
-![License: MIT](https://img.shields.io/github/license/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)
+![License: MIT](https://img.shields.io/github/license/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)
 
 This repository is open-sourced under the **MIT License**, which applies to the **guide content and download scripts** in this repo.
 
@@ -1737,10 +1737,10 @@ If this repository helps you, please Star, Fork, or share it with your peers!
 
 <br/>
 
-[![GitHub Stars](https://img.shields.io/github/stars/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/network/members)
-[![GitHub Watchers](https://img.shields.io/github/watchers/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/watchers)
-[![Discussions](https://img.shields.io/badge/Discussions-share_use_cases-9CF?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/discussions)
+[![GitHub Stars](https://img.shields.io/github/stars/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/network/members)
+[![GitHub Watchers](https://img.shields.io/github/watchers/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/watchers)
+[![Discussions](https://img.shields.io/badge/Discussions-share_use_cases-9CF?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/discussions)
 
 </div>
 
@@ -1750,8 +1750,8 @@ If this repository helps you, please Star, Fork, or share it with your peers!
 
 <h3>📈 Star History</h3>
 
-<a href="https://star-history.com/#wait4xx/Meteorological-Data-Download-Guide&Date">
-<img src="https://api.star-history.com/svg?repos=wait4xx/Meteorological-Data-Download-Guide&type=Date" alt="Star History" width="600">
+<a href="https://star-history.com/#wait4xx/open-earth-data-guide&Date">
+<img src="https://api.star-history.com/svg?repos=wait4xx/open-earth-data-guide&type=Date" alt="Star History" width="600">
 </a>
 
 </div>
@@ -1760,7 +1760,7 @@ If this repository helps you, please Star, Fork, or share it with your peers!
 
 <div align="center">
 
-<sub>🔄 Data links and availability may change over time · If you find a broken link or want to recommend a new resource, let us know via <a href="https://github.com/wait4xx/Meteorological-Data-Download-Guide/issues">Issues</a></sub>
+<sub>🔄 Data links and availability may change over time · If you find a broken link or want to recommend a new resource, let us know via <a href="https://github.com/wait4xx/open-earth-data-guide/issues">Issues</a></sub>
 
 <br/><br/>
 

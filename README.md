@@ -4,10 +4,10 @@
 
 **一站式汇集全球公开气象 · 海洋 · 气候数据的下载渠道、脚本与工具**
 
-[![GitHub Stars](https://img.shields.io/github/stars/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/network/members)
-[![License: MIT](https://img.shields.io/github/license/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](#许可证)
-[![Last Commit](https://img.shields.io/github/last-commit/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=git)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/commits)
+[![GitHub Stars](https://img.shields.io/github/stars/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/network/members)
+[![License: MIT](https://img.shields.io/github/license/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](#许可证)
+[![Last Commit](https://img.shields.io/github/last-commit/wait4xx/open-earth-data-guide?style=for-the-badge&logo=git)](https://github.com/wait4xx/open-earth-data-guide/commits)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen?style=for-the-badge&logo=github)](CONTRIBUTING.md)
 
 🌍 全球数据源 · 📥 配套下载脚本 · 🔄 持续更新 · 🤝 欢迎贡献
@@ -2020,9 +2020,9 @@ NOAA CoastWatch ERDDAP 服务器，提供海洋水色、SST、海冰等格点数
 
 <br/>
 
-[![报告问题](https://img.shields.io/badge/报告问题-Issues-e05d44?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/issues)
-[![添加资源](https://img.shields.io/badge/添加资源-Pull_Request-2962ff?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/pulls)
-[![分享用例](https://img.shields.io/badge/分享用例-Discussions-9CF?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/discussions)
+[![报告问题](https://img.shields.io/badge/报告问题-Issues-e05d44?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/issues)
+[![添加资源](https://img.shields.io/badge/添加资源-Pull_Request-2962ff?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/pulls)
+[![分享用例](https://img.shields.io/badge/分享用例-Discussions-9CF?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/discussions)
 
 <br/>
 
@@ -2038,7 +2038,7 @@ NOAA CoastWatch ERDDAP 服务器，提供海洋水色、SST、海冰等格点数
 
 <div align="center">
 
-![License: MIT](https://img.shields.io/github/license/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)
+![License: MIT](https://img.shields.io/github/license/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)
 
 本资源库采用 **MIT License** 开源，适用于本仓库的**指南内容与下载脚本**。
 
@@ -2084,10 +2084,10 @@ NOAA CoastWatch ERDDAP 服务器，提供海洋水色、SST、海冰等格点数
 
 <br/>
 
-[![GitHub Stars](https://img.shields.io/github/stars/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/network/members)
-[![GitHub Watchers](https://img.shields.io/github/watchers/wait4xx/Meteorological-Data-Download-Guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/watchers)
-[![Discussions](https://img.shields.io/badge/Discussions-分享用例-9CF?style=for-the-badge&logo=github)](https://github.com/wait4xx/Meteorological-Data-Download-Guide/discussions)
+[![GitHub Stars](https://img.shields.io/github/stars/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/stargazers)
+[![GitHub Forks](https://img.shields.io/github/forks/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/network/members)
+[![GitHub Watchers](https://img.shields.io/github/watchers/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/watchers)
+[![Discussions](https://img.shields.io/badge/Discussions-分享用例-9CF?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/discussions)
 
 </div>
 
@@ -2097,8 +2097,8 @@ NOAA CoastWatch ERDDAP 服务器，提供海洋水色、SST、海冰等格点数
 
 <h3>📈 Star History</h3>
 
-<a href="https://star-history.com/#wait4xx/Meteorological-Data-Download-Guide&Date">
-<img src="https://api.star-history.com/svg?repos=wait4xx/Meteorological-Data-Download-Guide&type=Date" alt="Star History" width="600">
+<a href="https://star-history.com/#wait4xx/open-earth-data-guide&Date">
+<img src="https://api.star-history.com/svg?repos=wait4xx/open-earth-data-guide&type=Date" alt="Star History" width="600">
 </a>
 
 </div>
@@ -2107,7 +2107,7 @@ NOAA CoastWatch ERDDAP 服务器，提供海洋水色、SST、海冰等格点数
 
 <div align="center">
 
-<sub>🔄 数据链接与可用性可能随时间变化 · 发现失效链接或有新资源推荐，请通过 <a href="https://github.com/wait4xx/Meteorological-Data-Download-Guide/issues">Issues</a> 告知我们</sub>
+<sub>🔄 数据链接与可用性可能随时间变化 · 发现失效链接或有新资源推荐，请通过 <a href="https://github.com/wait4xx/open-earth-data-guide/issues">Issues</a> 告知我们</sub>
 
 <br/><br/>
 

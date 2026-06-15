@@ -148,8 +148,8 @@ If you have programming skills, you can contribute:
 1. Click the "Fork" button in the top right corner of the GitHub page
 2. Clone the project locally:
 ```bash
-git clone https://github.com/wait4xx/Meteorological-Data-Download-Guide.git
-cd Meteorological-Data-Download-Guide
+git clone https://github.com/wait4xx/open-earth-data-guide.git
+cd open-earth-data-guide
 ```
 
 ### 2. Create a Branch
