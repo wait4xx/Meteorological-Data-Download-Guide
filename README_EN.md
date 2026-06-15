@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🌤️ Public Meteorological Data Download Resources
+# 🌍 Public Earth-System Data Download Resource Guide
 
-**A one-stop collection of download channels, scripts and tools for public meteorological · oceanographic · climate data**
+**A one-stop index of public meteorological · oceanographic · climate · environmental data, with download channels, access notes and companion scripts**
 
 [![GitHub Stars](https://img.shields.io/github/stars/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/network/members)
@@ -18,7 +18,19 @@
 
 </div>
 
-> 📌 A curated collection of public meteorological data download links, providing convenient data access for meteorological research, data analysis and application development.
+> 📌 A curated collection of download channels and access notes for public meteorological, oceanographic, climate and environmental data, providing convenient data access for research, analysis and application development.
+
+---
+
+### 🧩 Companion Toolkit: [Open Earth Data Kit](https://github.com/wait4xx/open-earth-data-kit)
+
+This repository is the **resource guide** — it focuses on “what data exists and where to download it”, collecting public data-source links, access notes and companion download scripts. If you’d rather converge these sources into a **unified command-line download platform**, check out its sibling project:
+
+> 🌍 **[Open Earth Data Kit](https://github.com/wait4xx/open-earth-data-kit)** · Unified CLI toolkit for public earth-system data access
+>
+> Provides the `meteo` CLI (`list` / `info` / `plan` / `download` / `tasks`), a structured data-source catalog (59 sources), multi-protocol adapters (HTTP index / S3 / OPeNDAP / Zarr), swappable download backends (Python / IDM / XDM), and SQLite-based task state tracking.
+
+**In short: the Guide tells you *where* to download, the Kit downloads *for you*.** The two share the same origin and complement each other — usable independently or together.
 
 ---
 
@@ -1614,7 +1626,7 @@ NOAA CoastWatch ERDDAP server providing ocean color, SST, sea ice and other grid
 
 <div align="center">
 
-<i>Selected open-source tools for meteorology and earth science, covering data download → format processing → physical analysis → visualization</i>
+<i>The companion download toolkit for this project is [Open Earth Data Kit](https://github.com/wait4xx/open-earth-data-kit) (unified CLI · catalog · multi-protocol adapters). Below is a curated selection of community tools for each stage, covering data download → format processing → physical analysis → visualization.</i>
 
 </div>
 
@@ -1670,6 +1682,8 @@ NOAA CoastWatch ERDDAP server providing ocean color, SST, sea ice and other grid
 <div align="center">
 
 All forms of contribution are welcome and appreciated! See [**CONTRIBUTING_EN.md**](CONTRIBUTING_EN.md) for detailed guidelines.
+
+> 💡 **Where to contribute**: To add or fix **data sources, access notes and other guide content**, open an Issue / PR in [this repo](https://github.com/wait4xx/open-earth-data-guide); to improve the **`meteo` CLI, download adapters and backends**, head over to [Open Earth Data Kit](https://github.com/wait4xx/open-earth-data-kit).
 
 <br/>
 

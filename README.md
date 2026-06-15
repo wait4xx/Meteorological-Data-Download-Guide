@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🌤️ 公开气象数据下载资源库
+# 🌍 公开地球系统数据下载资源指南
 
-**一站式汇集全球公开气象 · 海洋 · 气候数据的下载渠道、脚本与工具**
+**一站式索引全球公开气象 · 海洋 · 气候 · 环境数据，提供下载渠道、访问说明与配套脚本**
 
 [![GitHub Stars](https://img.shields.io/github/stars/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/network/members)
@@ -18,7 +18,19 @@
 
 </div>
 
-> 📌 收集整理各类公开气象数据下载网址，为气象研究、数据分析与应用开发提供便捷的数据获取渠道。
+> 📌 收集整理全球公开气象、海洋、气候与环境数据的下载渠道与访问说明，为气象研究、数据分析与应用开发提供便捷的数据获取入口。
+
+---
+
+### 🧩 配套工具：[Open Earth Data Kit](https://github.com/wait4xx/open-earth-data-kit)
+
+本仓库是**资源指南**——聚焦“有哪些数据、去哪下载”，汇总各机构公开数据源的链接、访问说明与配套下载脚本。如果你希望把这些数据源收敛成一个**统一的命令行下载平台**，欢迎使用同源配套项目：
+
+> 🌍 **[Open Earth Data Kit](https://github.com/wait4xx/open-earth-data-kit)** · 统一地球系统公开数据下载工具包
+>
+> 提供 `meteo` 命令行工具（`list` / `info` / `plan` / `download` / `tasks`）、结构化数据源目录（catalog，已收录 59 个数据源）、多协议适配器（HTTP 目录 / S3 / OPeNDAP / Zarr）与可切换的下载后端（Python / IDM / XDM），并用 SQLite 追踪下载任务状态。
+
+**一句话理解两者关系：指南告诉你“在哪下”，Kit 帮你“自动下”。** 两者同源、互补，既可独立使用，也可配合使用。
 
 ---
 
@@ -1961,7 +1973,7 @@ NOAA CoastWatch ERDDAP 服务器，提供海洋水色、SST、海冰等格点数
 
 <div align="center">
 
-<i>精选气象与地球科学开源工具，覆盖 <b>数据下载 → 格式处理 → 物理分析 → 可视化</b> 全流程</i>
+<i>本项目配套的下载工具平台是 [Open Earth Data Kit](https://github.com/wait4xx/open-earth-data-kit)（统一 CLI · catalog · 多协议适配器）。下面精选社区生态中各环节的优秀开源工具，覆盖 <b>数据下载 → 格式处理 → 物理分析 → 可视化</b> 全流程。</i>
 
 </div>
 
@@ -2018,6 +2030,8 @@ NOAA CoastWatch ERDDAP 服务器，提供海洋水色、SST、海冰等格点数
 
 我们欢迎并感谢所有形式的贡献！请参阅 [**CONTRIBUTING.md**](CONTRIBUTING.md) 了解详细指南。
 
+> 💡 **贡献去向**：补充或修正**数据源、访问说明等指南内容**，请在 [本仓库](https://github.com/wait4xx/open-earth-data-guide) 提 Issue / PR；改进 **`meteo` CLI 工具、下载适配器与后端**，请前往 [Open Earth Data Kit](https://github.com/wait4xx/open-earth-data-kit)。
+
 <br/>
 
 [![报告问题](https://img.shields.io/badge/报告问题-Issues-e05d44?style=for-the-badge&logo=github)](https://github.com/wait4xx/open-earth-data-guide/issues)
@@ -2040,7 +2054,7 @@ NOAA CoastWatch ERDDAP 服务器，提供海洋水色、SST、海冰等格点数
 
 ![License: MIT](https://img.shields.io/github/license/wait4xx/open-earth-data-guide?style=for-the-badge&logo=github)
 
-本资源库采用 **MIT License** 开源，适用于本仓库的**指南内容与下载脚本**。
+本资源指南采用 **MIT License** 开源，适用于本仓库的**指南内容与下载脚本**。
 
 </div>
 
@@ -2080,7 +2094,7 @@ NOAA CoastWatch ERDDAP 服务器，提供海洋水色、SST、海冰等格点数
 
 <h3>💖 支持本项目</h3>
 
-如果这个资源库对您有帮助，欢迎点亮 Star、Fork 或分享给同行！
+如果这个资源指南对您有帮助，欢迎点亮 Star、Fork 或分享给同行！
 
 <br/>
 
