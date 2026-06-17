@@ -37,6 +37,8 @@ This repository is the **resource guide** — it focuses on “what data exists 
 ### 📢 Latest Updates
 > **2026-06-13** · 🎉 Major update: added 18 public data sources (climate / observations / satellite / marine / air quality); open-source tools expanded to 20 as category tables; added MIT License & Star History; bilingual docs fully synced
 >
+> **2026-06-18** · 🔐 Added IRI Data Library; expanded NASA Earthdata entries (MERRA-2 / GPM IMERG / MODIS LST / AIRS / CERES / CALIPSO / AVHRR OI SST / CCMP Winds / OSCAR / SMAP / GRACE-FO / GLDAS / NSIDC Sea Ice CDR / MODIS Snow Cover) and CMEMS with authentication requirements & short_names; all entries connectivity-verified
+>
 > **2026-05-21** · 📝 Added Planette ERA5 AWS S3 download script for ERA5 daily, weekly and monthly mean data (`era5_planette_downloader.py`), supporting multi-variable concurrency, unit conversion, real-time progress
 >
 > **2026-04-11** · 📝 Added tutorial for ERA5 AWS S3 multi-threaded download script (`s3_downloader_multi.py`)
@@ -878,14 +880,20 @@ python era5_planette_downloader.py -v t2m pr slp -f month -t 2020-01-01 2024-12-
 </details>
 
 <details>
-<summary><b>MERRA-2</b> · NASA Reanalysis</summary>
+<summary><b>MERRA-2</b> · NASA Reanalysis · 🔒 Earthdata Login</summary>
 
-![Resolution](https://img.shields.io/badge/Resolution-0.5°-blue?style=flat-square)
-![Temporal Res](https://img.shields.io/badge/Temporal_Res-hourly/monthly-green?style=flat-square)
+![Resolution](https://img.shields.io/badge/Resolution-0.5°×0.625°-blue?style=flat-square)
+![Temporal Res](https://img.shields.io/badge/Temporal_Res-hourly/3hourly/monthly-green?style=flat-square)
 ![Period](https://img.shields.io/badge/Period-1980--present-orange?style=flat-square)
-![Source](https://img.shields.io/badge/Source-NASA-FF0000?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA_Earthdata-FF0000?style=flat-square)
 
-🔗 [MERRA_GSFC](https://disc.gsfc.nasa.gov/datasets?project=MERRA-2) · [MERRA_FTP](https://goldsmr4.gesdisc.eosdis.nasa.gov/data/)
+⚠️ **Requires free [Earthdata Login](https://urs.earthdata.nasa.gov/) registration; use `earthaccess` library for automatic authentication & S3 credential handling.**
+
+Key short_names: `M2T1NXSLV` (2D hourly surface T2M/SLP/wind), `M2I1NXASM` (2D instantaneous analysis), `M2T1NXFLX` (hourly flux/precipitation), `M2I3NPASM` (3D 3-hourly pressure levels, 72 layers).
+
+Protocols: OPeNDAP/DAP4 streaming + AWS S3 (requester-pays, `earthaccess.open()` auto-swaps credentials for bulk download).
+
+🔗 [GES DISC](https://disc.gsfc.nasa.gov/datasets?project=MERRA-2) · [FTP](https://goldsmr4.gesdisc.eosdis.nasa.gov/data/) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#2-nasa-earthdata)
 
 </details>
 
@@ -940,6 +948,23 @@ Surface (slp/air/pr_wtr/rhum), 17 pressure levels (hgt/uwnd/vwnd/air/shum); plus
 Historical reanalysis assimilating surface pressure observations; extremely long time span.
 
 🔗 📂 [Catalog](https://psl.noaa.gov/thredds/catalog/Datasets/20thC_ReanV2c/Dailies/pressure/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/20thC_ReanV2c/Dailies/pressure/hgt.2014.nc` · 📝 [Script](./sources/download_from_opendap.py)
+
+</details>
+
+<details>
+<summary><b>IRI Data Library</b> · Columbia University IRI · 🔒 dlauth login · OPeNDAP</summary>
+
+![Scale](https://img.shields.io/badge/Scale-154_top-level_sources-blue?style=flat-square)
+![Protocol](https://img.shields.io/badge/Protocol-OPeNDAP_DAP2-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-IRI_LDEO-9CF?style=flat-square)
+
+⚠️ **Requires free registration at [IRI Data Library](https://iridl.ldeo.columbia.edu/) (Google/GitHub SSO supported); access OPeNDAP via dlauth cookie after login.**
+
+Typical met/ocean datasets: CDAS-1 monthly MSL pressure (2.5°, 1948–), GPCP V2.2/V2.3 global precipitation (2.5°, 1979–), Levitus ocean climatology (1°, Z19), NMME seasonal forecast ensemble (33 models), CRU-TS2.1 land climate (0.5°), Kaplan extended SST (5°, 1856–), COADS ship observations (2°), ISCCP cloud cover (2.5°), ENSO/PDO/QBO climate indices, SODA ocean reanalysis, etc.
+
+Protocol: OPeNDAP (`pydap` + `requests.Session`), data URL pattern `https://iridl.ldeo.columbia.edu/SOURCES/{path}/dods`.
+
+🔗 [IRI Data Library](https://iridl.ldeo.columbia.edu/) · 📝 [Catalog probe script](./sources/iri_catalog_probe.py) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#1-iri-data-library)
 
 </details>
 
@@ -1303,17 +1328,80 @@ Terra/Aqua MODIS atmospheric products (aerosol optical depth, cloud properties, 
 
 </details>
 
+<details>
+<summary><b>MODIS LST</b> · NASA Land Surface Temperature · 🔒 Earthdata Login</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-1km_0.05°-blue?style=flat-square)
+![Product](https://img.shields.io/badge/Product-Land_Surface_Temp_LST-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA_Earthdata-FF0000?style=flat-square)
+
+⚠️ **Requires free Earthdata Login registration.**
+
+short_names: `MOD11C1` (Terra daily 0.05° global), `MOD11A1` (Terra daily 1km).
+
+🔗 [LP DAAC](https://lpdaac.usgs.gov/) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#2-nasa-earthdata)
+
+</details>
+
+<details>
+<summary><b>AIRS</b> · NASA Atmospheric Temperature/Humidity Profiles · 🔒 Earthdata Login</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-~1°-blue?style=flat-square)
+![Product](https://img.shields.io/badge/Product-Temp_Humidity_O3_profiles-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA_Earthdata-FF0000?style=flat-square)
+
+⚠️ **Requires free Earthdata Login registration.**
+
+short_names: `AIRS3STD` (Aqua/AIRS L3 standard product, daily, 2002–).
+
+🔗 [GES DISC](https://disc.gsfc.nasa.gov/datasets/AIRS3STD_006) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#2-nasa-earthdata)
+
+</details>
+
+<details>
+<summary><b>CERES</b> · NASA Top-of-Atmosphere Radiative Fluxes · 🔒 Earthdata Login</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-1°-blue?style=flat-square)
+![Product](https://img.shields.io/badge/Product-TOA_surface_radiation-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA_Earthdata-FF0000?style=flat-square)
+
+⚠️ **Requires free Earthdata Login registration.**
+
+short_names: `CERES_EBAF` (monthly, 2000–).
+
+🔗 [CERES](https://ceres.larc.nasa.gov/data/) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#2-nasa-earthdata)
+
+</details>
+
+<details>
+<summary><b>CALIPSO</b> · NASA Aerosol/Cloud Profiles</summary>
+
+![Product](https://img.shields.io/badge/Product-Aerosol_cloud_profiles-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA-FF0000?style=flat-square)
+
+short_names: `CAL_LID_L3_Tropospheric_APro` (L3 aerosol profiles, monthly, 2006–2023).
+
+🔗 [CALIPSO](https://www-calipso.larc.nasa.gov/products/)
+
+</details>
+
 #### Satellite Precipitation Products
 
 <details>
-<summary><b>GPM IMERG</b> · Global precipitation</summary>
+<summary><b>GPM IMERG</b> · NASA Global Precipitation · 🔒 Earthdata Login</summary>
 
 ![Spatial Res](https://img.shields.io/badge/Spatial_Res-0.1°-blue?style=flat-square)
 ![Temporal Res](https://img.shields.io/badge/Temporal_Res-30min-green?style=flat-square)
 ![Coverage](https://img.shields.io/badge/Coverage-global-orange?style=flat-square)
-![Source](https://img.shields.io/badge/Source-NASA-FF0000?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA_Earthdata-FF0000?style=flat-square)
 
-🔗 [NASA GES DISC](https://disc.gsfc.nasa.gov/)
+⚠️ **Requires free Earthdata Login registration.**
+
+short_names: `GPM_3IMERGHH` (Final half-hourly), `GPM_3IMERGDF` (daily), `GPM_3IMERGM` (monthly).
+
+Protocols: OPeNDAP/DAP4 + AWS S3 (`earthaccess`).
+
+🔗 [GES DISC](https://disc.gsfc.nasa.gov/) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#2-nasa-earthdata)
 
 </details>
 
@@ -1559,6 +1647,115 @@ IMS (Interactive Multisensor Snow and Ice Mapping) product hosted on NOAA CoastW
 
 </details>
 
+<details>
+<summary><b>AVHRR OI SST</b> · NOAA/NASA High-Resolution Sea Surface Temperature · 🔒 Earthdata Login</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
+![Temporal Res](https://img.shields.io/badge/Temporal_Res-daily-green?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1981--present-orange?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA_Earthdata-FF0000?style=flat-square)
+
+⚠️ **Requires free Earthdata Login registration.**
+
+short_names: `AVHRR_OI-NCEI-L4-GLOB-v2.1` (current version, 2016–), `AVHRR_OI-NCEI-L4-GLOB-v2.0` (historical version, 1981–2020).
+
+Protocols: OPeNDAP/DAP4 + AWS S3 (`earthaccess`).
+
+🔗 [GES DISC](https://disc.gsfc.nasa.gov/) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#2-nasa-earthdata)
+
+</details>
+
+<details>
+<summary><b>CCMP Winds</b> · NASA 10m Ocean Surface Winds</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
+![Temporal Res](https://img.shields.io/badge/Temporal_Res-6hourly-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA-FF0000?style=flat-square)
+
+short_names: `CCMP_WINDS_10M6HR_L4_V3.1` (1993–).
+
+🔗 [RSS/CCMP](https://www.remss.com/measurements/ccmp/)
+
+</details>
+
+<details>
+<summary><b>OSCAR</b> · NASA Ocean Surface Currents</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-1_3°-blue?style=flat-square)
+![Temporal Res](https://img.shields.io/badge/Temporal_Res-5daily-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA-FF0000?style=flat-square)
+
+short_names: `OSCAR_L4_OC_FINAL_V2.0` (1993–2022).
+
+🔗 [PODAAC](https://podaac.jpl.nasa.gov/dataset/OSCAR_L4_OC_FINAL_V2.0)
+
+</details>
+
+<details>
+<summary><b>SMAP</b> · NASA Soil Moisture / Sea Surface Salinity</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-9km_0.25°-blue?style=flat-square)
+![Product](https://img.shields.io/badge/Product-Soil_Moisture_SSS-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA-FF0000?style=flat-square)
+
+short_names: `SPL3SMP_E` (soil moisture 9km, 2015–), `SMAP_JPL_L3_SSS_CAP_8DAY` (sea surface salinity 0.25°).
+
+🔗 [NSIDC](https://nsidc.org/data/SPL3SMP)
+
+</details>
+
+<details>
+<summary><b>GRACE/GRACE-FO</b> · NASA Groundwater / Soil Water</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
+![Temporal Res](https://img.shields.io/badge/Temporal_Res-7daily-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA-FF0000?style=flat-square)
+
+short_names: `GRACEDADM_CLSM025GL_7D` (2003–).
+
+🔗 [PODAAC](https://podaac.jpl.nasa.gov/dataset/GRACEDADM_CLSM025GL_7D)
+
+</details>
+
+<details>
+<summary><b>NSIDC Sea Ice CDR</b> · NASA Sea Ice Concentration</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-25km-blue?style=flat-square)
+![Temporal Res](https://img.shields.io/badge/Temporal_Res-daily-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA-FF0000?style=flat-square)
+
+short_names: `G02202` (1978–).
+
+🔗 [NSIDC](https://nsidc.org/data/G02202)
+
+</details>
+
+<details>
+<summary><b>MODIS Snow Cover</b> · NASA Snow Cover</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-500m-blue?style=flat-square)
+![Temporal Res](https://img.shields.io/badge/Temporal_Res-daily-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA-FF0000?style=flat-square)
+
+short_names: `MOD10A1` (daily, 2000–), `MOD10A2` (8-day).
+
+🔗 [NSIDC](https://nsidc.org/data/MOD10A1)
+
+</details>
+
+<details>
+<summary><b>GLDAS</b> · NASA Global Land Data Assimilation</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
+![Temporal Res](https://img.shields.io/badge/Temporal_Res-3hourly-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-NASA-FF0000?style=flat-square)
+
+short_names: `GLDAS_NOAH025_3H` (1948–2014), `NLDAS_FORA0125_H` (North America hourly, 1979–).
+
+🔗 [GLDAS](https://ldas.gsfc.nasa.gov/)
+
+</details>
+
 ### Marine Models
 
 <details>
@@ -1573,13 +1770,21 @@ IMS (Interactive Multisensor Snow and Ice Mapping) product hosted on NOAA CoastW
 </details>
 
 <details>
-<summary><b>CMEMS</b> · EU marine monitoring & forecasting</summary>
+<summary><b>CMEMS</b> · Copernicus Marine Monitoring & Forecasting · 🔒 Copernicus Account</summary>
 
 ![Resolution](https://img.shields.io/badge/Resolution-multiple-blue?style=flat-square)
-![Product](https://img.shields.io/badge/Product-marine_monitoring/forecast-green?style=flat-square)
+![Product](https://img.shields.io/badge/Product-307_products_1259_datasets-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-Copernicus-003399?style=flat-square)
 
-🔗 [Copernicus Marine](https://marine.copernicus.eu/)
+⚠️ **Requires free [Copernicus Marine](https://marine.copernicus.eu/) account registration; use `copernicusmarine` CLI tool for access.**
+
+Flagship products: `cmems_mod_glo_phy_my_0.083deg_P1D-m` (**GLORYS** physical reanalysis, 1/12°, T/S/u/v/SSH), `cmems_mod_glo_wav_my_0.2deg_PT3H-i` (**WAVERY** wave reanalysis, 0.2°), `cmems_mod_glo_bgc_my_0.25deg_P1D-m` (biogeochemistry, 0.25°), DUACS sea surface height (0.25°), OSTIA SST NRT (0.05°).
+
+Coverage themes: Physical PHY, Biogeochemistry BGC, SST, Waves WAV, Sea Ice SI, Sea Surface Wind WIND, Sea Level SL, Ocean Monitoring Indicators OMI. Regions: Global + Arctic/Baltic/Black Sea/Mediterranean/IBI/NW Shelf.
+
+Protocols: ARCO Zarr streaming + S3 + OPeNDAP.
+
+🔗 [Copernicus Marine](https://marine.copernicus.eu/) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#3-cmemscopernicus-marine-service)
 
 </details>
 
