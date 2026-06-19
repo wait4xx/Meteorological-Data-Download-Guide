@@ -1,0 +1,4 @@
+
+# Local-only working docs — not for the repo
+/docs/Authenticated_Data_Sources_Detailed_Report.md
+/sources/iri_catalog_probe.py

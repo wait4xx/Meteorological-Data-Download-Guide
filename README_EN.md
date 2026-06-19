@@ -35,9 +35,9 @@ This repository is the **resource guide** — it focuses on “what data exists 
 ---
 
 ### 📢 Latest Updates
-> **2026-06-13** · 🎉 Major update: added 18 public data sources (climate / observations / satellite / marine / air quality); open-source tools expanded to 20 as category tables; added MIT License & Star History; bilingual docs fully synced
->
 > **2026-06-18** · 🔐 Added IRI Data Library; expanded NASA Earthdata entries (MERRA-2 / GPM IMERG / MODIS LST / AIRS / CERES / CALIPSO / AVHRR OI SST / CCMP Winds / OSCAR / SMAP / GRACE-FO / GLDAS / NSIDC Sea Ice CDR / MODIS Snow Cover) and CMEMS with authentication requirements & short_names; all entries connectivity-verified
+>
+> **2026-06-13** · 🎉 Major update: added 18 public data sources (climate / observations / satellite / marine / air quality); open-source tools expanded to 20 as category tables; added MIT License & Star History; bilingual docs fully synced
 >
 > **2026-05-21** · 📝 Added Planette ERA5 AWS S3 download script for ERA5 daily, weekly and monthly mean data (`era5_planette_downloader.py`), supporting multi-variable concurrency, unit conversion, real-time progress
 >
@@ -893,7 +893,7 @@ Key short_names: `M2T1NXSLV` (2D hourly surface T2M/SLP/wind), `M2I1NXASM` (2D i
 
 Protocols: OPeNDAP/DAP4 streaming + AWS S3 (requester-pays, `earthaccess.open()` auto-swaps credentials for bulk download).
 
-🔗 [GES DISC](https://disc.gsfc.nasa.gov/datasets?project=MERRA-2) · [FTP](https://goldsmr4.gesdisc.eosdis.nasa.gov/data/) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#2-nasa-earthdata)
+🔗 [GES DISC](https://disc.gsfc.nasa.gov/datasets?project=MERRA-2) · [FTP](https://goldsmr4.gesdisc.eosdis.nasa.gov/data/)
 
 </details>
 
@@ -964,7 +964,7 @@ Typical met/ocean datasets: CDAS-1 monthly MSL pressure (2.5°, 1948–), GPCP V
 
 Protocol: OPeNDAP (`pydap` + `requests.Session`), data URL pattern `https://iridl.ldeo.columbia.edu/SOURCES/{path}/dods`.
 
-🔗 [IRI Data Library](https://iridl.ldeo.columbia.edu/) · 📝 [Catalog probe script](./sources/iri_catalog_probe.py) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#1-iri-data-library)
+🔗 [IRI Data Library](https://iridl.ldeo.columbia.edu/)
 
 </details>
 
@@ -1339,7 +1339,7 @@ Terra/Aqua MODIS atmospheric products (aerosol optical depth, cloud properties, 
 
 short_names: `MOD11C1` (Terra daily 0.05° global), `MOD11A1` (Terra daily 1km).
 
-🔗 [LP DAAC](https://lpdaac.usgs.gov/) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#2-nasa-earthdata)
+🔗 [LP DAAC](https://lpdaac.usgs.gov/)
 
 </details>
 
@@ -1354,7 +1354,7 @@ short_names: `MOD11C1` (Terra daily 0.05° global), `MOD11A1` (Terra daily 1km).
 
 short_names: `AIRS3STD` (Aqua/AIRS L3 standard product, daily, 2002–).
 
-🔗 [GES DISC](https://disc.gsfc.nasa.gov/datasets/AIRS3STD_006) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#2-nasa-earthdata)
+🔗 [GES DISC](https://disc.gsfc.nasa.gov/datasets/AIRS3STD_006)
 
 </details>
 
@@ -1369,7 +1369,7 @@ short_names: `AIRS3STD` (Aqua/AIRS L3 standard product, daily, 2002–).
 
 short_names: `CERES_EBAF` (monthly, 2000–).
 
-🔗 [CERES](https://ceres.larc.nasa.gov/data/) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#2-nasa-earthdata)
+🔗 [CERES](https://ceres.larc.nasa.gov/data/)
 
 </details>
 
@@ -1401,7 +1401,7 @@ short_names: `GPM_3IMERGHH` (Final half-hourly), `GPM_3IMERGDF` (daily), `GPM_3I
 
 Protocols: OPeNDAP/DAP4 + AWS S3 (`earthaccess`).
 
-🔗 [GES DISC](https://disc.gsfc.nasa.gov/) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#2-nasa-earthdata)
+🔗 [GES DISC](https://disc.gsfc.nasa.gov/)
 
 </details>
 
@@ -1661,7 +1661,7 @@ short_names: `AVHRR_OI-NCEI-L4-GLOB-v2.1` (current version, 2016–), `AVHRR_OI-
 
 Protocols: OPeNDAP/DAP4 + AWS S3 (`earthaccess`).
 
-🔗 [GES DISC](https://disc.gsfc.nasa.gov/) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#2-nasa-earthdata)
+🔗 [GES DISC](https://disc.gsfc.nasa.gov/)
 
 </details>
 
@@ -1784,7 +1784,7 @@ Coverage themes: Physical PHY, Biogeochemistry BGC, SST, Waves WAV, Sea Ice SI, 
 
 Protocols: ARCO Zarr streaming + S3 + OPeNDAP.
 
-🔗 [Copernicus Marine](https://marine.copernicus.eu/) · 📖 [Authenticated Data Sources Detailed Report](./docs/Authenticated_Data_Sources_Detailed_Report.md#3-cmemscopernicus-marine-service)
+🔗 [Copernicus Marine](https://marine.copernicus.eu/)
 
 </details>
 
