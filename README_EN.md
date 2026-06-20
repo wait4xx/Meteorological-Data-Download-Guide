@@ -35,6 +35,8 @@ This repository is the **resource guide** — it focuses on “what data exists 
 ---
 
 ### 📢 Latest Updates
+> **2026-06-20** · 🗂️ Restructured IRI Data Library & CMEMS entries: IRI is now a "Reanalysis" entrypoint with datasets distributed into their topical sections by data type (each tagged `via IRI`, with **login-verified** `SOURCES/...` paths); added COADS / Levitus / ISCCP / NMME / ENSO-PDO-QBO entries. CMEMS split into a portal block + GLORYS / WAVERY / BGC / DUACS / OSTIA standalone entries (OPeNDAP/THREDDS retired, now via Marine Data Store). Live probing found IRI does NOT host ERA5 / MERRA-2 / SODA — removed from entries.
+>
 > **2026-06-18** · 🔐 Added IRI Data Library; expanded NASA Earthdata entries (MERRA-2 / GPM IMERG / MODIS LST / AIRS / CERES / CALIPSO / AVHRR OI SST / CCMP Winds / OSCAR / SMAP / GRACE-FO / GLDAS / NSIDC Sea Ice CDR / MODIS Snow Cover) and CMEMS with authentication requirements & short_names; all entries connectivity-verified
 >
 > **2026-06-13** · 🎉 Major update: added 18 public data sources (climate / observations / satellite / marine / air quality); open-source tools expanded to 20 as category tables; added MIT License & Star History; bilingual docs fully synced
@@ -333,6 +335,19 @@ This repository is the **resource guide** — it focuses on “what data exists 
 ![VPN](https://img.shields.io/badge/VPN-√-3126F0?style=flat-square)
 
 🔗 [🪜 GFS_GOOGLE](https://console.cloud.google.com/storage/browser/gfs-ensemble-forecast-system) · 📅 2020-09-25 to present
+
+</details>
+
+<details>
+<summary><b>NMME</b> · North American Multi-Model Ensemble seasonal forecast · via IRI (dlauth) · OPeNDAP</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-~1°-blue?style=flat-square)
+![Lead Time](https://img.shields.io/badge/Lead_Time-monthly_seasonal-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-IRI-9CF?style=flat-square)
+
+North American Multi-Model Ensemble: multi-institution coupled-model seasonal forecasts + hindcasts (CFSv2, GFDL, NASA GEOS-5, NCAR CCSM, CanCM, …); a primary input to NOAA CPC seasonal outlooks.
+
+🔗 via [IRI Data Library](https://iridl.ldeo.columbia.edu/) (dlauth): `SOURCES/Models/.NMME`
 
 </details>
 
@@ -909,6 +924,8 @@ Surface (slp/air/pr_wtr/rhum), 17 pressure levels (hgt/uwnd/vwnd/air/shum); plus
 
 🔗 📂 [Catalog](https://psl.noaa.gov/thredds/catalog/Datasets/ncep.reanalysis.derived/surface/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/ncep.reanalysis.derived/surface/air.mon.mean.nc` · 📝 [Script](./sources/download_from_opendap.py)
 
+🔗 via [IRI Data Library](https://iridl.ldeo.columbia.edu/) (dlauth): `SOURCES/.NOAA/.NCEP-NCAR/.CDAS-1/.MONTHLY/.Intrinsic/.PressureLevel` / `.MSL` (CDAS-1 = R1 monthly)
+
 </details>
 
 <details>
@@ -954,17 +971,18 @@ Historical reanalysis assimilating surface pressure observations; extremely long
 <details>
 <summary><b>IRI Data Library</b> · Columbia University IRI · 🔒 dlauth login · OPeNDAP</summary>
 
-![Scale](https://img.shields.io/badge/Scale-154_top-level_sources-blue?style=flat-square)
-![Protocol](https://img.shields.io/badge/Protocol-OPeNDAP_DAP2-green?style=flat-square)
+![Resolution](https://img.shields.io/badge/Resolution-0.25°–2.5°-blue?style=flat-square)
+![Temporal Res](https://img.shields.io/badge/Temporal_Res-daily/monthly-green?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1871--present-orange?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-IRI_LDEO-9CF?style=flat-square)
 
-⚠️ **Requires free registration at [IRI Data Library](https://iridl.ldeo.columbia.edu/) (Google/GitHub SSO supported); access OPeNDAP via dlauth cookie after login.**
+⚠️ **Requires free registration at [IRI Data Library](https://iridl.ldeo.columbia.edu/) (Google/GitHub SSO supported); sign in to get a dlauth session cookie — it now requires all users to sign in.**
 
-Typical met/ocean datasets: CDAS-1 monthly MSL pressure (2.5°, 1948–), GPCP V2.2/V2.3 global precipitation (2.5°, 1979–), Levitus ocean climatology (1°, Z19), NMME seasonal forecast ensemble (33 models), CRU-TS2.1 land climate (0.5°), Kaplan extended SST (5°, 1856–), COADS ship observations (2°), ISCCP cloud cover (2.5°), ENSO/PDO/QBO climate indices, SODA ocean reanalysis, etc.
+A cross-institutional climate portal maintained by Columbia University; access institutional **reanalysis** data via OPeNDAP (CDAS-1 = NCEP/NCAR R1, ECMWF ERA-Interim), each tagged `via IRI` with verified `SOURCES/...` paths. Other types (precipitation / SST / land / seasonal forecast / cloud / in-situ / climate indices) appear in their topical sections.
 
-Protocol: OPeNDAP (`pydap` + `requests.Session`), data URL pattern `https://iridl.ldeo.columbia.edu/SOURCES/{path}/dods`.
+Protocol: OPeNDAP (`pydap` + `requests.Session`), URL pattern `https://iridl.ldeo.columbia.edu/SOURCES/{path}/dods`; SOURCES node names must be exact (e.g. `.Surface`, `.PressureLevel`).
 
-🔗 [IRI Data Library](https://iridl.ldeo.columbia.edu/)
+🔗 [IRI Data Library](https://iridl.ldeo.columbia.edu/) · [Sign in](https://iridl.ldeo.columbia.edu/auth/login)
 
 </details>
 
@@ -980,6 +998,8 @@ Protocol: OPeNDAP (`pydap` + `requests.Session`), data URL pattern `https://irid
 ![Source](https://img.shields.io/badge/Source-UEA-00BFFF?style=flat-square)
 
 🔗 [UEA](https://crudata.uea.ac.uk/cru/data/hrg/)
+
+🔗 via [IRI Data Library](https://iridl.ldeo.columbia.edu/) (dlauth): `SOURCES/.UEA/.CRU/.TS2p1` (CRU-TS2.1)
 
 </details>
 
@@ -1007,6 +1027,8 @@ Global precipitation product combining satellite and surface observations.
 
 🔗 📂 [Catalog](https://psl.noaa.gov/thredds/catalog/Datasets/gpcp/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/gpcp/precip.mon.mean.nc` · 📝 [Script](./sources/download_from_opendap.py)
 
+🔗 via [IRI Data Library](https://iridl.ldeo.columbia.edu/) (dlauth): `SOURCES/.NASA/.GPCP/.V2p2` (V2.2) / `.V2p3` (V2.3)
+
 </details>
 
 <details>
@@ -1020,6 +1042,8 @@ Global precipitation product combining satellite and surface observations.
 Station-based gridded product, `precip` / `tmax`; 5× higher resolution than GPCP (2.5°).
 
 🔗 📂 [Catalog](https://psl.noaa.gov/thredds/catalog/Datasets/cpc_global_precip/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/cpc_global_precip/precip.2024.nc` · 📝 [Script](./sources/download_from_opendap.py)
+
+🔗 via [IRI Data Library](https://iridl.ldeo.columbia.edu/) (dlauth): `SOURCES/.NOAA/.NCEP/.CPC/.UNIFIED_PRCP` (CPC Unified gauge)
 
 </details>
 
@@ -1132,6 +1156,18 @@ Daily observations from global land stations (temp, precip, snow, etc.); foundat
 Monthly statistics from global land stations; suited to long-term trend and decadal variability analysis.
 
 🔗 [NCEI GHCN-Monthly](https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-monthly)
+
+</details>
+
+<details>
+<summary><b>ENSO / PDO / QBO</b> · Climate teleconnection indices · via IRI (dlauth) · OPeNDAP</summary>
+
+![Type](https://img.shields.io/badge/Type-climate_index_time_series-blue?style=flat-square)
+![Source](https://img.shields.io/badge/Source-IRI-9CF?style=flat-square)
+
+Climate teleconnection indices — ENSO (Niño3.4 / MEI / SOI), PDO (Pacific Decadal Oscillation), QBO (equatorial stratospheric zonal wind), etc. (time series).
+
+🔗 via [IRI Data Library](https://iridl.ldeo.columbia.edu/) (dlauth): `SOURCES/Indices/.PDO` / `.QBO` / `.nino`
 
 </details>
 
@@ -1385,6 +1421,19 @@ short_names: `CAL_LID_L3_Tropospheric_APro` (L3 aerosol profiles, monthly, 2006�
 
 </details>
 
+<details>
+<summary><b>ISCCP</b> · International Satellite Cloud Climatology · via IRI (dlauth) · OPeNDAP</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-2.5°-blue?style=flat-square)
+![Period](https://img.shields.io/badge/Period-1983--present-orange?style=flat-square)
+![Source](https://img.shields.io/badge/Source-IRI-9CF?style=flat-square)
+
+International Satellite Cloud Climatology Project: multi-satellite merged global cloud amount / cloud type / radiative flux climatology.
+
+🔗 via [IRI Data Library](https://iridl.ldeo.columbia.edu/) (dlauth): `SOURCES/.ISCCP`
+
+</details>
+
 #### Satellite Precipitation Products
 
 <details>
@@ -1575,6 +1624,32 @@ The world's largest ocean profile database maintained by NCEI, integrating histo
 
 </details>
 
+<details>
+<summary><b>COADS</b> · Ship/buoy marine observations · via IRI (dlauth) · OPeNDAP</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-2°-blue?style=flat-square)
+![Variables](https://img.shields.io/badge/Variables-SST_wind_pressure-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-IRI-9CF?style=flat-square)
+
+Comprehensive Ocean-Atmosphere Data Set: historical ship/buoy marine observations (SST, wind, pressure, etc.); a long-term statistical basis for marine climate. Current version: ICOADS.
+
+🔗 via [IRI Data Library](https://iridl.ldeo.columbia.edu/) (dlauth): `SOURCES/.COADS`
+
+</details>
+
+<details>
+<summary><b>Levitus ocean climatology</b> · via IRI (dlauth) · OPeNDAP</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-1°-blue?style=flat-square)
+![Variables](https://img.shields.io/badge/Variables-T/S/O2_climatology-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-IRI-9CF?style=flat-square)
+
+Levitus (WOA94) global ocean climatology: multi-year mean T/S/oxygen fields, 1° (Z19 depth levels); commonly used for ocean model initialization and validation.
+
+🔗 via [IRI Data Library](https://iridl.ldeo.columbia.edu/) (dlauth): `SOURCES/.LEVITUS94`
+
+</details>
+
 ### SST & Sea Ice
 
 <details>
@@ -1589,6 +1664,8 @@ The world's largest ocean profile database maintained by NCEI, integrating histo
 
 🔗 📂 [Catalog](https://psl.noaa.gov/thredds/catalog/Datasets/noaa.oisst.v2.highres/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/noaa.oisst.v2.highres/sst.day.mean.2024.nc` · 📝 [Script](./sources/download_from_opendap.py)
 
+🔗 via [IRI Data Library](https://iridl.ldeo.columbia.edu/) (dlauth): `SOURCES/.NOAA/.NCDC/.OISST/.version2p1` (v2.1)
+
 </details>
 
 <details>
@@ -1602,6 +1679,8 @@ The world's largest ocean profile database maintained by NCEI, integrating histo
 Observation-reconstructed global SST, with v3/v4/v5/v6 (v6 recommended).
 
 🔗 📂 [Catalog](https://psl.noaa.gov/thredds/catalog/Datasets/noaa.ersst.v6/catalog.html) · OPeNDAP (v3–v6, change version) `https://psl.noaa.gov/thredds/dodsC/Datasets/noaa.ersst.v6/sst.mnmean.nc` · 📝 [Script](./sources/download_from_opendap.py)
+
+🔗 via [IRI Data Library](https://iridl.ldeo.columbia.edu/) (dlauth): `SOURCES/.NOAA/.NCDC/.ERSST/.version5` (v5)
 
 </details>
 
@@ -1630,6 +1709,8 @@ JMA long-term historical SST reconstruction (COBE2 current, COBE predecessor).
 Coarse-grid (5°) SST anomaly reconstruction, suited to long-term trend studies.
 
 🔗 📂 [Catalog](https://psl.noaa.gov/thredds/catalog/Datasets/kaplan_sst/catalog.html) · OPeNDAP `https://psl.noaa.gov/thredds/dodsC/Datasets/kaplan_sst/sst.mon.anom.nc` · 📝 [Script](./sources/download_from_opendap.py)
+
+🔗 via [IRI Data Library](https://iridl.ldeo.columbia.edu/) (dlauth): `SOURCES/.KAPLAN/.EXTENDED` (extended SST)
 
 </details>
 
@@ -1770,21 +1851,71 @@ short_names: `GLDAS_NOAH025_3H` (1948–2014), `NLDAS_FORA0125_H` (North America
 </details>
 
 <details>
-<summary><b>CMEMS</b> · Copernicus Marine Monitoring & Forecasting · 🔒 Copernicus Account</summary>
+<summary><b>CMEMS</b> (portal) · Copernicus Marine Monitoring & Forecasting · 🔒 Copernicus Account</summary>
 
-![Resolution](https://img.shields.io/badge/Resolution-multiple-blue?style=flat-square)
-![Product](https://img.shields.io/badge/Product-307_products_1259_datasets-green?style=flat-square)
 ![Source](https://img.shields.io/badge/Source-Copernicus-003399?style=flat-square)
+![Product](https://img.shields.io/badge/Product-307_products_1259_datasets-green?style=flat-square)
 
-⚠️ **Requires free [Copernicus Marine](https://marine.copernicus.eu/) account registration; use `copernicusmarine` CLI tool for access.**
+⚠️ **Requires free [Copernicus Marine](https://marine.copernicus.eu/) account registration; use the `copernicusmarine` CLI (`describe` / `get` / `subset`).** ⚠️ The legacy OPeNDAP/THREDDS/MOTU/FTP (`*.cmems-du.eu`) has been fully retired; data is now served via **Marine Data Store + ARCO Zarr/S3** with no volume/bandwidth quota.
 
-Flagship products: `cmems_mod_glo_phy_my_0.083deg_P1D-m` (**GLORYS** physical reanalysis, 1/12°, T/S/u/v/SSH), `cmems_mod_glo_wav_my_0.2deg_PT3H-i` (**WAVERY** wave reanalysis, 0.2°), `cmems_mod_glo_bgc_my_0.25deg_P1D-m` (biogeochemistry, 0.25°), DUACS sea surface height (0.25°), OSTIA SST NRT (0.05°).
-
-Coverage themes: Physical PHY, Biogeochemistry BGC, SST, Waves WAV, Sea Ice SI, Sea Surface Wind WIND, Sea Level SL, Ocean Monitoring Indicators OMI. Regions: Global + Arctic/Baltic/Black Sea/Mediterranean/IBI/NW Shelf.
-
-Protocols: ARCO Zarr streaming + S3 + OPeNDAP.
+Coverage themes: Physical PHY, Biogeochemistry BGC, SST, Waves WAV, Sea Ice SI, Sea Surface Wind WIND, Sea Level SL, Ocean Monitoring Indicators OMI. Regions: Global + Arctic/Baltic/Black Sea/Mediterranean/IBI/NW Shelf. Flagship products split into the standalone entries below.
 
 🔗 [Copernicus Marine](https://marine.copernicus.eu/)
+
+</details>
+
+<details>
+<summary><b>CMEMS · GLORYS</b> · Global physical ocean reanalysis · 🔒 Copernicus Account</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-1/12°-blue?style=flat-square)
+![Variables](https://img.shields.io/badge/Variables-T/S/u/v/SSH-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-Copernicus-003399?style=flat-square)
+
+Product ID `cmems_mod_glo_phy_my_0.083deg_P1D-m`: global 1/12° physical (T/S/u/v + SSH) reanalysis, daily mean.
+
+</details>
+
+<details>
+<summary><b>CMEMS · WAVERY</b> · Global wave reanalysis · 🔒 Copernicus Account</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-0.2°-blue?style=flat-square)
+![Variables](https://img.shields.io/badge/Variables-waves-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-Copernicus-003399?style=flat-square)
+
+Product ID `cmems_mod_glo_wav_my_0.2deg_PT3H-i`: global 0.2° wave reanalysis, 3-hourly.
+
+</details>
+
+<details>
+<summary><b>CMEMS · BGC</b> · Global biogeochemical reanalysis · 🔒 Copernicus Account</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
+![Variables](https://img.shields.io/badge/Variables-chl/nutrients/carbon-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-Copernicus-003399?style=flat-square)
+
+Product ID `cmems_mod_glo_bgc_my_0.25deg_P1D-m`: global 0.25° biogeochemistry (chlorophyll/nutrients/carbon) reanalysis, daily mean.
+
+</details>
+
+<details>
+<summary><b>CMEMS · DUACS</b> · Sea surface height (ADT/SLA) · 🔒 Copernicus Account</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-0.25°-blue?style=flat-square)
+![Variables](https://img.shields.io/badge/Variables-ADT/SLA/geostrophy-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-Copernicus-003399?style=flat-square)
+
+Multi-altimeter gridded Absolute Dynamic Topography (ADT) and Sea Level Anomaly (SLA), 0.25°, daily.
+
+</details>
+
+<details>
+<summary><b>CMEMS · OSTIA SST NRT</b> · Near-real-time sea surface temperature · 🔒 Copernicus Account</summary>
+
+![Resolution](https://img.shields.io/badge/Resolution-0.05°-blue?style=flat-square)
+![Variables](https://img.shields.io/badge/Variables-SST/sea_ice-green?style=flat-square)
+![Source](https://img.shields.io/badge/Source-Copernicus-003399?style=flat-square)
+
+OSTIA near-real-time multi-source blended SST (0.05°), daily.
 
 </details>
 
